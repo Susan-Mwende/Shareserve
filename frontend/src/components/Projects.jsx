@@ -4,6 +4,7 @@ import { Container, Row, Col, Card, Button, Modal, Badge } from "react-bootstrap
 import axios from "axios";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
 import "./Projects.css";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function Projects() {
   const [programs, setPrograms] = useState([]);
@@ -15,7 +16,7 @@ function Projects() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/api/programs")
+      .get(API_ENDPOINTS.PROGRAMS)
       .then((res) => setPrograms(res.data))
       .catch((err) => console.log(err));
   }, []);

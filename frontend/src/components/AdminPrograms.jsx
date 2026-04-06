@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Container, Form, Button, Card } from "react-bootstrap";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function AdminPrograms() {
   const [title, setTitle] = useState("");
@@ -10,7 +11,7 @@ function AdminPrograms() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:5001/api/programs", {
+    await axios.post(API_ENDPOINTS.PROGRAMS, {
       title,
       description,
       image,

@@ -26,6 +26,9 @@ export const API_ENDPOINTS = {
   // Contact
   CONTACT: `${API_BASE_URL}/api/contact`,
   
+  // Dashboard
+  DASHBOARD: `${API_BASE_URL}/api/dashboard`,
+  
   // M-Pesa
   MPESA_STK: `${API_BASE_URL}/api/mpesa/stk-push`,
   

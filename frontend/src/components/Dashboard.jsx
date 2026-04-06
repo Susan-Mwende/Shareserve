@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Row, Col, Card, Table } from "react-bootstrap";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function Dashboard() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5001/api/dashboard")
+    axios.get(API_ENDPOINTS.DASHBOARD)
       .then(res => setData(res.data));
   }, []);
 
