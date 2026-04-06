@@ -44,6 +44,15 @@
   color: #198754;
 }
 
+/* About section spacing */
+.about-content {
+  padding-right: 1rem;
+}
+
+.about-image {
+  padding-left: 1rem;
+}
+
 /* Modal customizations */
 .modal-xl {
   max-width: 95%;
@@ -82,5 +91,19 @@
   
   .value-card {
     margin-bottom: 1rem;
+  }
+  
+  .about-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .about-image {
+    padding-left: 0;
+  }
+  
+  .about-content .btn {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
   }
 }

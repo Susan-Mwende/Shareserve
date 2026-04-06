@@ -22,9 +22,11 @@ function About() {
               through youth empowerment and sustainable solutions.
             </p>
             
-            <Button variant="success" className="mt-3 btn-lg" onClick={handleShowModal}>
-              Learn More
-            </Button>
+            <div className="mt-4 mb-3">
+              <Button variant="success" className="btn-lg px-4" onClick={handleShowModal}>
+                Learn More
+              </Button>
+            </div>
           </div>
         </Col>
         <Col md={6}>
