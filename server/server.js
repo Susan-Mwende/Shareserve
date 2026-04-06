@@ -8,6 +8,7 @@ import apiRoutes from "./Routes/api.js";
 import authRoutes from "./Routes/authRoutes.js";
 import mpesaRoutes from "./Routes/mpesaRoutes.js";
 import partnerRoutes from "./Routes/partnerRoutes.js";
+import adminRoutes from "./Routes/adminRoutes.js";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.use("/api", apiRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/mpesa", mpesaRoutes);
 app.use("/api/contact", partnerRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Debug: Log available M-Pesa routes
 console.log('Available M-Pesa routes:');
@@ -55,6 +57,19 @@ if (partnerRoutes && partnerRoutes.stack) {
   });
 } else {
   console.log('  No routes found in partnerRoutes');
+}
+
+// Debug: Log available admin routes
+console.log('Available admin routes:');
+if (adminRoutes && adminRoutes.stack) {
+  adminRoutes.stack.forEach(layer => {
+    if (layer.route) {
+      const methods = Object.keys(layer.route.methods).join(', ').toUpperCase();
+      console.log(`  ${methods} /api/admin${layer.route.path}`);
+    }
+  });
+} else {
+  console.log('  No routes found in adminRoutes');
 }
 
 // Connect to MongoDB separately
