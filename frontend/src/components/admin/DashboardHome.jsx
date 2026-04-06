@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Row, Col, Card, ProgressBar, Table } from "react-bootstrap";
+import { API_ENDPOINTS } from "../../config/api.js";
 
 const DashboardHome = () => {
   const [dashboardData, setDashboardData] = useState({
@@ -17,7 +18,7 @@ const DashboardHome = () => {
     const fetchDashboardData = async () => {
       try {
         // Fetch programs data like the Impact section
-        const programsResponse = await axios.get("http://localhost:5001/api/programs");
+        const programsResponse = await axios.get(API_ENDPOINTS.PROGRAMS);
         const programs = programsResponse.data;
         
         // Calculate totals like the Impact section
