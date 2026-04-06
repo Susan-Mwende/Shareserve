@@ -89,6 +89,30 @@ app.get('/test', (req, res) => {
   });
 });
 
+// Add admin creation endpoint (temporary for setup)
+app.post('/create-admin', async (req, res) => {
+  try {
+    const AdminUser = require('./models/AdminUser.js').default;
+    
+    const admin = new AdminUser({
+      firstName: 'Susan',
+      lastName: 'Nyaga',
+      email: 'admin@shareserve.org',
+      password: 'admin123',
+      role: 'super_admin'
+    });
+
+    await admin.save();
+    res.json({ 
+      message: 'Admin created successfully',
+      email: 'admin@shareserve.org',
+      password: 'admin123'
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Serve the test HTML file
 app.get('/test-stk-push', (req, res) => {
   res.sendFile('test-stk-push.html', { root: '.' });
