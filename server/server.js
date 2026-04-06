@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  origin: ['http://localhost:5173', 'http://localhost:3000', 'https://shareserve-frontend.onrender.com'],
   credentials: true
 }));
 
@@ -58,7 +58,7 @@ if (partnerRoutes && partnerRoutes.stack) {
 }
 
 // Connect to MongoDB separately
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => {
     console.error("MongoDB connection error:", err);
@@ -79,10 +79,12 @@ app.get('/test-stk-push', (req, res) => {
   res.sendFile('test-stk-push.html', { root: '.' });
 });
 
-app.listen(5001, () => {
-  console.log("Server running on port 5001");
+const PORT = process.env.PORT || 5001;
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
   console.log("Test endpoints:");
-  console.log("  http://localhost:5001/test");
-  console.log("  http://localhost:5001/api/mpesa/test");
-  console.log("  http://localhost:5001/test-stk-push");
+  console.log(`  http://localhost:${PORT}/test`);
+  console.log(`  http://localhost:${PORT}/api/mpesa/test`);
+  console.log(`  http://localhost:${PORT}/test-stk-push`);
 });
