@@ -12,6 +12,7 @@ import {
   Alert,
 } from "react-bootstrap";
 import axios from "axios";
+import { API_ENDPOINTS } from "../../config/api.js";
 
 const ProgramManagement = () => {
   const [programs, setPrograms] = useState([]);
@@ -43,7 +44,7 @@ const ProgramManagement = () => {
   const fetchPrograms = async () => {
     try {
       console.log("Fetching programs..."); // Debug log
-      const response = await axios.get("http://localhost:5001/api/programs");
+      const response = await axios.get(API_ENDPOINTS.PROGRAMS);
       console.log("Programs fetched:", response.data); // Debug log
       setPrograms(response.data);
       setLoading(false);
@@ -106,12 +107,12 @@ const ProgramManagement = () => {
       let response;
       if (editingProgram) {
         response = await axios.put(
-          `http://localhost:5001/api/programs/${editingProgram._id}`,
+          `${API_ENDPOINTS.PROGRAMS}/${editingProgram._id}`,
           formData
         );
         setSuccess("Program updated successfully");
       } else {
-        response = await axios.post("http://localhost:5001/api/programs", formData);
+        response = await axios.post(API_ENDPOINTS.PROGRAMS, formData);
         console.log("Program created response:", response.data); // Debug log
         setSuccess("Program created successfully");
       }
@@ -131,7 +132,7 @@ const ProgramManagement = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this program?")) {
       try {
-        await axios.delete(`http://localhost:5001/api/programs/${id}`);
+        await axios.delete(`${API_ENDPOINTS.PROGRAMS}/${id}`);
         setSuccess("Program deleted successfully");
         fetchPrograms();
       } catch (err) {
