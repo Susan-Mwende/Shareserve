@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Table, Badge, Alert, Spinner, Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../../config/api.js';
 
 const SessionMonitoring = () => {
   const [sessions, setSessions] = useState([]);
@@ -18,7 +19,7 @@ const SessionMonitoring = () => {
 
   const fetchSessions = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/auth/sessions');
+      const response = await axios.get(API_ENDPOINTS.SESSIONS);
       setSessions(response.data);
       setLoading(false);
     } catch (error) {
@@ -30,7 +31,7 @@ const SessionMonitoring = () => {
 
   const handleEndSession = async (sessionId) => {
     try {
-      await axios.post(`http://localhost:5001/api/auth/sessions/${sessionId}/end`);
+      await axios.post(`${API_ENDPOINTS.SESSIONS}/${sessionId}/end`);
       setSuccess('Session ended successfully');
       fetchSessions();
     } catch (error) {

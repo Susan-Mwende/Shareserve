@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, Button, Table, Modal, Alert, Spinner } from 'react-bootstrap';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../../config/api.js';
 
 const AdminManagement = () => {
   const [admins, setAdmins] = useState([]);
@@ -22,7 +23,7 @@ const AdminManagement = () => {
 
   const fetchAdmins = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/auth/admins');
+      const response = await axios.get(API_ENDPOINTS.ADMINS);
       setAdmins(response.data);
       setLoading(false);
     } catch (error) {
@@ -43,7 +44,7 @@ const AdminManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/register', formData);
+      const response = await axios.post(API_ENDPOINTS.ADMINS, formData);
       setSuccess('Admin user created successfully!');
       setShowModal(false);
       setFormData({
@@ -62,7 +63,7 @@ const AdminManagement = () => {
   const handleDelete = async (adminId) => {
     if (window.confirm('Are you sure you want to delete this admin user?')) {
       try {
-        await axios.delete(`http://localhost:5001/api/auth/admins/${adminId}`);
+        await axios.delete(`${API_ENDPOINTS.ADMINS}/${adminId}`);
         setSuccess('Admin user deleted successfully!');
         fetchAdmins();
       } catch (error) {
@@ -73,7 +74,7 @@ const AdminManagement = () => {
 
   const handleToggleActive = async (adminId, isActive) => {
     try {
-      await axios.patch(`http://localhost:5001/api/auth/admins/${adminId}`, { isActive: !isActive });
+      await axios.patch(`${API_ENDPOINTS.ADMINS}/${adminId}`, { isActive: !isActive });
       setSuccess(`Admin user ${!isActive ? 'activated' : 'deactivated'} successfully!`);
       fetchAdmins();
     } catch (error) {

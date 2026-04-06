@@ -12,6 +12,7 @@ import {
   Modal,
 } from "react-bootstrap";
 import axios from "axios";
+import { API_ENDPOINTS } from "../../config/api.js";
 
 const DonationManagement = () => {
   const [donations, setDonations] = useState([]);
@@ -61,7 +62,7 @@ const DonationManagement = () => {
       });
 
       const response = await axios.get(
-        `http://localhost:5001/api/donations?${params}`
+        `${API_ENDPOINTS.DONATIONS}?${params}`
       );
       setDonations(response.data.donations);
       setTotalPages(response.data.totalPages);
@@ -75,7 +76,7 @@ const DonationManagement = () => {
   const fetchStats = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/donations/stats/summary"
+        API_ENDPOINTS.DONATIONS_STATS
       );
       setStats(response.data);
     } catch (err) {
@@ -134,7 +135,7 @@ const DonationManagement = () => {
       
       console.log("Submitting donation data:", submissionData);
       
-      await axios.post("http://localhost:5001/api/donations", submissionData);
+      await axios.post(API_ENDPOINTS.DONATIONS, submissionData);
       setSuccess("Donation recorded successfully");
       fetchDonations();
       fetchStats();
