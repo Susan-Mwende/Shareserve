@@ -113,6 +113,40 @@ app.post('/create-admin', async (req, res) => {
   }
 });
 
+// GET endpoint for easy admin creation
+app.get('/create-admin-get', async (req, res) => {
+  try {
+    const AdminUser = require('./models/AdminUser.js').default;
+    
+    // Check if admin already exists
+    const existingAdmin = await AdminUser.findOne({ email: 'admin@shareserve.org' });
+    if (existingAdmin) {
+      return res.json({ 
+        message: 'Admin already exists',
+        email: 'admin@shareserve.org',
+        password: 'admin123'
+      });
+    }
+    
+    const admin = new AdminUser({
+      firstName: 'Susan',
+      lastName: 'Nyaga',
+      email: 'admin@shareserve.org',
+      password: 'admin123',
+      role: 'super_admin'
+    });
+
+    await admin.save();
+    res.json({ 
+      message: 'Admin created successfully',
+      email: 'admin@shareserve.org',
+      password: 'admin123'
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Create custom superadmin endpoint
 app.post('/create-superadmin', async (req, res) => {
   try {
