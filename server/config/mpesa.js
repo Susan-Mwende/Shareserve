@@ -1,0 +1,138 @@
+// M-Pesa Daraja Configuration
+export const MPESA_CONFIG = {
+  // Daraja API Environment
+  environment: 'sandbox', // 'sandbox' for testing, 'production' for live
+  
+  // Daraja API Credentials (Get from https://developer.safaricom.co.ke)
+  consumerKey: 'YOUR_ACTUAL_CONSUMER_KEY', // Replace with your Consumer Key
+  consumerSecret: 'YOUR_ACTUAL_CONSUMER_SECRET', // Replace with your Consumer Secret
+  
+  // Daraja API Endpoints
+  oauthUrl: 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
+  stkPushUrl: 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
+  
+  // Business Details
+  shortCode: '174379', // Test Paybill (Daraja sandbox default)
+  passKey: 'bfb279c9a9ffb0349b9d9b9b9b9b9b9b', // Test Passkey (Daraja sandbox default)
+  
+  // Callback URLs (Must be publicly accessible in production)
+  callbackUrl: 'http://localhost:5000/api/mpesa/callback',
+  timeoutUrl: 'http://localhost:5000/api/mpesa/timeout',
+  
+  // Transaction Details
+  transactionType: 'CustomerPayBillOnline',
+  defaultAccountReference: 'SHARESERVE',
+  defaultDescription: 'Donation to ShareServe International'
+};
+
+// For testing without actual M-Pesa credentials
+export const TEST_MODE = true;
+
+// Test phone numbers for development
+export const TEST_PHONE_NUMBERS = [
+  '254708374149', // Daraja sandbox test number
+  '254712345678',
+  '254711926171'
+];
+
+// Daraja API Response Codes
+export const DARAJA_RESPONSE_CODES = {
+  SUCCESS: '0',
+  INSUFFICIENT_FUNDS: '1',
+  LESS_THAN_MINIMUM: '2',
+  MORE_THAN_MAXIMUM: '3',
+  EXCEEDED_DAILY_LIMIT: '4',
+  EXCEEDED_TRANSACTION_LIMIT: '5',
+  EXCEEDED_MONTHLY_LIMIT: '6',
+  EXCEEDED_DAILY_TRANS_COUNT: '7',
+  EXCEEDED_MONTHLY_TRANS_COUNT: '8',
+  INVALID_ACCOUNT: '11',
+  INVALID_PHONE_NUMBER: '12',
+  INVALID_AMOUNT: '13',
+  INVALID_TRANSACTION: '15',
+  TIMEOUT: '16',
+  INVALID_CREDENTIALS: '17',
+  INVALID_SHORTCODE: '18',
+  INVALID_PASSKEY: '19',
+  INVALID_CALLBACK_URL: '20',
+  INVALID_SECURITY_CREDENTIAL: '21',
+  INVALID_INITIATOR: '22',
+  INVALID_COMMAND_ID: '23',
+  INVALID_PARTY_A: '24',
+  INVALID_PARTY_B: '25',
+  INVALID_RECEIVER: '26',
+  INVALID_ID_TYPE: '27',
+  INVALID_SIGNATURE: '28',
+  INVALID_QUEUE_TIME_URL: '29',
+  INVALID_RESULT_URL: '30',
+  INVALID_OCCASION: '31',
+  INVALID_COMMAND: '32',
+  INVALID_LANGUAGE: '33',
+  INVALID_MSISDN: '34',
+  INVALID_CURRENCY: '35',
+  INVALID_CUSTOMER: '36',
+  INVALID_KYC: '37',
+  INVALID_RULE: '38',
+  INVALID_RULE_VALUE: '39',
+  INVALID_SOURCE_TYPE: '40',
+  INVALID_DESTINATION_TYPE: '41',
+  INVALID_ID_DOCUMENT: '42',
+  INVALID_ID_DOCUMENT_TYPE: '43',
+  INVALID_DOB: '44',
+  INVALID_MIN_AGE: '45',
+  INVALID_MAX_AGE: '46',
+  INVALID_AMOUNT_RANGE: '47',
+  INVALID_KYC_DOCUMENT: '48',
+  INVALID_KYC_DOCUMENT_TYPE: '49',
+  INVALID_GENDER: '50',
+  INVALID_EMAIL: '51',
+  INVALID_PHONE: '52',
+  INVALID_ADDRESS: '53',
+  INVALID_CITY: '54',
+  INVALID_COUNTRY: '55',
+  INVALID_POSTAL_CODE: '56',
+  INVALID_OCCUPATION: '57',
+  INVALID_INCOME_SOURCE: '58',
+  INVALID_INCOME_RANGE: '59',
+  INVALID_PENSION: '60',
+  INVALID_EMPLOYMENT_STATUS: '61',
+  INVALID_MARITAL_STATUS: '62',
+  INVALID_EMPLOYER_NAME: '63',
+  INVALID_EMPLOYER_ADDRESS: '64',
+  INVALID_EMPLOYER_CITY: '65',
+  INVALID_EMPLOYER_COUNTRY: '66',
+  INVALID_EMPLOYER_POSTAL_CODE: '67',
+  INVALID_EMPLOYER_PHONE: '68',
+  INVALID_EMPLOYER_EMAIL: '69',
+  INVALID_GUARDIAN_NAME: '70',
+  INVALID_GUARDIAN_PHONE: '71',
+  INVALID_GUARDIAN_EMAIL: '72',
+  INVALID_GUARDIAN_ADDRESS: '73',
+  INVALID_GUARDIAN_CITY: '74',
+  INVALID_GUARDIAN_COUNTRY: '75',
+  INVALID_GUARDIAN_POSTAL_CODE: '76',
+  INVALID_SPOUSE_NAME: '77',
+  INVALID_SPOUSE_PHONE: '78',
+  INVALID_SPOUSE_EMAIL: '79',
+  INVALID_SPOUSE_ADDRESS: '80',
+  INVALID_SPOUSE_CITY: '81',
+  INVALID_SPOUSE_COUNTRY: '82',
+  INVALID_SPOUSE_POSTAL_CODE: '83',
+  INVALID_NEXT_OF_KIN_NAME: '84',
+  INVALID_NEXT_OF_KIN_PHONE: '85',
+  INVALID_NEXT_OF_KIN_EMAIL: '86',
+  INVALID_NEXT_OF_KIN_ADDRESS: '87',
+  INVALID_NEXT_OF_KIN_CITY: '88',
+  INVALID_NEXT_OF_KIN_COUNTRY: '89',
+  INVALID_NEXT_OF_KIN_POSTAL_CODE: '90',
+  INVALID_DEPENDENT_NAME: '91',
+  INVALID_DEPENDENT_PHONE: '92',
+  INVALID_DEPENDENT_EMAIL: '93',
+  INVALID_DEPENDENT_ADDRESS: '94',
+  INVALID_DEPENDENT_CITY: '95',
+  INVALID_DEPENDENT_COUNTRY: '96',
+  INVALID_DEPENDENT_POSTAL_CODE: '97',
+  INVALID_DEPENDENT_RELATIONSHIP: '98',
+  INVALID_DEPENDENT_DOB: '99',
+  INVALID_DEPENDENT_MIN_AGE: '100'
+};

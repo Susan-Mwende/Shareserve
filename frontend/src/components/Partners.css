@@ -1,0 +1,60 @@
+.partners-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.partner-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f8f9fa;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.partner-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #198754, #20c997);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.logo-icon {
+  font-size: 32px;
+  color: white;
+}
+
+.partner-name {
+  color: #198754;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.partner-type .badge {
+  background: #198754 !important;
+  font-size: 12px;
+}
+
+.partner-description {
+  color: #495057;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 60px 0;
+  }
+  
+  .partner-card {
+    margin-bottom: 20px;
+  }
+}

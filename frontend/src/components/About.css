@@ -1,0 +1,86 @@
+/* Modal Styles */
+.mission-card,
+.vision-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-2px);
+}
+
+.focus-card,
+.impact-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.focus-card:hover,
+.impact-card:hover {
+  transform: translateY(-2px);
+}
+
+.value-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-2px);
+}
+
+.value-icon {
+  font-size: 2rem;
+  color: #198754;
+}
+
+/* Modal customizations */
+.modal-xl {
+  max-width: 95%;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: white;
+  border-bottom: none;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.modal-body {
+  padding: 2rem;
+  background: #f8f9fa;
+}
+
+.modal-footer {
+  background: white;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-xl {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .value-card {
+    margin-bottom: 1rem;
+  }
+}

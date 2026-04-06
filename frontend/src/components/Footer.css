@@ -1,0 +1,209 @@
+/* Footer Section - Force Colors */
+.footer-section {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%) !important;
+  color: #ffffff !important;
+  padding: 15px 0 8px;
+  border-top: 3px solid #198754;
+  position: relative;
+}
+
+/* Force all footer text to white */
+.footer-section,
+.footer-section *,
+.footer-section *::before,
+.footer-section *::after,
+.footer-section h1,
+.footer-section h2,
+.footer-section h3,
+.footer-section h4,
+.footer-section h5,
+.footer-section h6,
+.footer-section p,
+.footer-section span,
+.footer-section div,
+.footer-section a,
+.footer-section button,
+.footer-section .btn,
+.footer-section .nav-link,
+.footer-section .card-title,
+.footer-section .card-text,
+.footer-section .form-label,
+.footer-section .form-control {
+  color: #ffffff !important;
+}
+
+.footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #198754, #157347, #198754);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.footer-title {
+  color: #198754 !important;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(25, 135, 84, 0.3) !important;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #198754, #157347);
+  border-radius: 2px;
+}
+
+.footer-text {
+  color: #f8f9fa !important;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  font-weight: 400;
+}
+
+.footer-text:hover {
+  opacity: 1;
+  color: #ffffff !important;
+}
+
+.footer-link {
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #198754;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #198754 !important;
+  text-decoration: none;
+  transform: translateX(8px);
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+.social-links .btn {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  border-radius: 25px;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.social-links .btn:hover {
+  border-color: #198754 !important;
+  color: #198754 !important;
+  background-color: rgba(25, 135, 84, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(25, 135, 84, 0.3);
+}
+
+.contact-info {
+  color: #f8f9fa !important;
+  line-height: 2;
+  font-weight: 400;
+}
+
+.contact-info div {
+  transition: transform 0.3s ease;
+  color: #f8f9fa !important;
+  padding: 0.25rem 0;
+}
+
+.contact-info div:hover {
+  transform: translateX(8px);
+  color: #ffffff !important;
+}
+
+.contact-info span {
+  font-size: 0.95rem;
+  color: #f8f9fa !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 10px 0 5px;
+  }
+  
+  .footer-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+  }
+  
+  .contact-info span {
+    font-size: 0.8rem;
+  }
+  
+  .social-links .btn {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
+.footer-section {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Bottom Bar */
+.footer-section .border-top {
+  border-color: #333333 !important;
+  background: linear-gradient(90deg, transparent, #333333, transparent);
+}
+
+.footer-section .text-center p {
+  color: #ffffff;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-section .text-center p:hover {
+  opacity: 1;
+}

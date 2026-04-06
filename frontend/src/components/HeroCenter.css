@@ -1,0 +1,19 @@
+/* Hero Content Centering Override */
+.hero-content {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+.hero-content h1,
+.hero-content p,
+.hero-content .mt-4 {
+  text-align: center !important;
+}
+
+/* Center buttons container */
+.hero-content .mt-4 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

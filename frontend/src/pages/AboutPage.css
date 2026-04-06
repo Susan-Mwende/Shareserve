@@ -1,0 +1,82 @@
+.about-page {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+.mission-card,
+.vision-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-5px);
+}
+
+.focus-card,
+.impact-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.focus-card:hover,
+.impact-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 3rem;
+  color: #198754;
+}
+
+.cta-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: white;
+}
+
+.cta-card h2,
+.cta-card p {
+  color: white;
+}
+
+.cta-card .btn-outline-primary {
+  border-color: white;
+  color: white;
+}
+
+.cta-card .btn-outline-primary:hover {
+  background-color: white;
+  color: #198754;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 2rem 0;
+  }
+  
+  .value-card {
+    margin-bottom: 1rem;
+  }
+}

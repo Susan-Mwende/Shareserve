@@ -1,0 +1,114 @@
+.project-card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* image behaves like hero cover */
+.program-image {
+  height: 120px !important;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft dark overlay like NGO sites */
+.program-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Ensure image covers entire area */
+.program-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Progress bar styles */
+.progress {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #198754, #157347);
+  transition: width 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments for project cards */
+@media (max-width: 992px) {
+  .program-card {
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .program-image {
+    height: 100px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .program-card {
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .program-image {
+    height: 90px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .program-card {
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .program-image {
+    height: 80px !important;
+  }
+  
+  .card-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .card-text {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Prevent horizontal scrolling */
+.projects-section {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.col {
+  padding-right: 8px !important;
+  padding-left: 8px !important;
+}

@@ -1,0 +1,107 @@
+.values-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  color: #198754;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  color: #6c757d;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+.value-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 200px;
+  margin: 2px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  max-width: 400px;
+}
+
+/* Responsive adjustments for values cards */
+@media (min-width: 1400px) {
+  .value-card {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .value-card {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 992px) {
+  .value-card {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .value-card {
+    max-width: 320px;
+    margin: 1px;
+  }
+}
+
+@media (max-width: 576px) {
+  .value-card {
+    max-width: 280px;
+    margin: 0.5px;
+  }
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: #FA8000;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.value-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: #FA8000;
+}
+
+.value-card {
+  min-height: 160px;
+  max-width: 350px;
+}
+
+.value-card .card-title {
+  color: #198754;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.value-card .card-text {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.value-card .card-body {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}

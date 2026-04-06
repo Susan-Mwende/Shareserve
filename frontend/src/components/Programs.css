@@ -1,0 +1,340 @@
+.program-card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Program image styling - improved clarity */
+.program-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.program-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Ensure image covers entire area without overlay */
+.program-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+/* Program description styling */
+.program-description {
+  color: #6c757d;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Progress bar styles */
+.progress {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #198754, #157347);
+  transition: width 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Program category icons */
+.program-card .fa-heartbeat,
+.program-card .fa-graduation-cap,
+.program-card .fa-briefcase,
+.program-card .fa-leaf,
+.program-card .fa-tasks {
+  font-size: 1.2rem;
+  color: #198754;
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+}
+
+.program-card .fa-heartbeat {
+  color: #dc3545;
+}
+
+.program-card .fa-graduation-cap {
+  color: #007bff;
+}
+
+.program-card .fa-briefcase {
+  color: #ffc107;
+}
+
+.program-card .fa-leaf {
+  color: #28a745;
+}
+
+.program-card .fa-tasks {
+  color: #6c757d;
+}
+
+/* Donate Form Styles */
+.donation-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.donation-form .form-label {
+  color: #198754;
+  margin-bottom: 0.5rem;
+}
+
+.donation-form .form-control,
+.donation-form .form-select {
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donation-form .form-control:focus,
+.donation-form .form-select:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+.donation-form .btn-outline-success:hover {
+  background-color: #198754;
+  border-color: #198754;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.donation-form .form-check-input:checked {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.donation-form .btn-success {
+  background: linear-gradient(135deg, #198754 0%, #157347 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.donation-form .btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);
+}
+
+/* Programs section styles */
+.programs-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.programs-section .container {
+  max-width: 1400px;
+}
+.project-stats {
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 15px;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(25, 135, 84, 0.1);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Project Carousel Styles */
+.project-carousel-section {
+  margin-bottom: 3rem;
+}
+
+.project-carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.carousel-project-container {
+  padding: 0 1rem;
+}
+
+.project-carousel-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 400px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.carousel-project-image {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-project-image img:hover {
+  transform: scale(1.05);
+}
+
+.carousel-project-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 320px);
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background: rgba(255,255,255,0.9);
+  color: #198754;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background: #198754;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+  background-color: rgba(25, 135, 84, 0.5);
+  border: 2px solid #198754;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active button {
+  background-color: #198754;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments for program cards */
+@media (min-width: 1200px) {
+  .programs-section .container {
+    max-width: 1600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .program-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .program-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .program-card {
+    margin-bottom: 1rem;
+  }
+  
+  .program-image {
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .program-card {
+    margin-bottom: 0.8rem;
+  }
+  
+  .program-image {
+    height: 140px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+}

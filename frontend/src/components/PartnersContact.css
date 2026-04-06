@@ -1,0 +1,87 @@
+/* Partnership Contact Form Styles */
+.contact-form {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+.contact-form .btn {
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-form .btn-success {
+  background: linear-gradient(45deg, #198754, #198754);
+  border: none;
+}
+
+.contact-form .btn-success:hover {
+  background: linear-gradient(45deg, #157347, #198754);
+  transform: translateY(-2px);
+}
+
+.contact-form .btn-secondary {
+  background: #6c757d;
+  border: none;
+}
+
+.contact-form .btn-secondary:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+/* Modal Header Styling */
+.modal-header .modal-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Alert Styling */
+.contact-form .alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.contact-form .alert-success {
+  background: linear-gradient(45deg, #d4edda, #198754);
+  color: white;
+}
+
+.contact-form .alert-danger {
+  background: linear-gradient(45deg, #f8d7da, #dc3545);
+  color: white;
+}
+
+/* Spinner Animation */
+.spinner-border {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: text-bottom;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
