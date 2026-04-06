@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/ShareServe logo.jpeg";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
+import "./Navbar.css";
 
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
