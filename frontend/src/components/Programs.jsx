@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
 import "./Programs.css";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function Programs() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -16,7 +17,7 @@ function Programs() {
   // Fetch actual projects from API
   useEffect(() => {
     axios
-      .get("http://localhost:5001/api/programs")
+      .get(API_ENDPOINTS.PROGRAMS)
       .then((res) => setAllProjects(res.data))
       .catch((err) => console.log(err));
   }, []);
