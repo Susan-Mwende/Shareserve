@@ -11,6 +11,7 @@ import {
   Tab,
 } from "react-bootstrap";
 import axios from "axios";
+import { API_ENDPOINTS } from "../../config/api.js";
 
 const ContactManagement = () => {
   const [contactData, setContactData] = useState({
@@ -42,7 +43,7 @@ const ContactManagement = () => {
 
   const fetchContactData = async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/contact");
+      const response = await axios.get(API_ENDPOINTS.CONTACT);
       setContactData(response.data);
       setLoading(false);
     } catch (err) {
@@ -53,7 +54,7 @@ const ContactManagement = () => {
 
   const handleSave = async () => {
     try {
-      await axios.put("http://localhost:5001/api/contact", contactData);
+      await axios.put(API_ENDPOINTS.CONTACT, contactData);
       setSuccess("Contact information updated successfully");
       setTimeout(() => setSuccess(""), 3000);
     } catch (err) {

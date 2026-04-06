@@ -12,6 +12,7 @@ import {
   Tab,
 } from "react-bootstrap";
 import axios from "axios";
+import { API_ENDPOINTS } from "../../config/api.js";
 
 const AboutManagement = () => {
   const [aboutData, setAboutData] = useState({
@@ -43,7 +44,7 @@ const AboutManagement = () => {
 
   const fetchAboutData = async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/about");
+      const response = await axios.get(API_ENDPOINTS.ABOUT);
       setAboutData(response.data);
       setLoading(false);
     } catch (err) {
@@ -54,7 +55,7 @@ const AboutManagement = () => {
 
   const handleSaveMainInfo = async () => {
     try {
-      await axios.put("http://localhost:5001/api/about", aboutData);
+      await axios.put(API_ENDPOINTS.ABOUT, aboutData);
       setSuccess("About information updated successfully");
       setTimeout(() => setSuccess(""), 3000);
     } catch (err) {
