@@ -1,23 +1,11 @@
 services:
-  # Frontend Service
-  - type: web
-    name: shareserve-frontend
-    env: node
-    buildCommand: cd frontend && npm run build
-    startCommand: cd frontend && npm run preview
-    staticPublishPath: frontend/dist
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: VITE_API_URL
-        value: https://shareserve.onrender.com
-
-  # Backend Service  
+  # Backend Service
   - type: web
     name: shareserve-backend
     env: node
-    buildCommand: cd server && npm install
-    startCommand: cd server && node server.js
+    rootDir: server          # ← Render cds into server/ before running commands
+    buildCommand: npm install
+    startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
@@ -28,4 +16,15 @@ services:
       - key: JWT_SECRET
         value: ${JWT_SECRET}
       - key: CORS_ORIGIN
-        value: https://shareserve.onrender.com
+        value: https://shareserve-frontend.onrender.com
+
+  # Frontend Service
+  - type: web
+    name: shareserve-frontend
+    env: static              # ← use "static" for Vite-built React apps, not "node"
+    rootDir: frontend        # ← Render cds into frontend/ before running commands
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist  # ← relative to rootDir, so frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://shareserve-backend.onrender.com
