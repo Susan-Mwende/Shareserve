@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import "./Impact.css";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function Impact() {
   const [impactData, setImpactData] = useState({
@@ -81,7 +82,7 @@ function Impact() {
     const fetchImpactData = async () => {
       try {
         // Fetch completed projects to calculate impact
-        const programsResponse = await axios.get("http://localhost:5001/api/programs");
+        const programsResponse = await axios.get(API_ENDPOINTS.PROGRAMS);
         const programs = programsResponse.data;
         
         // Calculate totals

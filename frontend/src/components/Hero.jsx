@@ -6,6 +6,7 @@ import "./HeroCenter.css";
 import "./HeroContact.css";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
 import axios from "axios";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function Hero() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -28,7 +29,7 @@ function Hero() {
     setSuccess('');
 
     try {
-      const response = await axios.post('http://localhost:5001/api/contact/partner', {
+      const response = await axios.post(`${API_ENDPOINTS.CONTACT}/partner`, {
         ...contactForm,
         recipient: 'info@shareserve.org'
       });
