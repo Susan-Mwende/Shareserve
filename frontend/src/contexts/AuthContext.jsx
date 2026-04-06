@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       dispatch({ type: 'LOGIN_START' });
-      const response = await axios.post('http://localhost:5001/api/auth/login', {
+      const response = await axios.post('https://shareserve-backend.onrender.com/api/auth/login', {
         email,
         password
       });
@@ -97,7 +97,7 @@ export const AuthProvider = ({ children }) => {
       // Call server logout endpoint
       const token = localStorage.getItem('token');
       if (token) {
-        await axios.post('http://localhost:5001/api/auth/logout');
+        await axios.post('https://shareserve-backend.onrender.com/api/auth/logout');
       }
     } catch (error) {
       console.error('Logout error:', error);
