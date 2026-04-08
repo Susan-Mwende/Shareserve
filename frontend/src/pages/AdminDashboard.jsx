@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Nav, Card, Dropdown, Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
@@ -15,9 +15,22 @@ import "./AdminDashboard.css";
 const AdminDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767.98);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleLogout = () => {
     logout();
@@ -36,6 +49,47 @@ const AdminDashboard = () => {
   const handleMobileNavigation = () => {
     closeMobileMenu();
   };
+
+  // Force mobile styles
+  const contentStyle = isMobile ? {
+    marginLeft: "0 !important",
+    width: "100vw !important",
+    maxWidth: "100vw !important",
+    position: "relative !important",
+    left: "0 !important",
+    right: "0 !important",
+    transform: "none !important",
+    overflowX: "hidden !important",
+    transition: "none !important"
+  } : {
+    marginLeft: sidebarOpen ? "250px" : "80px",
+    transition: "margin-left 0.3s ease",
+    minHeight: "100vh",
+  };
+
+  const topBarStyle = isMobile ? {
+    padding: "0.75rem !important",
+    width: "100vw !important",
+    maxWidth: "100vw !important",
+    left: "0 !important",
+    right: "0 !important",
+    transform: "none !important",
+    margin: "0 !important",
+    borderBottom: "1px solid #dee2e6"
+  } : {
+    borderBottom: "1px solid #dee2e6"
+  };
+
+  const mainContentStyle = isMobile ? {
+    padding: "0.5rem !important",
+    width: "100vw !important",
+    maxWidth: "100vw !important",
+    left: "0 !important",
+    right: "0 !important",
+    transform: "none !important",
+    margin: "0 !important",
+    overflowX: "hidden !important"
+  } : {};
 
   const sidebarItems = [
     { path: "/admin", label: "Dashboard", icon: "fas fa-tachometer-alt" },
@@ -136,17 +190,13 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
       <div
-        style={{
-          marginLeft: sidebarOpen ? "250px" : "80px",
-          transition: "margin-left 0.3s ease",
-          minHeight: "100vh",
-        }}
+        style={contentStyle}
         className="admin-content"
       >
         {/* Top Bar */}
         <div
           className="bg-white shadow-sm p-3 d-flex justify-content-between align-items-center top-bar"
-          style={{ borderBottom: "1px solid #dee2e6" }}
+          style={topBarStyle}
         >
           <button
             className="btn btn-outline-secondary mobile-menu-toggle"
@@ -206,7 +256,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Page Content */}
-        <Container fluid className="p-4 main-content">
+        <Container fluid className="p-4 main-content" style={mainContentStyle}>
           <Routes>
             <Route path="/" element={<DashboardHome />} />
             <Route path="/programs" element={<ProgramManagement />} />
