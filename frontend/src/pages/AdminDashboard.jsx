@@ -33,6 +33,80 @@ const AdminDashboard = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Force mobile layout with DOM manipulation
+  useEffect(() => {
+    if (isMobile) {
+      // Force body styles
+      document.body.style.display = 'block';
+      document.body.style.placeItems = 'unset';
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+      document.body.style.overflowX = 'hidden';
+      document.body.style.width = '100vw';
+      document.body.style.minWidth = '100vw';
+      document.body.style.maxWidth = '100vw';
+      
+      // Force html styles
+      document.documentElement.style.overflowX = 'hidden';
+      document.documentElement.style.width = '100vw';
+      
+      // Force root styles
+      const root = document.getElementById('root');
+      if (root) {
+        root.style.display = 'block';
+        root.style.width = '100vw';
+        root.style.overflowX = 'hidden';
+        root.style.position = 'relative';
+        root.style.left = '0';
+        root.style.right = '0';
+        root.style.transform = 'none';
+      }
+      
+      // Force admin content styles
+      const adminContent = document.querySelector('.admin-content');
+      if (adminContent) {
+        adminContent.style.marginLeft = '0';
+        adminContent.style.width = '100vw';
+        adminContent.style.maxWidth = '100vw';
+        adminContent.style.position = 'relative';
+        adminContent.style.left = '0';
+        adminContent.style.right = '0';
+        adminContent.style.transform = 'none';
+        adminContent.style.overflowX = 'hidden';
+      }
+      
+      // Force container styles
+      const containers = document.querySelectorAll('.container-fluid');
+      containers.forEach(container => {
+        container.style.width = '100vw';
+        container.style.maxWidth = '100vw';
+        container.style.margin = '0';
+        container.style.padding = '0 0.25rem';
+        container.style.overflowX = 'hidden';
+      });
+      
+      // Force row styles
+      const rows = document.querySelectorAll('.row');
+      rows.forEach(row => {
+        row.style.width = '100vw';
+        row.style.margin = '0';
+        row.style.padding = '0';
+        row.style.display = 'flex';
+        row.style.flexWrap = 'wrap';
+      });
+      
+      // Force column styles
+      const cols = document.querySelectorAll('.col, .col-md-6, .col-md-4, .col-md-8, .col-md-12');
+      cols.forEach(col => {
+        col.style.width = '100%';
+        col.style.maxWidth = '100%';
+        col.style.margin = '0';
+        col.style.padding = '0.125rem';
+        col.style.boxSizing = 'border-box';
+      });
+    }
+  }, [isMobile]);
+
   const handleLogout = () => {
     logout();
     navigate('/login');
