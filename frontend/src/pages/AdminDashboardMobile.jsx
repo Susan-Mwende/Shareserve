@@ -246,10 +246,10 @@ const AdminDashboardMobile = () => {
         </div>
 
         {/* Page Content */}
-        <Container style={{
+        <Container fluid style={{
           padding: '0.5rem',
-          width: '100vw',
-          maxWidth: '100vw',
+          width: '100%',
+          maxWidth: '100%',
           margin: '0',
           overflowX: 'hidden'
         }}>

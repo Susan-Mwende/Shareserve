@@ -321,23 +321,23 @@ const AdminDashboard = () => {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-          </div>
 
-          {/* Page Content */}
-          <Container fluid className="p-4 main-content" style={mainContentStyle}>
-            <Routes>
-              <Route path="/" element={<DashboardHome />} />
-              <Route path="/programs" element={<ProgramManagement />} />
-              <Route path="/engagement" element={<AboutManagement />} />
-              <Route path="/beneficiaries" element={<DonationManagement />} />
-              {user?.role === 'super_admin' && (
-                <>
-                  <Route path="/admins" element={<AdminManagement />} />
-                  <Route path="/sessions" element={<SessionMonitoring />} />
-                </>
-              )}
-            </Routes>
-          </Container>
+            {/* Page Content */}
+            <Container fluid className="p-4 main-content" style={mainContentStyle}>
+              <Routes>
+                <Route path="/" element={<DashboardHome />} />
+                <Route path="/programs" element={<ProgramManagement />} />
+                <Route path="/engagement" element={<AboutManagement />} />
+                <Route path="/beneficiaries" element={<DonationManagement />} />
+                {user?.role === 'super_admin' && (
+                  <>
+                    <Route path="/admins" element={<AdminManagement />} />
+                    <Route path="/sessions" element={<SessionMonitoring />} />
+                  </>
+                )}
+              </Routes>
+            </Container>
+          </div>
         </div>
       )}
     </>
