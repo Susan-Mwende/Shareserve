@@ -11,6 +11,7 @@ import DonationManagement from "../components/admin/DonationManagement.jsx";
 import SessionMonitoring from "../components/admin/SessionMonitoring.jsx";
 import logo from "../assets/ShareServe logo.jpeg";
 import "./AdminDashboard.css";
+import "./AdminDashboardMobile.css";
 
 const AdminDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
