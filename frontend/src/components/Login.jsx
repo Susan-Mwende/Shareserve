@@ -31,9 +31,9 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <Container>
-        <Row className="justify-content-center align-items-center min-vh-100">
-          <Col md={6} lg={4}>
+      <Container fluid className="h-100">
+        <Row className="justify-content-center align-items-center min-vh-100 mx-0">
+          <Col xs={12} sm={10} md={6} lg={4} className="px-3">
             <Card className="login-card shadow-lg">
               <Card.Body className="p-5">
                 <div className="text-center mb-4">
