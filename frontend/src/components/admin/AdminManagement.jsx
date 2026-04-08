@@ -23,7 +23,7 @@ const AdminManagement = () => {
 
   const fetchAdmins = async () => {
     try {
-      const response = await axios.get(API_ENDPOINTS.ADMINS);
+      const response = await axios.get(API_ENDPOINTS.ADMIN_USERS);
       setAdmins(response.data);
       setLoading(false);
     } catch (error) {
@@ -44,7 +44,7 @@ const AdminManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(API_ENDPOINTS.ADMINS, formData);
+      const response = await axios.post(API_ENDPOINTS.ADMIN_USERS, formData);
       setSuccess('Admin user created successfully!');
       setShowModal(false);
       setFormData({
@@ -63,7 +63,7 @@ const AdminManagement = () => {
   const handleDelete = async (adminId) => {
     if (window.confirm('Are you sure you want to delete this admin user?')) {
       try {
-        await axios.delete(`${API_ENDPOINTS.ADMINS}/${adminId}`);
+        await axios.delete(`${API_ENDPOINTS.ADMIN_USERS}/${adminId}`);
         setSuccess('Admin user deleted successfully!');
         fetchAdmins();
       } catch (error) {
@@ -74,7 +74,7 @@ const AdminManagement = () => {
 
   const handleToggleActive = async (adminId, isActive) => {
     try {
-      await axios.patch(`${API_ENDPOINTS.ADMINS}/${adminId}`, { isActive: !isActive });
+      await axios.patch(`${API_ENDPOINTS.ADMIN_USERS}/${adminId}`, { isActive: !isActive });
       setSuccess(`Admin user ${!isActive ? 'activated' : 'deactivated'} successfully!`);
       fetchAdmins();
     } catch (error) {
