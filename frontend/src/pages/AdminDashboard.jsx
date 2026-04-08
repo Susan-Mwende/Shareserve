@@ -10,6 +10,7 @@ import AdminManagement from "../components/admin/AdminManagement.jsx";
 import DonationManagement from "../components/admin/DonationManagement.jsx";
 import SessionMonitoring from "../components/admin/SessionMonitoring.jsx";
 import logo from "../assets/ShareServe logo.jpeg";
+import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -47,11 +48,11 @@ const AdminDashboard = () => {
           transition: "width 0.3s ease",
           zIndex: 1000,
         }}
-        className="admin-sidebar"
+        className={`admin-sidebar ${sidebarOpen ? "" : "collapsed"}`}
       >
         <div className="p-3">
           <div
-            className="text-white mb-4"
+            className="text-white mb-4 sidebar-logo"
             style={{
               fontSize: sidebarOpen ? "1.5rem" : "1rem",
               fontWeight: "bold",
@@ -70,7 +71,7 @@ const AdminDashboard = () => {
                 borderRadius: "8px"
               }}
             />
-            {sidebarOpen && "SHARESERVE"}
+            <span className={`sidebar-logo-text ${sidebarOpen ? "" : "d-none"}`}>SHARESERVE</span>
           </div>
           
           <Nav className="flex-column">
@@ -92,10 +93,10 @@ const AdminDashboard = () => {
                     alignItems: "center",
                   }}
                 >
-                  <span style={{ fontSize: "1.2rem", marginRight: sidebarOpen ? "12px" : "0" }}>
+                  <span className={`icon-only ${sidebarOpen ? "" : "me-0"}`} style={{ fontSize: "1.2rem", marginRight: sidebarOpen ? "12px" : "0" }}>
                     <i className={item.icon}></i>
                   </span>
-                  {sidebarOpen && <span>{item.label}</span>}
+                  <span className={`sidebar-text ${sidebarOpen ? "" : "d-none"}`}>{item.label}</span>
                 </Nav.Link>
               </Nav.Item>
             ))}
@@ -114,18 +115,18 @@ const AdminDashboard = () => {
       >
         {/* Top Bar */}
         <div
-          className="bg-white shadow-sm p-3 d-flex justify-content-between align-items-center"
+          className="bg-white shadow-sm p-3 d-flex justify-content-between align-items-center top-bar"
           style={{ borderBottom: "1px solid #dee2e6" }}
         >
           <button
-            className="btn btn-outline-secondary d-md-none"
+            className="btn btn-outline-secondary mobile-menu-toggle"
             onClick={() => setSidebarOpen(!sidebarOpen)}
           >
             <i className="fas fa-bars"></i>
           </button>
           
-          <div className="d-flex align-items-center">
-            <div className="me-3 text-end">
+          <div className="d-flex align-items-center user-info">
+            <div className="me-3 text-end user-details">
               <div className="fw-bold">{user ? `${user.firstName} ${user.lastName}` : 'Admin User'}</div>
               <div className="text-muted small">{user?.role || 'Administrator'}</div>
               {user?.lastLogin && (
@@ -143,7 +144,7 @@ const AdminDashboard = () => {
                 style={{ border: "none", background: "transparent" }}
               >
                 <div
-                  className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2"
+                  className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2 user-avatar"
                   style={{ width: "40px", height: "40px" }}
                 >
                   {user ? `${user.firstName[0]}${user.lastName[0]}` : "AD"}
@@ -175,7 +176,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Page Content */}
-        <Container fluid className="p-4">
+        <Container fluid className="p-4 main-content">
           <Routes>
             <Route path="/" element={<DashboardHome />} />
             <Route path="/programs" element={<ProgramManagement />} />
