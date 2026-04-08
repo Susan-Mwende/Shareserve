@@ -9,7 +9,7 @@ import ContactManagement from "../components/admin/ContactManagement.jsx";
 import AdminManagement from "../components/admin/AdminManagement.jsx";
 import DonationManagement from "../components/admin/DonationManagement.jsx";
 import SessionMonitoring from "../components/admin/SessionMonitoring.jsx";
-import logo from "../assets/ShareServe logo.jpeg";
+import logo from "../assets/ShareServe logo.png";
 
 const AdminDashboardMobile = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

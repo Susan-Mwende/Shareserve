@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button, Alert, Spinner } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/ShareServe logo.jpeg';
+import logo from '../assets/ShareServe logo.png';
 import './Login.css';
 
 const Login = () => {

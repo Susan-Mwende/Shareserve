@@ -25,6 +25,12 @@ export const API_ENDPOINTS = {
   
   // Contact
   CONTACT: `${API_BASE_URL}/api/contact`,
+
+  // Partner contact form
+  PARTNER: `${API_BASE_URL}/api/partner`,
+
+  // Gallery
+  GALLERY: `${API_BASE_URL}/api/gallery`,
   
   // Dashboard
   DASHBOARD: `${API_BASE_URL}/api/dashboard`,

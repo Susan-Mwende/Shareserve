@@ -29,7 +29,7 @@ function Hero() {
     setSuccess('');
 
     try {
-      const response = await axios.post(`${API_ENDPOINTS.CONTACT}/partner`, {
+      const response = await axios.post(`${API_ENDPOINTS.PARTNER}`, {
         ...contactForm,
         recipient: 'info@shareserve.org'
       });

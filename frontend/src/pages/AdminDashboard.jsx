@@ -9,7 +9,7 @@ import ContactManagement from "../components/admin/ContactManagement.jsx";
 import AdminManagement from "../components/admin/AdminManagement.jsx";
 import DonationManagement from "../components/admin/DonationManagement.jsx";
 import SessionMonitoring from "../components/admin/SessionMonitoring.jsx";
-import logo from "../assets/ShareServe logo.jpeg";
+import logo from "../assets/ShareServe logo.png";
 import "./AdminDashboard.css";
 import "./AdminDashboardMobile.css";
 import AdminDashboardMobile from "./AdminDashboardMobile.jsx";

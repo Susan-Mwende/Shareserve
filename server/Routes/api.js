@@ -7,6 +7,7 @@ import dashboardRoutes from "./dashboardRoutes.js";
 import adminRoutes from "./adminRoutes.js";
 import mpesaRoutes from "./mpesaRoutes.js";
 import partnerRoutes from "./partnerRoutes.js";
+import galleryRoutes from "./galleryRoutes.js";
 
 const router = express.Router();
 
@@ -19,5 +20,6 @@ router.use("/dashboard", dashboardRoutes);
 router.use("/admin", adminRoutes);
 router.use("/mpesa", mpesaRoutes);
 router.use("/partner", partnerRoutes);
+router.use("/gallery", galleryRoutes);
 
 export default router;

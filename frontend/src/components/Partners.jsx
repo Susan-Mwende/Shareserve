@@ -25,7 +25,7 @@ function Partners() {
     setSuccess('');
 
     try {
-      const response = await axios.post(`${API_ENDPOINTS.CONTACT}/partner`, {
+      const response = await axios.post(`${API_ENDPOINTS.PARTNER}`, {
         ...contactForm,
         recipient: 'suziemweshn@gmail.com'
       });
