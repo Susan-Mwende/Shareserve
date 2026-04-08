@@ -24,11 +24,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Mobile-specific body overrides */
+/* Override body styles for mobile */
 @media (max-width: 767.98px) {
   body {
-    display: block !important;
-    place-items: unset !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
@@ -309,8 +307,7 @@ html {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: block;
   min-width: 320px;
   min-height: 100vh;
 }
