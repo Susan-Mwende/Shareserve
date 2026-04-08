@@ -24,6 +24,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile-specific body overrides */
+@media (max-width: 767.98px) {
+  body {
+    display: block !important;
+    place-items: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  html {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+  }
+  
+  #root {
+    width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
 /* Update primary colors to match organization theme */
 .text-primary, .text-primary:hover {
   color: var(--primary-color) !important;
@@ -289,6 +313,21 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+/* Override body styles for mobile */
+@media (max-width: 767.98px) {
+  body {
+    display: block !important;
+    place-items: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    min-height: auto !important;
+  }
 }
 
 h1 {
