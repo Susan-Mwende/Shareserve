@@ -14,6 +14,7 @@ import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
@@ -21,6 +22,19 @@ const AdminDashboard = () => {
   const handleLogout = () => {
     logout();
     navigate('/login');
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  // Close mobile menu when navigating
+  const handleMobileNavigation = () => {
+    closeMobileMenu();
   };
 
   const sidebarItems = [
@@ -48,7 +62,7 @@ const AdminDashboard = () => {
           transition: "width 0.3s ease",
           zIndex: 1000,
         }}
-        className={`admin-sidebar ${sidebarOpen ? "" : "collapsed"}`}
+        className={`admin-sidebar ${sidebarOpen ? "" : "collapsed"} ${mobileMenuOpen ? "mobile-open" : ""}`}
       >
         <div className="p-3">
           <div
@@ -71,7 +85,16 @@ const AdminDashboard = () => {
                 borderRadius: "8px"
               }}
             />
-            <span className={`sidebar-logo-text ${sidebarOpen ? "" : "d-none"}`}>SHARESERVE</span>
+            <div className="d-flex align-items-center justify-content-between w-100">
+              <span className={`sidebar-logo-text ${sidebarOpen ? "" : "d-none"}`}>SHARESERVE</span>
+              <button 
+                className="mobile-close-btn d-lg-none"
+                onClick={closeMobileMenu}
+                style={{ display: mobileMenuOpen ? "block" : "none" }}
+              >
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
           </div>
           
           <Nav className="flex-column">
@@ -80,6 +103,7 @@ const AdminDashboard = () => {
                 <Nav.Link
                   as={Link}
                   to={item.path}
+                  onClick={handleMobileNavigation}
                   className={`text-white ${
                     location.pathname === item.path
                       ? "bg-success"
@@ -104,6 +128,12 @@ const AdminDashboard = () => {
         </div>
       </div>
 
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`mobile-menu-overlay ${mobileMenuOpen ? "show" : ""}`}
+        onClick={closeMobileMenu}
+      ></div>
+
       {/* Main Content */}
       <div
         style={{
@@ -120,7 +150,7 @@ const AdminDashboard = () => {
         >
           <button
             className="btn btn-outline-secondary mobile-menu-toggle"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
+            onClick={toggleMobileMenu}
           >
             <i className="fas fa-bars"></i>
           </button>
