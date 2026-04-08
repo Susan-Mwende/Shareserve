@@ -23,13 +23,13 @@ const AdminDashboard = () => {
   };
 
   const sidebarItems = [
-    { path: "/admin", label: "Dashboard", icon: "📊" },
-    { path: "/admin/programs", label: "Programs", icon: "📋" },
-    { path: "/admin/engagement", label: "Engagement", icon: "🤝" },
-    { path: "/admin/beneficiaries", label: "Beneficiaries", icon: "👥" },
+    { path: "/admin", label: "Dashboard", icon: "fas fa-tachometer-alt" },
+    { path: "/admin/programs", label: "Programs", icon: "fas fa-clipboard-list" },
+    { path: "/admin/engagement", label: "Engagement", icon: "fas fa-handshake" },
+    { path: "/admin/beneficiaries", label: "Beneficiaries", icon: "fas fa-users" },
     ...(user?.role === 'super_admin' ? [
-      { path: "/admin/admins", label: "Admin Management", icon: "👤" },
-      { path: "/admin/sessions", label: "Session Monitoring", icon: "🔍" }
+      { path: "/admin/admins", label: "Admin Management", icon: "fas fa-user-shield" },
+      { path: "/admin/sessions", label: "Session Monitoring", icon: "fas fa-search" }
     ] : [])
   ];
 
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
                   }}
                 >
                   <span style={{ fontSize: "1.2rem", marginRight: sidebarOpen ? "12px" : "0" }}>
-                    {item.icon}
+                    <i className={item.icon}></i>
                   </span>
                   {sidebarOpen && <span>{item.label}</span>}
                 </Nav.Link>
@@ -121,7 +121,7 @@ const AdminDashboard = () => {
             className="btn btn-outline-secondary d-md-none"
             onClick={() => setSidebarOpen(!sidebarOpen)}
           >
-            ☰
+            <i className="fas fa-bars"></i>
           </button>
           
           <div className="d-flex align-items-center">
