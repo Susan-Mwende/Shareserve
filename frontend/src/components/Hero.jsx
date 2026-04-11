@@ -1,8 +1,8 @@
 import { Container, Button, Modal, Form, Alert, Carousel } from "react-bootstrap";
 import { useState } from "react";
-import heroImage from "../assets/hero.jpg";
-import educationImage from "../assets/education.jpg";
-import livelihoodImage from "../assets/livelihood.jpg";
+import carousel1Image from "../assets/carousel 1.jpeg";
+import carousel2Image from "../assets/carousel 2.jpeg";
+import carousel3Image from "../assets/carousel 3.jpeg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
@@ -93,7 +93,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${heroImage})` }}
+            style={{ backgroundImage: `url(${carousel1Image})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -124,18 +124,18 @@ function Hero() {
           </div>
         </Carousel.Item>
 
-        {/* Slide 2: Education Focus */}
+        {/* Slide 2: Environmental Restoration */}
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${educationImage})` }}
+            style={{ backgroundImage: `url(${carousel2Image})` }}
           >
             <div className="hero-overlay">
               <Container>
                 <div className="hero-content">
-                  <h1 className="hero-title">Quality Education for Sustainable Future</h1>
+                  <h1 className="hero-title">Restoring Kenya's Natural Environment</h1>
                   <p className="hero-subtitle">
-                    Providing educational opportunities and environmental literacy to equip the next generation with knowledge and skills for sustainable development.
+                    Leading reforestation efforts and environmental conservation to combat climate change and preserve biodiversity for future generations.
                   </p>
                   <div className="mt-4">
                     <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
@@ -159,18 +159,18 @@ function Hero() {
           </div>
         </Carousel.Item>
 
-        {/* Slide 3: Livelihood Development */}
+        {/* Slide 3: Environmental Education */}
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${livelihoodImage})` }}
+            style={{ backgroundImage: `url(${carousel3Image})` }}
           >
             <div className="hero-overlay">
               <Container>
                 <div className="hero-content">
-                  <h1 className="hero-title">Creating Sustainable Livelihoods</h1>
+                  <h1 className="hero-title">Environmental Education for All</h1>
                   <p className="hero-subtitle">
-                    Supporting rural communities through economic empowerment, skills development, and environmental conservation initiatives for lasting positive change.
+                    Teaching communities about sustainable practices, conservation techniques, and environmental stewardship to create lasting positive impact.
                   </p>
                   <div className="mt-4">
                     <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
