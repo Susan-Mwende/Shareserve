@@ -81,10 +81,12 @@ function Hero() {
   return (
     <>
       <Carousel 
-        interval={5000} 
+        interval={4000} 
         controls={true} 
         indicators={true}
-        fade={true}
+        fade={false}
+        pause={false}
+        wrap={true}
         className="hero-carousel"
       >
         {/* Slide 1: Environmental Champions */}
