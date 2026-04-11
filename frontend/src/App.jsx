@@ -8,6 +8,7 @@ import Programs from "@/components/Programs.jsx";
 import About from "@/components/About.jsx";
 import Projects from "@/components/Projects.jsx";
 import Impact from "@/components/Impact.jsx";
+import Gallery from "@/components/Gallery.jsx";
 import Footer from "@/components/Footer.jsx";
 import AboutPage from "@/pages/AboutPage.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
@@ -38,6 +39,9 @@ function App() {
                     </section>
                     <Impact />
                   </Container>
+                </section>
+                <section id="gallery">
+                  <Gallery />
                 </section>
 
                 {/* Professional Footer */}

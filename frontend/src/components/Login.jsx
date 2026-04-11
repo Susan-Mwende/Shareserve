@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button, Alert, Spinner } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/ShareServe logo.png';
+import logo from '../assets/ShareServe logo.jpeg';
 import './Login.css';
 
 const Login = () => {
@@ -31,9 +31,9 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <Container fluid className="h-100">
-        <Row className="justify-content-center align-items-center min-vh-100 mx-0">
-          <Col xs={12} sm={10} md={6} lg={4} className="px-3">
+      <Container>
+        <Row className="justify-content-center align-items-center min-vh-100">
+          <Col md={6} lg={4}>
             <Card className="login-card shadow-lg">
               <Card.Body className="p-5">
                 <div className="text-center mb-4">

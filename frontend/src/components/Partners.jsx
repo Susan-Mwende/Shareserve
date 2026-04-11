@@ -3,7 +3,6 @@ import { useState } from "react";
 import axios from "axios";
 import "./Partners.css";
 import "./PartnersContact.css";
-import { API_ENDPOINTS } from "../config/api.js";
 
 function Partners() {
   const [showContactModal, setShowContactModal] = useState(false);
@@ -25,7 +24,7 @@ function Partners() {
     setSuccess('');
 
     try {
-      const response = await axios.post(`${API_ENDPOINTS.PARTNER}`, {
+      const response = await axios.post('http://localhost:5001/api/contact/partner', {
         ...contactForm,
         recipient: 'suziemweshn@gmail.com'
       });

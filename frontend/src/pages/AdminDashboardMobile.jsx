@@ -9,6 +9,7 @@ import ContactManagement from "../components/admin/ContactManagement.jsx";
 import AdminManagement from "../components/admin/AdminManagement.jsx";
 import DonationManagement from "../components/admin/DonationManagement.jsx";
 import SessionMonitoring from "../components/admin/SessionMonitoring.jsx";
+import GalleryManagement from "../components/admin/GalleryManagement.jsx";
 import logo from "../assets/ShareServe logo.png";
 
 const AdminDashboardMobile = () => {
@@ -39,6 +40,7 @@ const AdminDashboardMobile = () => {
     { path: "/admin/programs", label: "Programs", icon: "fas fa-clipboard-list" },
     { path: "/admin/engagement", label: "Engagement", icon: "fas fa-handshake" },
     { path: "/admin/beneficiaries", label: "Beneficiaries", icon: "fas fa-users" },
+    { path: "/admin/gallery", label: "Gallery", icon: "fas fa-images" },
     ...(user?.role === 'super_admin' ? [
       { path: "/admin/admins", label: "Admin Management", icon: "fas fa-user-shield" },
       { path: "/admin/sessions", label: "Session Monitoring", icon: "fas fa-search" }
@@ -258,6 +260,7 @@ const AdminDashboardMobile = () => {
             <Route path="/programs" element={<ProgramManagement />} />
             <Route path="/engagement" element={<AboutManagement />} />
             <Route path="/beneficiaries" element={<DonationManagement />} />
+            <Route path="/gallery" element={<GalleryManagement />} />
             {user?.role === 'super_admin' && (
               <>
                 <Route path="/admins" element={<AdminManagement />} />

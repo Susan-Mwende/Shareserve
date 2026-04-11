@@ -1,12 +1,35 @@
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import aboutImage from "../assets/livelihood.jpg";
 import "./About.css";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
+import axios from "axios";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function About() {
   const [showModal, setShowModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [aboutData, setAboutData] = useState({
+    mission: "Shareserve International is a mission driven organization working in rural kenya to address enronmental degradation and economic vulnerability through youth empowerment and sustainable solutions.",
+    vision: "To raise and equip 100,000 + young environmental champions through education, tree growing and community driven environmental action.",
+    history: "A greener, more environmental kenya led by younger resilient champions."
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchAboutData();
+  }, []);
+
+  const fetchAboutData = async () => {
+    try {
+      const response = await axios.get(API_ENDPOINTS.ABOUT);
+      setAboutData(response.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Failed to fetch about data:", error);
+      setLoading(false);
+    }
+  };
 
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
@@ -55,8 +78,7 @@ function About() {
                   <Card.Body className="p-4">
                     <h3 className="text-center mb-3" style={{ color: "#198754" }}>Our Mission</h3>
                     <p className="text-center">
-                      To raise and equip 100,000 + young environmental champions through education, tree growing and community driven
-                      environmental action. </p>
+                      {aboutData.mission || "To raise and equip 100,000 + young environmental champions through education, tree growing and community driven environmental action."}</p>
                   </Card.Body>
                 </Card>
               </Col>
@@ -69,7 +91,7 @@ function About() {
                   <Card.Body className="p-4">
                     <h3 className="text-center mb-3" style={{ color: "#198754" }}>Our Vision</h3>
                     <p className="text-center">
-                      A greener, more environmental kenya led by younger resilient champions.
+                      {aboutData.vision || "A greener, more environmental kenya led by younger resilient champions."}
                     </p>
                   </Card.Body>
                 </Card>

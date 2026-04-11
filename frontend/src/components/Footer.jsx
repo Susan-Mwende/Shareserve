@@ -1,11 +1,36 @@
 import { Container, Row, Col, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../assets/ShareServe logo.png";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
+import axios from "axios";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function Footer() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [contactInfo, setContactInfo] = useState({
+    email: "info@shareserve.org",
+    phone: "+254 123 456 789",
+    address: "Nairobi, Kenya",
+    workingHours: {
+      weekdays: "Mon - Fri: 9:00 AM - 5:00 PM",
+      weekends: "Closed"
+    },
+    socialMedia: {}
+  });
+
+  useEffect(() => {
+    fetchContactInfo();
+  }, []);
+
+  const fetchContactInfo = async () => {
+    try {
+      const response = await axios.get(API_ENDPOINTS.CONTACT);
+      setContactInfo(response.data);
+    } catch (error) {
+      console.error("Failed to fetch contact info:", error);
+    }
+  };
   return (
     <>
       <footer className="footer-section" style={{ backgroundColor: '#000000', color: '#ffffff' }}>
@@ -125,32 +150,32 @@ function Footer() {
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">📧</span>
-                info@shareserve.org
+                <span className="me-2">?</span>
+                {contactInfo.email}
               </div>
 
               <div
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">📞</span>
-                +254 123 456 789
+                <span className="me-2">?</span>
+                {contactInfo.phone}
               </div>
 
               <div
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">📍</span>
-                Nairobi, Kenya
+                <span className="me-2">?</span>
+                {contactInfo.address}
               </div>
 
               <div
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">🕐</span>
-                Mon - Fri: 9:00 AM - 5:00 PM
+                <span className="me-2">?</span>
+                {contactInfo.workingHours?.weekdays || "Mon - Fri: 9:00 AM - 5:00 PM"}
               </div>
             </div>
           </Col>
