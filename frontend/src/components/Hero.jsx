@@ -1,8 +1,8 @@
 import { Container, Button, Modal, Form, Alert, Carousel } from "react-bootstrap";
 import { useState } from "react";
-import carousel1Image from "../assets/carousel1.jpeg";
-import carousel2Image from "../assets/carousel2.jpeg";
-import carousel3Image from "../assets/carousel3.jpeg";
+import heroImage from "../assets/hero.jpg";
+import educationImage from "../assets/education.jpg";
+import livelihoodImage from "../assets/livelihood.jpg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
@@ -93,7 +93,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel1Image})` }}
+            style={{ backgroundImage: `url(${heroImage})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -128,7 +128,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel2Image})` }}
+            style={{ backgroundImage: `url(${educationImage})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -163,7 +163,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel3Image})` }}
+            style={{ backgroundImage: `url(${livelihoodImage})` }}
           >
             <div className="hero-overlay">
               <Container>
