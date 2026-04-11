@@ -81,7 +81,7 @@ function Hero() {
   return (
     <>
       <Carousel 
-        interval={4000} 
+        interval={2000} 
         controls={true} 
         indicators={true}
         fade={false}
