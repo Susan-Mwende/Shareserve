@@ -85,7 +85,7 @@
   left: 0;
   right: 50%;
   bottom: 0;
-  background: rgba(25, 135, 84, 0.85);
+  background: transparent;
   z-index: 1;
 }
 
