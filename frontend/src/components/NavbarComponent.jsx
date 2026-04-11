@@ -17,9 +17,19 @@ function NavbarComponent() {
 
   return (
     <>
-      <Navbar bg="light" expand="lg" sticky="top">
+      <Navbar 
+        bg="light" 
+        expand="lg" 
+        sticky="top" 
+        style={{
+          boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+          zIndex: 1030,
+          backdropFilter: 'blur(10px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.95)'
+        }}
+      >
         <Container>
-          <Navbar.Brand as={Link} to="/" style={{ textDecoration: 'none', color: '#198754', display: 'flex', alignItems: 'center' }}>
+          <Navbar.Brand as={Link} to="/" style={{ textDecoration: 'none', color: '#198754', display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
             <img 
               src={logo} 
               alt="ShareServe International" 
@@ -27,41 +37,50 @@ function NavbarComponent() {
             />
             ShareServe International
           </Navbar.Brand>
-          <Navbar.Toggle />
+          <Navbar.Toggle 
+            style={{ borderColor: '#198754' }}
+          />
           <Navbar.Collapse>
             <Nav className="ms-auto">
               <Nav.Link 
                 as={Link} 
                 to="/" 
                 className={location.pathname === "/" ? "active" : ""}
+                style={{ fontWeight: '500', color: '#333' }}
               >
                 Home
               </Nav.Link>
               <Nav.Link 
                 onClick={() => scrollToSection('about')}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
               >
                 About
               </Nav.Link>
               <Nav.Link 
                 onClick={() => scrollToSection('programs')}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
               >
                 Programs
               </Nav.Link>
               <Nav.Link 
                 onClick={() => scrollToSection('projects')}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
               >
                 Projects
               </Nav.Link>
               <Nav.Link 
                 onClick={() => scrollToSection('footer')}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
               >
                 Contact
               </Nav.Link>
-              <Button variant="success" onClick={() => setShowPaymentModal(true)}>Donate</Button>
+              <Button 
+                variant="success" 
+                onClick={() => setShowPaymentModal(true)}
+                style={{ marginLeft: '10px', fontWeight: '500' }}
+              >
+                Donate
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
