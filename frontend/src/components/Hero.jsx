@@ -160,13 +160,11 @@ function Hero() {
           </div>
         </Carousel.Item>
 
-        {/* Slide 3: Environmental Education */}
+        {/* Slide 3: Environmental Education - Grid Layout */}
         <Carousel.Item>
-          <div
-            className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel3Image})` }}
-          >
-            <div className="hero-overlay">
+          <div className="hero-slide-grid text-white">
+            <div className="hero-overlay"></div>
+            <div className="hero-content-left">
               <Container>
                 <div className="hero-content">
                   <h1 className="hero-title">Environmental Education for All</h1>
@@ -191,6 +189,9 @@ function Hero() {
                   </div>
                 </div>
               </Container>
+            </div>
+            <div className="hero-image-right">
+              <img src={carousel3Image} alt="Environmental Education" />
             </div>
           </div>
         </Carousel.Item>
