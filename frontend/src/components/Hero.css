@@ -136,6 +136,19 @@
   background: rgba(0, 0, 0, 0.45);
 }
 
+/* Shadow overlay effect for slides 1 and 2 */
+.hero-slide:not(.hero-slide-grid) .hero-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero-overlay h1 {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-weight: 300;
