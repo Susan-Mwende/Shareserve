@@ -1,7 +1,7 @@
 import { Container, Row, Col, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import logo from "../assets/ShareServe logo.png";
+import logo from "../assets/ShareServe logo.jpeg";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
 import axios from "axios";
 import { API_ENDPOINTS } from "../config/api.js";

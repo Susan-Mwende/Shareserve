@@ -10,7 +10,7 @@ import AdminManagement from "../components/admin/AdminManagement.jsx";
 import DonationManagement from "../components/admin/DonationManagement.jsx";
 import SessionMonitoring from "../components/admin/SessionMonitoring.jsx";
 import GalleryManagement from "../components/admin/GalleryManagement.jsx";
-import logo from "../assets/ShareServe logo.png";
+import logo from "../assets/ShareServe logo.jpeg";
 import "./AdminDashboard.css";
 import "./AdminDashboardMobile.css";
 import AdminDashboardMobile from "./AdminDashboardMobile.jsx";
