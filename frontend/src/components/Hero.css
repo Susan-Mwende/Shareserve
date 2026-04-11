@@ -40,6 +40,8 @@
   z-index: 2;
   position: relative;
   color: white !important;
+  background: rgba(25, 135, 84, 0.85);
+  border-radius: 10px;
 }
 
 .hero-slide-grid .hero-content-left .hero-content {
