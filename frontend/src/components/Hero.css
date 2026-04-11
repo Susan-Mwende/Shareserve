@@ -60,6 +60,11 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -o-filter: none !important;
+  -ms-filter: none !important;
 }
 
 .hero-slide-grid .hero-image-right img {
@@ -68,6 +73,10 @@
   object-fit: cover;
   object-position: center;
   filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -o-filter: none !important;
+  -ms-filter: none !important;
 }
 
 .hero-slide-grid .hero-overlay {
