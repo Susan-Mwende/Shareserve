@@ -1,6 +1,8 @@
-import { Container, Button, Modal, Form, Alert } from "react-bootstrap";
+import { Container, Button, Modal, Form, Alert, Carousel } from "react-bootstrap";
 import { useState } from "react";
 import heroImage from "../assets/hero.jpg";
+import educationImage from "../assets/education.jpg";
+import livelihoodImage from "../assets/livelihood.jpg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
@@ -78,40 +80,118 @@ function Hero() {
 
   return (
     <>
-      <div
-        className="hero-section text-white rounded"
-        style={{ backgroundImage: `url(${heroImage})` }}
+      <Carousel 
+        interval={5000} 
+        controls={true} 
+        indicators={true}
+        fade={true}
+        className="hero-carousel"
       >
-        <div className="hero-overlay">
-          <Container>
-            <div className="hero-content">
-              <h1 className="hero-title">Raising 100,000 + young environmental champions</h1>
-              <p className="hero-subtitle">
-               Empowering pupils and rural communities in Kenya to restore environment through education,tree growing and sustainale livelihoods.
-              </p>
-              
-            
-
-              <div className="mt-4">
-                <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
-                   Join the Movement
-                </Button>
-                <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
-                   Partner With Us
-                </Button>
-                <Button 
-                  variant="success" 
-                  className="btn-lg"
-                  style={{ backgroundColor: '#198754', borderColor: '#198754' }}
-                  onClick={() => setShowPaymentModal(true)}
-                >
-                  Donate Now
-                </Button>
-              </div>
+        {/* Slide 1: Environmental Champions */}
+        <Carousel.Item>
+          <div
+            className="hero-slide text-white"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          >
+            <div className="hero-overlay">
+              <Container>
+                <div className="hero-content">
+                  <h1 className="hero-title">Raising 100,000 + Young Environmental Champions</h1>
+                  <p className="hero-subtitle">
+                    Empowering pupils and rural communities in Kenya to restore environment through education, tree growing and sustainable livelihoods.
+                  </p>
+                  <div className="mt-4">
+                    <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
+                       Join the Movement
+                    </Button>
+                    <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
+                       Partner With Us
+                    </Button>
+                    <Button 
+                      variant="success" 
+                      className="btn-lg"
+                      style={{ backgroundColor: '#198754', borderColor: '#198754' }}
+                      onClick={() => setShowPaymentModal(true)}
+                    >
+                      Donate Now
+                    </Button>
+                  </div>
+                </div>
+              </Container>
             </div>
-          </Container>
-        </div>
-      </div>
+          </div>
+        </Carousel.Item>
+
+        {/* Slide 2: Education Focus */}
+        <Carousel.Item>
+          <div
+            className="hero-slide text-white"
+            style={{ backgroundImage: `url(${educationImage})` }}
+          >
+            <div className="hero-overlay">
+              <Container>
+                <div className="hero-content">
+                  <h1 className="hero-title">Quality Education for Sustainable Future</h1>
+                  <p className="hero-subtitle">
+                    Providing educational opportunities and environmental literacy to equip the next generation with knowledge and skills for sustainable development.
+                  </p>
+                  <div className="mt-4">
+                    <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
+                       Join the Movement
+                    </Button>
+                    <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
+                       Partner With Us
+                    </Button>
+                    <Button 
+                      variant="success" 
+                      className="btn-lg"
+                      style={{ backgroundColor: '#198754', borderColor: '#198754' }}
+                      onClick={() => setShowPaymentModal(true)}
+                    >
+                      Donate Now
+                    </Button>
+                  </div>
+                </div>
+              </Container>
+            </div>
+          </div>
+        </Carousel.Item>
+
+        {/* Slide 3: Livelihood Development */}
+        <Carousel.Item>
+          <div
+            className="hero-slide text-white"
+            style={{ backgroundImage: `url(${livelihoodImage})` }}
+          >
+            <div className="hero-overlay">
+              <Container>
+                <div className="hero-content">
+                  <h1 className="hero-title">Creating Sustainable Livelihoods</h1>
+                  <p className="hero-subtitle">
+                    Supporting rural communities through economic empowerment, skills development, and environmental conservation initiatives for lasting positive change.
+                  </p>
+                  <div className="mt-4">
+                    <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
+                       Join the Movement
+                    </Button>
+                    <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
+                       Partner With Us
+                    </Button>
+                    <Button 
+                      variant="success" 
+                      className="btn-lg"
+                      style={{ backgroundColor: '#198754', borderColor: '#198754' }}
+                      onClick={() => setShowPaymentModal(true)}
+                    >
+                      Donate Now
+                    </Button>
+                  </div>
+                </div>
+              </Container>
+            </div>
+          </div>
+        </Carousel.Item>
+      </Carousel>
 
       <MpesaPaymentModal 
         show={showPaymentModal} 

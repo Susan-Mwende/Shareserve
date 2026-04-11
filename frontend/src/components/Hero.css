@@ -1,3 +1,21 @@
+.hero-carousel {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.hero-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+}
+
 .hero-section {
   position: relative;
   background-size: 100vw 70vh;
