@@ -1,9 +1,9 @@
 import { Container, Button, Modal, Form, Alert, Carousel } from "react-bootstrap";
 import { useState } from "react";
 // Using direct URL paths for carousel images
-const carousel1Image = "https://drive.google.com/drive/my-drive?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto&q=type:image%20parent:0AP4sgikPl1w7Uk9PVA";
-const carousel2Image = "https://drive.google.com/drive/my-drive?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto&q=type:image%20parent:0AP4sgikPl1w7Uk9PVA";
-const carousel3Image = "/src/assets/carousel3.jpeghttps://drive.google.com/drive/home?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto";
+const carousel1Image = "https://drive.google.com/uc?export=view&id=1rrEXYCtiFrj5-DsfcEwRQDalyD4zIGdO";
+const carousel2Image = "https://drive.google.com/uc?export=view&id=1GoSoTPIKLtI1ra60bAjczFT1UL3Uiv_V";
+const carousel3Image = "https://drive.google.com/uc?export=view&id=1qq3uEVe38cPwLfYBAIRQZ5twFzdOT26E";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
