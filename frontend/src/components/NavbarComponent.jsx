@@ -20,8 +20,11 @@ function NavbarComponent() {
       <Navbar 
         bg="light" 
         expand="lg" 
-        sticky="top" 
         style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
           boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
           zIndex: 1030,
           backdropFilter: 'blur(10px)',

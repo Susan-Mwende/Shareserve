@@ -22,7 +22,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={
-              <div style={{ width: "100%" }}>
+              <div style={{ width: "100%", paddingTop: "80px" }}>
                 <section>
                   <Container>
                     <NavbarComponent />
