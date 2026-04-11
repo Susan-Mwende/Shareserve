@@ -47,11 +47,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
 }
 
 .hero-slide-grid .hero-content-left .hero-content {
