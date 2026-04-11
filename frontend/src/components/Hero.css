@@ -9,7 +9,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  min-height: 70vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -18,9 +18,9 @@
 
 .hero-section {
   position: relative;
-  background-size: 100vw 70vh;
+  background-size: 100vw 90vh;
   background-position: center;
-  min-height: 70vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
