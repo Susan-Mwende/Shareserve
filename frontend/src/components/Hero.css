@@ -40,8 +40,9 @@
   z-index: 2;
   position: relative;
   color: white !important;
-  background: rgba(25, 135, 84, 0.85);
-  border-radius: 10px;
+  background: rgba(25, 135, 84, 1); /* Changed from 0.85 to 1 for solid green background */
+  width: 100%; /* Added to apply background to entire left side */
+  height: 100vh; /* Added to apply background to entire left side */
 }
 
 .hero-slide-grid .hero-content-left .hero-content {
