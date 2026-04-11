@@ -1,8 +1,8 @@
 import { Container, Button, Modal, Form, Alert, Carousel } from "react-bootstrap";
 import { useState } from "react";
-import carousel1Image from "../assets/carousel 1.jpeg";
-import carousel2Image from "../assets/carousel 2.jpeg";
-import carousel3Image from "../assets/carousel 3.jpeg";
+import carousel1Image from "../assets/carousel1.jpeg";
+import carousel2Image from "../assets/carousel2.jpeg";
+import carousel3Image from "../assets/carousel3.jpeg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
