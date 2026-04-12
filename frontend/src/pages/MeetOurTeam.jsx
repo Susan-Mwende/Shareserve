@@ -10,27 +10,27 @@ function MeetOurTeam() {
   const [teamMembers, setTeamMembers] = useState([
     {
       name: "John Doe",
-      role: "Executive Director",
+      position: "Executive Director",
       image: "/baby.jpeg",
-      description: "Leading our mission with passion and dedication."
+      bio: "Leading our mission with passion and dedication."
     },
     {
       name: "Jane Smith",
-      role: "Program Manager",
+      position: "Program Manager",
       image: "/baby.jpeg",
-      description: "Coordinating our environmental programs."
+      bio: "Coordinating our environmental programs."
     },
     {
       name: "Michael Brown",
-      role: "Community Outreach",
+      position: "Community Outreach",
       image: "/baby.jpeg",
-      description: "Connecting with communities across Kenya."
+      bio: "Connecting with communities across Kenya."
     },
     {
       name: "Sarah Johnson",
-      role: "Education Coordinator",
+      position: "Education Coordinator",
       image: "/baby.jpeg",
-      description: "Developing curriculum for environmental education."
+      bio: "Developing curriculum for environmental education."
     }
   ]);
   const [loading, setLoading] = useState(true);
@@ -85,10 +85,10 @@ function MeetOurTeam() {
                       {member.name}
                     </h4>
                     <p className="team-role text-muted fw-bold">
-                      {member.role}
+                      {member.position}
                     </p>
                     <p className="team-description text-muted">
-                      {member.description}
+                      {member.bio}
                     </p>
                   </Card.Body>
                 </Card>

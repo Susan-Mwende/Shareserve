@@ -1,10 +1,13 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { useState, useEffect } from "react";
 import "./Values.css";
 import NavbarComponent from "@/components/NavbarComponent.jsx";
 import Footer from "@/components/Footer.jsx";
+import axios from "axios";
+import { API_ENDPOINTS } from "../config/api.js";
 
 function Values() {
-  const values = [
+  const [values, setValues] = useState([
     {
       icon: "👤",
       title: "Dignity",
@@ -35,7 +38,25 @@ function Values() {
       title: "Service",
       description: "We dedicate ourselves to serving others with humility and a genuine desire to make a positive impact."
     }
-  ];
+  ]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchValuesData();
+  }, []);
+
+  const fetchValuesData = async () => {
+    try {
+      const response = await axios.get(API_ENDPOINTS.ABOUT);
+      if (response.data && response.data.values && response.data.values.length > 0) {
+        setValues(response.data.values);
+      }
+      setLoading(false);
+    } catch (error) {
+      console.error("Failed to fetch values data:", error);
+      setLoading(false);
+    }
+  };
 
   return (
     <>
