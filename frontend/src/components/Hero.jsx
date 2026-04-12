@@ -104,9 +104,6 @@ function Hero() {
                     Empowering pupils and rural communities in Kenya to restore environment through education, tree growing and sustainable livelihoods.
                   </p>
                   <div className="mt-4">
-                    <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
-                       Join the Movement
-                    </Button>
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
                        Partner With Us
                     </Button>
@@ -139,9 +136,6 @@ function Hero() {
                     Leading reforestation efforts and environmental conservation to combat climate change and preserve biodiversity for future generations.
                   </p>
                   <div className="mt-4">
-                    <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
-                       Join the Movement
-                    </Button>
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
                        Partner With Us
                     </Button>
@@ -171,9 +165,6 @@ function Hero() {
                     Teaching communities about sustainable practices, conservation techniques, and environmental stewardship to create lasting positive impact.
                   </p>
                   <div className="mt-4">
-                    <Button variant="success" className="me-2 btn-lg" onClick={() => openContactModal('join')}>
-                       Join the Movement
-                    </Button>
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
                        Partner With Us
                     </Button>
