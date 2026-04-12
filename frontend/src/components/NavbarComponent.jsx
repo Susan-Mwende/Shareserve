@@ -59,7 +59,7 @@ function NavbarComponent() {
                 style={{ fontWeight: '500', color: '#333' }}
               >
                 <NavDropdown.Item as={Link} to="/about" style={{ fontWeight: '500' }}>
-                  About Us
+                  Who We Are
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/mission" style={{ fontWeight: '500' }}>
                   Our Mission
