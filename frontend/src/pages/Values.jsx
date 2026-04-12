@@ -1,5 +1,7 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import "./Values.css";
+import NavbarComponent from "@/components/NavbarComponent.jsx";
+import Footer from "@/components/Footer.jsx";
 
 function Values() {
   const values = [
@@ -36,7 +38,9 @@ function Values() {
   ];
 
   return (
-    <Container className="mt-5 pt-5" id="values">
+    <>
+      <NavbarComponent />
+      <Container className="pt-5" id="values" style={{ marginTop: '80px' }}>
       <Row className="justify-content-center mb-4">
         <Col md={10} lg={8}>
           <h1 className="text-center mb-4" style={{ color: "#198754" }}>
@@ -66,7 +70,9 @@ function Values() {
           </Col>
         ))}
       </Row>
-    </Container>
+      </Container>
+      <Footer />
+    </>
   );
 }
 

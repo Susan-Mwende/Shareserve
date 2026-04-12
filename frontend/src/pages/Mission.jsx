@@ -1,10 +1,14 @@
 import { Container } from "react-bootstrap";
 import "./Mission.css";
 import carousel3Image from "../assets/carousel3.jpeg";
+import NavbarComponent from "@/components/NavbarComponent.jsx";
+import Footer from "@/components/Footer.jsx";
 
 function Mission() {
   return (
-    <div className="mission-page-grid">
+    <>
+      <NavbarComponent />
+      <div className="mission-page-grid" style={{ marginTop: '80px' }}>
       <div className="mission-content-left">
         <Container>
           <div className="mission-content">
@@ -18,7 +22,9 @@ function Mission() {
       <div className="mission-image-right">
         <img src={carousel3Image} alt="Environmental Mission" />
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 

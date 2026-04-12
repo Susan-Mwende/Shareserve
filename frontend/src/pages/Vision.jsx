@@ -1,10 +1,14 @@
 import { Container } from "react-bootstrap";
 import "./Vision.css";
+import NavbarComponent from "@/components/NavbarComponent.jsx";
+import Footer from "@/components/Footer.jsx";
 const babyImage = "/baby.jpeg";
 
 function Vision() {
   return (
-    <div className="vision-page-grid">
+    <>
+      <NavbarComponent />
+      <div className="vision-page-grid" style={{ marginTop: '80px' }}>
       <div className="vision-content-left">
         <Container>
           <div className="vision-content">
@@ -27,7 +31,9 @@ function Vision() {
       <div className="vision-image-right">
         <img src={babyImage} alt="Vision for Future" />
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
