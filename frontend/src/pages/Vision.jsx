@@ -8,7 +8,8 @@ function Vision() {
   return (
     <>
       <NavbarComponent />
-      <div className="vision-page-grid" style={{ marginTop: '80px' }}>
+      <div style={{ paddingTop: '80px' }}>
+      <div className="vision-page-grid">
       <div className="vision-content-left">
         <Container>
           <div className="vision-content">
@@ -30,6 +31,7 @@ function Vision() {
       </div>
       <div className="vision-image-right">
         <img src={babyImage} alt="Vision for Future" />
+      </div>
       </div>
       </div>
       <Footer />

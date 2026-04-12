@@ -40,7 +40,8 @@ function Values() {
   return (
     <>
       <NavbarComponent />
-      <Container className="pt-5" id="values" style={{ marginTop: '80px' }}>
+      <div style={{ paddingTop: '80px' }}>
+      <Container className="pt-5 pb-5" id="values">
       <Row className="justify-content-center mb-4">
         <Col md={10} lg={8}>
           <h1 className="text-center mb-4" style={{ color: "#198754" }}>
@@ -71,6 +72,7 @@ function Values() {
         ))}
       </Row>
       </Container>
+      </div>
       <Footer />
     </>
   );

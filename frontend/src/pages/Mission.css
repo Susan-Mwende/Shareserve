@@ -7,8 +7,8 @@
   width: 100vw;
   position: relative;
   background: none !important;
-  margin-top: -80px; /* Offset for fixed navbar */
-  padding-top: 80px;
+  padding-top: 0;
+  margin-bottom: 0;
 }
 
 .mission-content-left {

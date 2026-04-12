@@ -14,6 +14,7 @@ import AboutPage from "@/pages/AboutPage.jsx";
 import Mission from "@/pages/Mission.jsx";
 import Vision from "@/pages/Vision.jsx";
 import ValuesPage from "@/pages/Values.jsx";
+import MeetOurTeam from "@/pages/MeetOurTeam.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
 import Login from "@/components/Login.jsx";
 import ProtectedRoute from "@/components/ProtectedRoute.jsx";
@@ -43,6 +44,9 @@ function App() {
                     <Impact />
                   </Container>
                 </section>
+                <section id="team">
+                  <MeetOurTeam />
+                </section>
                 <section id="gallery">
                   <Gallery />
                 </section>
@@ -53,11 +57,20 @@ function App() {
                 </footer>
               </div>
             } />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={
+              <>
+                <NavbarComponent />
+                <div style={{ paddingTop: '80px' }}>
+                  <About />
+                </div>
+                <Footer />
+              </>
+            } />
             <Route path="/about-full" element={<AboutPage />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/vision" element={<Vision />} />
             <Route path="/values" element={<ValuesPage />} />
+            <Route path="/team" element={<MeetOurTeam />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin/*" element={

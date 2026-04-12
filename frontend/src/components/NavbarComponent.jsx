@@ -70,6 +70,10 @@ function NavbarComponent() {
                 <NavDropdown.Item as={Link} to="/values" style={{ fontWeight: '500' }}>
                   Our Values
                 </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} to="/team" style={{ fontWeight: '500' }}>
+                  Meet Our Team
+                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link 
                 onClick={() => scrollToSection('programs')}

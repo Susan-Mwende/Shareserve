@@ -8,7 +8,8 @@ function Mission() {
   return (
     <>
       <NavbarComponent />
-      <div className="mission-page-grid" style={{ marginTop: '80px' }}>
+      <div style={{ paddingTop: '80px' }}>
+      <div className="mission-page-grid">
       <div className="mission-content-left">
         <Container>
           <div className="mission-content">
@@ -21,6 +22,7 @@ function Mission() {
       </div>
       <div className="mission-image-right">
         <img src={carousel3Image} alt="Environmental Mission" />
+      </div>
       </div>
       </div>
       <Footer />

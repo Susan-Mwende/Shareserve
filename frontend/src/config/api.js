@@ -32,6 +32,9 @@ export const API_ENDPOINTS = {
   // Gallery
   GALLERY: `${API_BASE_URL}/api/gallery`,
   
+  // Team
+  TEAM: `${API_BASE_URL}/api/team`,
+  
   // Dashboard
   DASHBOARD: `${API_BASE_URL}/api/dashboard`,
   
