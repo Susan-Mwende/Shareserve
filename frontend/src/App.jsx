@@ -44,9 +44,6 @@ function App() {
                     <Impact />
                   </Container>
                 </section>
-                <section id="team">
-                  <MeetOurTeam />
-                </section>
                 <section id="gallery">
                   <Gallery />
                 </section>
