@@ -3,13 +3,13 @@
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   align-items: center !important;
-  gap: 0 !important;
+  gap: 40px !important;
   min-height: calc(100vh - 80px);
   width: 100%;
   max-width: 100%;
   position: relative;
   background: none !important;
-  padding: 0;
+  padding: 0 40px;
   margin: 0;
 }
 
