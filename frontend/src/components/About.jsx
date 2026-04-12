@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import aboutImage from "../assets/livelihood.jpg";
+import aboutImage from "../assets/small baby.jpeg";
 import "./About.css";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
 import axios from "axios";
