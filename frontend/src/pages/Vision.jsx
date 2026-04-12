@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import "./Vision.css";
-import babyImage from "../assets/baby.jpeg";
+const babyImage = "/baby.jpeg";
 
 function Vision() {
   return (
