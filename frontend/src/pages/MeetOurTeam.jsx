@@ -7,32 +7,7 @@ import axios from "axios";
 import { API_ENDPOINTS } from "../config/api.js";
 
 function MeetOurTeam() {
-  const [teamMembers, setTeamMembers] = useState([
-    {
-      name: "John Doe",
-      position: "Executive Director",
-      image: "/baby.jpeg",
-      bio: "Leading our mission with passion and dedication."
-    },
-    {
-      name: "Jane Smith",
-      position: "Program Manager",
-      image: "/baby.jpeg",
-      bio: "Coordinating our environmental programs."
-    },
-    {
-      name: "Michael Brown",
-      position: "Community Outreach",
-      image: "/baby.jpeg",
-      bio: "Connecting with communities across Kenya."
-    },
-    {
-      name: "Sarah Johnson",
-      position: "Education Coordinator",
-      image: "/baby.jpeg",
-      bio: "Developing curriculum for environmental education."
-    }
-  ]);
+  const [teamMembers, setTeamMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

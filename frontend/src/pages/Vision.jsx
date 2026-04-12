@@ -40,15 +40,6 @@ function Vision() {
             <p className="vision-description">
               {vision}
             </p>
-            <div className="vision-future">
-              <p className="mb-2">We envision a future where:</p>
-              <ul className="vision-list">
-                <li>✅ Communities are environmentally conscious</li>
-                <li>✅ Youth lead conservation efforts</li>
-                <li>✅ Sustainable practices are the norm</li>
-                <li>✅ Kenya's environment is restored and protected</li>
-              </ul>
-            </div>
           </div>
         </Container>
       </div>

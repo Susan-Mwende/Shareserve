@@ -4,23 +4,23 @@
   grid-template-columns: 1fr 1fr !important;
   align-items: center !important;
   gap: 40px !important;
-  min-height: calc(100vh - 80px);
+  min-height: auto;
   width: 100%;
   max-width: 100%;
   position: relative;
   background: none !important;
-  padding: 40px;
+  padding: 20px 40px 40px;
   margin-bottom: 60px;
 }
 
 .vision-content-left {
-  padding: 60px;
+  padding: 40px;
   z-index: 2;
   position: relative;
   color: #333 !important;
   background: transparent;
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: auto;
   height: auto;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@
 
 .vision-image-right {
   position: relative;
-  min-height: calc(100vh - 80px);
+  min-height: 400px;
   height: auto;
   width: 100%;
   overflow: hidden;
@@ -97,7 +97,7 @@
 
 .vision-image-right img {
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: 400px;
   height: auto;
   object-fit: cover;
   object-position: center;

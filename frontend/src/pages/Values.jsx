@@ -7,38 +7,7 @@ import axios from "axios";
 import { API_ENDPOINTS } from "../config/api.js";
 
 function Values() {
-  const [values, setValues] = useState([
-    {
-      icon: "👤",
-      title: "Dignity",
-      description: "We honor the inherent worth of every individual, treating all people with respect and compassion regardless of their circumstances."
-    },
-    {
-      icon: "❤️",
-      title: "Empathy",
-      description: "We seek to understand and share the feelings of those we serve, building connections based on genuine care and mutual understanding."
-    },
-    {
-      icon: "🤝",
-      title: "Integrity",
-      description: "We operate with transparency and accountability in all our programs, ensuring trust and ethical conduct in everything we do."
-    },
-    {
-      icon: "🌱",
-      title: "Sustainability",
-      description: "We are committed to environmental stewardship and creating lasting solutions that benefit both people and the planet."
-    },
-    {
-      icon: "💪",
-      title: "Empowerment",
-      description: "We believe in equipping communities with the knowledge and tools they need to drive their own development."
-    },
-    {
-      icon: "🤲",
-      title: "Service",
-      description: "We dedicate ourselves to serving others with humility and a genuine desire to make a positive impact."
-    }
-  ]);
+  const [values, setValues] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
