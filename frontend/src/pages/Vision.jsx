@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import "./Vision.css";
-import babyImage from "../assets/small baby.jpeg";
+import babyImage from "../assets/baby.jpeg";
 
 function Vision() {
   return (
@@ -11,11 +11,6 @@ function Vision() {
             <h1 className="vision-title">Our Vision</h1>
             <p className="vision-description">
               To raise and equip 100,000+ young environmental champions through education, tree growing and community driven environmental action.
-            </p>
-            <hr className="my-4" />
-            <h3 className="vision-subtitle">Our Dream</h3>
-            <p className="vision-text">
-              A greener, more environmental Kenya led by younger resilient champions.
             </p>
             <div className="vision-future">
               <p className="mb-2">We envision a future where:</p>
