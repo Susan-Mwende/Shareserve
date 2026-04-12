@@ -71,6 +71,7 @@
 .hero-slide-grid .hero-image-right {
   position: relative;
   height: 100vh;
+  width: 50%;
   overflow: hidden;
   filter: none !important;
   -webkit-filter: none !important;
@@ -89,6 +90,7 @@
   -moz-filter: none !important;
   -o-filter: none !important;
   -ms-filter: none !important;
+  display: block;
 }
 
 .hero-section {
