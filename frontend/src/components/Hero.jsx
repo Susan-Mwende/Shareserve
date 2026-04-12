@@ -3,7 +3,7 @@ import { useState } from "react";
 // Using public folder paths for reliable image display
 const carousel1Image = "/carousel1.jpeg";
 const carousel2Image = "/carousel2.jpeg";
-const carousel3Image = "/carousel3.jpeg";
+const carousel3Image = "/carousel4.jpeg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
