@@ -1,37 +1,35 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "./Mission.css";
+import carousel3Image from "../assets/carousel3.jpeg";
 
 function Mission() {
   return (
-    <Container className="mt-5 pt-5" id="mission">
-      <Row className="justify-content-center">
-        <Col md={10} lg={8}>
-          <Card className="mission-card shadow-lg">
-            <Card.Body className="p-5">
-              <h1 className="text-center mb-4" style={{ color: "#198754" }}>
-                Our Mission
-              </h1>
-              <p className="lead text-center mb-4">
-                Shareserve International is a mission driven organization working in rural Kenya to address environmental degradation and economic vulnerability through youth empowerment and sustainable solutions.
-              </p>
-              <hr className="my-4" />
-              <h3 className="text-center mb-3" style={{ color: "#198754" }}>
-                What We Do
-              </h3>
-              <p className="text-center">
-                We equip young learners with practical environmental skills while supporting rural communities with sustainable livelihoods.
-              </p>
-              <ul className="list-unstyled mt-4">
-                <li className="mb-2">🌱 School Environmental Clubs</li>
-                <li className="mb-2">🌳 Indigenous & Fruit Tree Growing</li>
-                <li className="mb-2">🌍 Climate Change Education</li>
-                <li className="mb-2">🤝 Community Restoration Projects</li>
-              </ul>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div className="mission-page-grid">
+      <div className="mission-content-left">
+        <Container>
+          <div className="mission-content">
+            <h1 className="mission-title">Our Mission</h1>
+            <p className="mission-description">
+              Shareserve International is a mission driven organization working in rural Kenya to address environmental degradation and economic vulnerability through youth empowerment and sustainable solutions.
+            </p>
+            <hr className="my-4" />
+            <h3 className="mission-subtitle">What We Do</h3>
+            <p className="mission-text">
+              We equip young learners with practical environmental skills while supporting rural communities with sustainable livelihoods.
+            </p>
+            <ul className="mission-list">
+              <li>🌱 School Environmental Clubs</li>
+              <li>🌳 Indigenous & Fruit Tree Growing</li>
+              <li>🌍 Climate Change Education</li>
+              <li>🤝 Community Restoration Projects</li>
+            </ul>
+          </div>
+        </Container>
+      </div>
+      <div className="mission-image-right">
+        <img src={carousel3Image} alt="Environmental Mission" />
+      </div>
+    </div>
   );
 }
 
