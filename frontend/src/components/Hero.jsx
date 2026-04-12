@@ -163,7 +163,6 @@ function Hero() {
         {/* Slide 3: Environmental Education - Grid Layout */}
         <Carousel.Item>
           <div className="hero-slide-grid text-white">
-            <div className="hero-overlay"></div>
             <div className="hero-content-left">
               <Container>
                 <div className="hero-content">
