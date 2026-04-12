@@ -1,21 +1,136 @@
-.vision-card {
-  border: none;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+/* Grid layout for Vision page */
+.vision-page-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: center !important;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: none !important;
+  margin-top: -80px; /* Offset for fixed navbar */
+  padding-top: 80px;
 }
 
-.vision-card h1 {
+.vision-content-left {
+  padding: 60px;
+  z-index: 2;
+  position: relative;
+  color: white !important;
+  background: rgba(25, 135, 84, 1); /* Solid green background */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-column: 1;
+}
+
+.vision-content {
+  max-width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.vision-title {
+  color: white !important;
   font-weight: 700;
   font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.vision-card .lead {
+.vision-description {
   font-size: 1.25rem;
   line-height: 1.8;
-  color: #495057;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
 }
 
-.vision-card ul li {
+.vision-subtitle {
+  color: white !important;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.vision-text {
+  font-size: 1.1rem;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.vision-future {
+  margin-top: 1rem;
+}
+
+.vision-future p {
+  font-size: 1.1rem;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.vision-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.vision-list li {
   font-size: 1.1rem;
   padding: 8px 0;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.vision-image-right {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  grid-column: 2;
+}
+
+.vision-image-right img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  min-height: 100vh;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .vision-page-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .vision-content-left {
+    height: auto;
+    min-height: 50vh;
+    padding: 40px 20px;
+    grid-column: 1;
+  }
+  
+  .vision-image-right {
+    height: 50vh;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .vision-image-right img {
+    height: 50vh;
+    min-height: 50vh;
+  }
+  
+  .vision-title {
+    font-size: 2rem;
+  }
 }

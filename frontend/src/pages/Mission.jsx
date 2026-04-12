@@ -12,17 +12,6 @@ function Mission() {
             <p className="mission-description">
               Shareserve International is a mission driven organization working in rural Kenya to address environmental degradation and economic vulnerability through youth empowerment and sustainable solutions.
             </p>
-            <hr className="my-4" />
-            <h3 className="mission-subtitle">What We Do</h3>
-            <p className="mission-text">
-              We equip young learners with practical environmental skills while supporting rural communities with sustainable livelihoods.
-            </p>
-            <ul className="mission-list">
-              <li>🌱 School Environmental Clubs</li>
-              <li>🌳 Indigenous & Fruit Tree Growing</li>
-              <li>🌍 Climate Change Education</li>
-              <li>🤝 Community Restoration Projects</li>
-            </ul>
           </div>
         </Container>
       </div>
