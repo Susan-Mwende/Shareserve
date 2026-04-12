@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/ShareServe logo.jpeg";
@@ -53,12 +53,24 @@ function NavbarComponent() {
               >
                 Home
               </Nav.Link>
-              <Nav.Link 
-                onClick={() => scrollToSection('about')}
-                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
+              <NavDropdown 
+                title="About" 
+                id="about-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
               >
-                About
-              </Nav.Link>
+                <NavDropdown.Item as={Link} to="/about" style={{ fontWeight: '500' }}>
+                  About Us
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/mission" style={{ fontWeight: '500' }}>
+                  Our Mission
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/vision" style={{ fontWeight: '500' }}>
+                  Our Vision
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/values" style={{ fontWeight: '500' }}>
+                  Our Values
+                </NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link 
                 onClick={() => scrollToSection('programs')}
                 style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}

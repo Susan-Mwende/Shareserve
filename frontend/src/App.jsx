@@ -11,6 +11,9 @@ import Impact from "@/components/Impact.jsx";
 import Gallery from "@/components/Gallery.jsx";
 import Footer from "@/components/Footer.jsx";
 import AboutPage from "@/pages/AboutPage.jsx";
+import Mission from "@/pages/Mission.jsx";
+import Vision from "@/pages/Vision.jsx";
+import Values from "@/pages/Values.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
 import Login from "@/components/Login.jsx";
 import ProtectedRoute from "@/components/ProtectedRoute.jsx";
@@ -52,6 +55,9 @@ function App() {
             } />
             <Route path="/about" element={<About />} />
             <Route path="/about-full" element={<AboutPage />} />
+            <Route path="/mission" element={<Mission />} />
+            <Route path="/vision" element={<Vision />} />
+            <Route path="/values" element={<Values />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin/*" element={

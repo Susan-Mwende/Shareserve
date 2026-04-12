@@ -1,0 +1,28 @@
+.value-card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.value-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.value-card h4 {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

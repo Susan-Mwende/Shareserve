@@ -1,0 +1,26 @@
+.mission-card {
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.mission-card h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.mission-card .lead {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #495057;
+}
+
+.mission-card ul li {
+  font-size: 1.1rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.mission-card ul li:last-child {
+  border-bottom: none;
+}
