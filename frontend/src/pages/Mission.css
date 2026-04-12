@@ -9,16 +9,16 @@
   max-width: 100%;
   position: relative;
   background: none !important;
-  padding: 0 40px;
-  margin: 0;
+  padding: 40px;
+  margin-bottom: 60px;
 }
 
 .mission-content-left {
   padding: 60px;
   z-index: 2;
   position: relative;
-  color: white !important;
-  background: rgba(25, 135, 84, 1); /* Solid green background */
+  color: #333 !important;
+  background: transparent;
   width: 100%;
   min-height: calc(100vh - 80px);
   height: auto;
@@ -39,33 +39,29 @@
 }
 
 .mission-title {
-  color: white !important;
+  color: #198754 !important;
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .mission-description {
   font-size: 1.25rem;
-  line-height: 1.8;
-  color: white !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  color: #555 !important;
   margin-bottom: 1.5rem;
 }
 
 .mission-subtitle {
-  color: white !important;
+  color: #333 !important;
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .mission-text {
   font-size: 1.1rem;
-  color: white !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  color: #555 !important;
   margin-bottom: 1rem;
 }
 
@@ -78,8 +74,7 @@
 .mission-list li {
   font-size: 1.1rem;
   padding: 8px 0;
-  color: white !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  color: #555 !important;
 }
 
 .mission-image-right {
