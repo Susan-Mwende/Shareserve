@@ -47,6 +47,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  grid-column: 1; /* Explicitly place in first column (left) */
 }
 
 .hero-slide-grid .hero-content-left .hero-content {
@@ -71,13 +72,14 @@
 .hero-slide-grid .hero-image-right {
   position: relative;
   height: 100vh;
-  width: 50%;
+  width: 100%;
   overflow: hidden;
   filter: none !important;
   -webkit-filter: none !important;
   -moz-filter: none !important;
   -o-filter: none !important;
   -ms-filter: none !important;
+  grid-column: 2; /* Explicitly place in second column (right) */
 }
 
 .hero-slide-grid .hero-image-right img {
