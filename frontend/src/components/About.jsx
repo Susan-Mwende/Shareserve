@@ -49,7 +49,7 @@ function About() {
               src={aboutImage} 
               alt="ShareServe community development and empowerment" 
               className="img-fluid rounded shadow"
-              style={{ width: "100%", height: "400px", objectFit: "cover" }}
+              style={{ width: "100%", height: "500px", objectFit: "cover" }}
             />
           </div>
         </Col>
