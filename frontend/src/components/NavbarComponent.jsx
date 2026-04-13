@@ -75,12 +75,33 @@ function NavbarComponent() {
                   Meet Our Team
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link 
-                onClick={() => scrollToSection('programs')}
-                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
+              <NavDropdown 
+                title="Our Work" 
+                id="work-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
               >
-                Programs
-              </Nav.Link>
+                <NavDropdown.Item as={Link} to="/education" style={{ fontWeight: '500' }}>
+                  <i className="fas fa-graduation-cap me-2 text-success"></i>
+                  Education
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/livelihood" style={{ fontWeight: '500' }}>
+                  <i className="fas fa-briefcase me-2" style={{ color: '#F08000' }}></i>
+                  Livelihood
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/environment" style={{ fontWeight: '500' }}>
+                  <i className="fas fa-leaf me-2 text-success"></i>
+                  Environment
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/health" style={{ fontWeight: '500' }}>
+                  <i className="fas fa-heartbeat me-2 text-danger"></i>
+                  Health
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={() => scrollToSection('programs')} style={{ fontWeight: '500' }}>
+                  <i className="fas fa-th-large me-2 text-muted"></i>
+                  View All Programs
+                </NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link 
                 onClick={() => scrollToSection('projects')}
                 style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}

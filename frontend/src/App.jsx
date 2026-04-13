@@ -15,6 +15,10 @@ import Mission from "@/pages/Mission.jsx";
 import Vision from "@/pages/Vision.jsx";
 import ValuesPage from "@/pages/Values.jsx";
 import MeetOurTeam from "@/pages/MeetOurTeam.jsx";
+import Education from "@/pages/Education.jsx";
+import Livelihood from "@/pages/Livelihood.jsx";
+import Environment from "@/pages/Environment.jsx";
+import Health from "@/pages/Health.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
 import Login from "@/components/Login.jsx";
 import ProtectedRoute from "@/components/ProtectedRoute.jsx";
@@ -68,6 +72,10 @@ function App() {
             <Route path="/vision" element={<Vision />} />
             <Route path="/values" element={<ValuesPage />} />
             <Route path="/team" element={<MeetOurTeam />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/livelihood" element={<Livelihood />} />
+            <Route path="/environment" element={<Environment />} />
+            <Route path="/health" element={<Health />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin/*" element={
