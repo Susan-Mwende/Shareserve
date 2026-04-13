@@ -117,7 +117,9 @@ const AboutManagement = () => {
     });
   };
 
-  const handleModalSubmit = () => {
+  const handleModalSubmit = async () => {
+    let updatedAboutData = { ...aboutData };
+
     if (modalType === "value") {
       const newValue = {
         title: formData.title,
@@ -128,12 +130,12 @@ const AboutManagement = () => {
       if (editingIndex !== null) {
         const updatedValues = [...aboutData.values];
         updatedValues[editingIndex] = newValue;
-        setAboutData({ ...aboutData, values: updatedValues });
+        updatedAboutData = { ...aboutData, values: updatedValues };
       } else {
-        setAboutData({
+        updatedAboutData = {
           ...aboutData,
           values: [...aboutData.values, newValue],
-        });
+        };
       }
     } else if (modalType === "team") {
       const newMember = {
@@ -146,38 +148,60 @@ const AboutManagement = () => {
       if (editingIndex !== null) {
         const updatedTeam = [...aboutData.team];
         updatedTeam[editingIndex] = newMember;
-        setAboutData({ ...aboutData, team: updatedTeam });
+        updatedAboutData = { ...aboutData, team: updatedTeam };
       } else {
-        setAboutData({
+        updatedAboutData = {
           ...aboutData,
           team: [...aboutData.team, newMember],
-        });
+        };
       }
     }
 
+    // Update local state
+    setAboutData(updatedAboutData);
+
+    // Auto-save to backend immediately
+    try {
+      await axios.put(API_ENDPOINTS.ABOUT, updatedAboutData);
+      setSuccess(
+        modalType === "value"
+          ? editingIndex !== null
+            ? "Value updated and saved successfully"
+            : "Value added and saved successfully"
+          : editingIndex !== null
+          ? "Team member updated and saved successfully"
+          : "Team member added and saved successfully"
+      );
+    } catch (err) {
+      setError("Failed to save to database. Please try again.");
+    }
+
     handleCloseModal();
-    setSuccess(
-      modalType === "value"
-        ? editingIndex !== null
-          ? "Value updated successfully"
-          : "Value added successfully"
-        : editingIndex !== null
-        ? "Team member updated successfully"
-        : "Team member added successfully"
-    );
     setTimeout(() => setSuccess(""), 3000);
   };
 
-  const handleDelete = (type, index) => {
+  const handleDelete = async (type, index) => {
     if (window.confirm(`Are you sure you want to delete this ${type === "value" ? "value" : "team member"}?`)) {
+      let updatedAboutData = { ...aboutData };
+      
       if (type === "value") {
         const updatedValues = aboutData.values.filter((_, i) => i !== index);
-        setAboutData({ ...aboutData, values: updatedValues });
+        updatedAboutData = { ...aboutData, values: updatedValues };
       } else {
         const updatedTeam = aboutData.team.filter((_, i) => i !== index);
-        setAboutData({ ...aboutData, team: updatedTeam });
+        updatedAboutData = { ...aboutData, team: updatedTeam };
       }
-      setSuccess(`${type === "value" ? "Value" : "Team member"} deleted successfully`);
+      
+      setAboutData(updatedAboutData);
+      
+      // Auto-save to backend immediately
+      try {
+        await axios.put(API_ENDPOINTS.ABOUT, updatedAboutData);
+        setSuccess(`${type === "value" ? "Value" : "Team member"} deleted and saved successfully`);
+      } catch (err) {
+        setError("Failed to save deletion to database. Please try again.");
+      }
+      
       setTimeout(() => setSuccess(""), 3000);
     }
   };
