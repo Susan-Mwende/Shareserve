@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 const aboutSchema = new mongoose.Schema({
   mission: {
     type: String,
-    required: true,
+    default: "",
   },
   vision: {
     type: String,
-    required: true,
+    default: "",
   },
   history: {
     type: String,
-    required: true,
+    default: "",
   },
   values: [{
     title: String,
