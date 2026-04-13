@@ -32,6 +32,7 @@ const AboutManagement = () => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
+    icon: "",
     name: "",
     position: "",
     bio: "",
@@ -72,6 +73,7 @@ const AboutManagement = () => {
       setFormData({
         title: value.title,
         description: value.description,
+        icon: value.icon || "",
         name: "",
         position: "",
         bio: "",
@@ -107,6 +109,7 @@ const AboutManagement = () => {
     setFormData({
       title: "",
       description: "",
+      icon: "",
       name: "",
       position: "",
       bio: "",
@@ -119,6 +122,7 @@ const AboutManagement = () => {
       const newValue = {
         title: formData.title,
         description: formData.description,
+        icon: formData.icon || "⭐",
       };
 
       if (editingIndex !== null) {
@@ -391,6 +395,17 @@ const AboutManagement = () => {
                   value={formData.title}
                   onChange={(e) =>
                     setFormData({ ...formData, title: e.target.value })
+                  }
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Icon (emoji)</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="e.g. 🌱, 💚, 🤝, ⭐"
+                  value={formData.icon}
+                  onChange={(e) =>
+                    setFormData({ ...formData, icon: e.target.value })
                   }
                 />
               </Form.Group>

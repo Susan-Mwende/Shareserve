@@ -42,25 +42,39 @@ function Values() {
           </p>
         </Col>
       </Row>
-      <Row className="g-4">
-        {values.map((value, index) => (
-          <Col md={6} lg={4} key={index}>
-            <Card className="value-card text-center h-100 shadow">
-              <Card.Body className="p-4">
-                <div className="value-icon mb-3" style={{ fontSize: '2.5rem' }}>
-                  {value.icon}
-                </div>
-                <h4 className="mb-3" style={{ color: "#198754" }}>
-                  {value.title}
-                </h4>
-                <p className="text-muted">
-                  {value.description}
-                </p>
-              </Card.Body>
-            </Card>
+      {loading ? (
+        <Row className="justify-content-center">
+          <Col className="text-center">
+            <p>Loading values...</p>
           </Col>
-        ))}
-      </Row>
+        </Row>
+      ) : values.length === 0 ? (
+        <Row className="justify-content-center">
+          <Col className="text-center">
+            <p className="text-muted">No values added yet. Please check back later.</p>
+          </Col>
+        </Row>
+      ) : (
+        <Row className="g-4">
+          {values.map((value, index) => (
+            <Col md={6} lg={4} key={index}>
+              <Card className="value-card text-center h-100 shadow">
+                <Card.Body className="p-4">
+                  <div className="value-icon mb-3" style={{ fontSize: '2.5rem' }}>
+                    {value.icon}
+                  </div>
+                  <h4 className="mb-3" style={{ color: "#198754" }}>
+                    {value.title}
+                  </h4>
+                  <p className="text-muted">
+                    {value.description}
+                  </p>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      )}
       </Container>
       </div>
       <Footer />

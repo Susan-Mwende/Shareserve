@@ -43,33 +43,47 @@ function MeetOurTeam() {
             </Col>
           </Row>
           
-          <Row className="g-4">
-            {teamMembers.map((member, index) => (
-              <Col md={6} lg={3} key={index}>
-                <Card className="team-card text-center h-100 shadow">
-                  <div className="team-image-wrapper">
-                    <Card.Img 
-                      variant="top" 
-                      src={member.image} 
-                      alt={member.name}
-                      className="team-image"
-                    />
-                  </div>
-                  <Card.Body className="p-4">
-                    <h4 className="team-name" style={{ color: "#198754" }}>
-                      {member.name}
-                    </h4>
-                    <p className="team-role text-muted fw-bold">
-                      {member.position}
-                    </p>
-                    <p className="team-description text-muted">
-                      {member.bio}
-                    </p>
-                  </Card.Body>
-                </Card>
+          {loading ? (
+            <Row className="justify-content-center">
+              <Col className="text-center">
+                <p>Loading team members...</p>
               </Col>
-            ))}
-          </Row>
+            </Row>
+          ) : teamMembers.length === 0 ? (
+            <Row className="justify-content-center">
+              <Col className="text-center">
+                <p className="text-muted">No team members added yet. Please check back later.</p>
+              </Col>
+            </Row>
+          ) : (
+            <Row className="g-4">
+              {teamMembers.map((member, index) => (
+                <Col md={6} lg={3} key={index}>
+                  <Card className="team-card text-center h-100 shadow">
+                    <div className="team-image-wrapper">
+                      <Card.Img
+                        variant="top"
+                        src={member.image}
+                        alt={member.name}
+                        className="team-image"
+                      />
+                    </div>
+                    <Card.Body className="p-4">
+                      <h4 className="team-name" style={{ color: "#198754" }}>
+                        {member.name}
+                      </h4>
+                      <p className="team-role text-muted fw-bold">
+                        {member.position}
+                      </p>
+                      <p className="team-description text-muted">
+                        {member.bio}
+                      </p>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          )}
         </Container>
       </div>
       <Footer />
