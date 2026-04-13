@@ -10,6 +10,8 @@ import AdminManagement from "../components/admin/AdminManagement.jsx";
 import DonationManagement from "../components/admin/DonationManagement.jsx";
 import SessionMonitoring from "../components/admin/SessionMonitoring.jsx";
 import GalleryManagement from "../components/admin/GalleryManagement.jsx";
+import ValuesManagement from "../components/admin/ValuesManagement.jsx";
+import TeamManagement from "../components/admin/TeamManagement.jsx";
 import logo from "../assets/ShareServe logo.jpeg";
 import "./AdminDashboard.css";
 import "./AdminDashboardMobile.css";
@@ -172,6 +174,8 @@ const AdminDashboard = () => {
     { path: "/admin", label: "Dashboard", icon: "fas fa-tachometer-alt" },
     { path: "/admin/programs", label: "Programs", icon: "fas fa-clipboard-list" },
     { path: "/admin/engagement", label: "Engagement", icon: "fas fa-handshake" },
+    { path: "/admin/values", label: "Values", icon: "fas fa-star" },
+    { path: "/admin/team", label: "Team", icon: "fas fa-user-tie" },
     { path: "/admin/beneficiaries", label: "Beneficiaries", icon: "fas fa-users" },
     { path: "/admin/gallery", label: "Gallery", icon: "fas fa-images" },
     ...(user?.role === 'super_admin' ? [
@@ -330,6 +334,8 @@ const AdminDashboard = () => {
                 <Route path="/" element={<DashboardHome />} />
                 <Route path="/programs" element={<ProgramManagement />} />
                 <Route path="/engagement" element={<AboutManagement />} />
+                <Route path="/values" element={<ValuesManagement />} />
+                <Route path="/team" element={<TeamManagement />} />
                 <Route path="/beneficiaries" element={<DonationManagement />} />
                 <Route path="/gallery" element={<GalleryManagement />} />
                 {user?.role === 'super_admin' && (
