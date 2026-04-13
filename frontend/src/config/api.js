@@ -19,6 +19,12 @@ export const API_ENDPOINTS = {
   // About
   ABOUT: `${API_BASE_URL}/api/about`,
   
+  // Values (separate module)
+  VALUES: `${API_BASE_URL}/api/values`,
+  
+  // Team (separate module)
+  TEAM: `${API_BASE_URL}/api/team`,
+  
   // Donations
   DONATIONS: `${API_BASE_URL}/api/donations`,
   DONATIONS_STATS: `${API_BASE_URL}/api/donations/stats/summary`,

@@ -16,9 +16,9 @@ function Values() {
 
   const fetchValuesData = async () => {
     try {
-      const response = await axios.get(API_ENDPOINTS.ABOUT);
-      if (response.data && response.data.values && response.data.values.length > 0) {
-        setValues(response.data.values);
+      const response = await axios.get(API_ENDPOINTS.VALUES);
+      if (response.data && response.data.length > 0) {
+        setValues(response.data);
       }
       setLoading(false);
     } catch (error) {

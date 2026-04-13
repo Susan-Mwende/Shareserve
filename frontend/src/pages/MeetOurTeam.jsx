@@ -16,9 +16,9 @@ function MeetOurTeam() {
 
   const fetchTeamData = async () => {
     try {
-      const response = await axios.get(API_ENDPOINTS.ABOUT);
-      if (response.data && response.data.team && response.data.team.length > 0) {
-        setTeamMembers(response.data.team);
+      const response = await axios.get(API_ENDPOINTS.TEAM);
+      if (response.data && response.data.length > 0) {
+        setTeamMembers(response.data);
       }
       setLoading(false);
     } catch (error) {
