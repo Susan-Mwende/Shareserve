@@ -97,25 +97,39 @@ function NavbarComponent() {
                   Health
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link 
-                onClick={() => scrollToSection('projects')}
-                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
+              <NavDropdown 
+                title="Resources" 
+                id="resources-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
               >
-                Projects
-              </Nav.Link>
+                <NavDropdown.Item as={Link} to="/blog" style={{ fontWeight: '500' }}>
+                  Blog/News
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/events" style={{ fontWeight: '500' }}>
+                  Events
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/testimonials" style={{ fontWeight: '500' }}>
+                  Testimonials
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown 
+                title="Get Involved" 
+                id="get-involved-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
+              >
+                <NavDropdown.Item as={Link} to="/partner" style={{ fontWeight: '500' }}>
+                  Partner With Us
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => setShowPaymentModal(true)} style={{ fontWeight: '500' }}>
+                  Donate
+                </NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link 
                 onClick={() => scrollToSection('footer')}
                 style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
               >
                 Contact
               </Nav.Link>
-              <Button 
-                variant="success" 
-                onClick={() => setShowPaymentModal(true)}
-                style={{ marginLeft: '10px', fontWeight: '500' }}
-              >
-                Donate
-              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
