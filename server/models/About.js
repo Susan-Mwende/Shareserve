@@ -16,6 +16,7 @@ const aboutSchema = new mongoose.Schema({
   values: [{
     title: String,
     description: String,
+    icon: String,
   }],
   team: [{
     name: String,
