@@ -69,14 +69,15 @@ function Programs() {
                   <div 
                     className="flip-card-front"
                     style={{ 
-                      backgroundColor: category.color,
-                      backgroundImage: `linear-gradient(135deg, ${category.color}dd, ${category.color})`,
+                      backgroundImage: `url(${category.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
                     }}
                   >
-                    <div className="flip-card-content">
-                      <i className={`${category.icon} fa-4x mb-3`}></i>
-                      <h3 className="flip-card-title">{category.title}</h3>
-                      <p className="flip-card-hint">Click to learn more</p>
+                    <div className="flip-card-overlay" style={{ backgroundColor: `${category.color}cc` }}>
+                      <div className="flip-card-content">
+                        <h3 className="flip-card-title">{category.title}</h3>
+                      </div>
                     </div>
                   </div>
                   
