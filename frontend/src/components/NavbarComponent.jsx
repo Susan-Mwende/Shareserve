@@ -130,6 +130,13 @@ function NavbarComponent() {
               >
                 Contact
               </Nav.Link>
+              <Button 
+                variant="success" 
+                onClick={() => setShowPaymentModal(true)}
+                style={{ marginLeft: '10px', fontWeight: '500' }}
+              >
+                Donate
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
