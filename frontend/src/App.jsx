@@ -54,11 +54,6 @@ function App() {
                     <Impact />
                   </Container>
                 </section>
-                <section id="blog">
-                  <Container>
-                    <BlogSection />
-                  </Container>
-                </section>
                 <section id="testimonials">
                   <Container>
                     <TestimonialsSection />
@@ -66,6 +61,11 @@ function App() {
                 </section>
                 <section id="gallery">
                   <Gallery />
+                </section>
+                <section id="blog">
+                  <Container>
+                    <BlogSection />
+                  </Container>
                 </section>
 
                 {/* Professional Footer */}
