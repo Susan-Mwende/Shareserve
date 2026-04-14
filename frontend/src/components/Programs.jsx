@@ -93,7 +93,6 @@ function Programs() {
                         to={category.link}
                         variant="outline-primary"
                         size="sm"
-                        className="mt-auto"
                         onClick={(e) => e.stopPropagation()}
                       >
                         Learn More

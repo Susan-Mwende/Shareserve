@@ -23,6 +23,8 @@ import Blog from "@/pages/Blog.jsx";
 import Events from "@/pages/Events.jsx";
 import Testimonials from "@/pages/Testimonials.jsx";
 import Partner from "@/pages/Partner.jsx";
+import BlogSection from "@/components/BlogSection.jsx";
+import TestimonialsSection from "@/components/TestimonialsSection.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
 import Login from "@/components/Login.jsx";
 import ProtectedRoute from "@/components/ProtectedRoute.jsx";
@@ -50,6 +52,16 @@ function App() {
                       <Projects />
                     </section>
                     <Impact />
+                  </Container>
+                </section>
+                <section id="blog">
+                  <Container>
+                    <BlogSection />
+                  </Container>
+                </section>
+                <section id="testimonials">
+                  <Container>
+                    <TestimonialsSection />
                   </Container>
                 </section>
                 <section id="gallery">
