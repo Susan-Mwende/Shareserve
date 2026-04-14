@@ -19,6 +19,10 @@ import Education from "@/pages/Education.jsx";
 import Livelihood from "@/pages/Livelihood.jsx";
 import Environment from "@/pages/Environment.jsx";
 import Health from "@/pages/Health.jsx";
+import Blog from "@/pages/Blog.jsx";
+import Events from "@/pages/Events.jsx";
+import Testimonials from "@/pages/Testimonials.jsx";
+import Partner from "@/pages/Partner.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
 import Login from "@/components/Login.jsx";
 import ProtectedRoute from "@/components/ProtectedRoute.jsx";
@@ -76,6 +80,10 @@ function App() {
             <Route path="/livelihood" element={<Livelihood />} />
             <Route path="/environment" element={<Environment />} />
             <Route path="/health" element={<Health />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/partner" element={<Partner />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin/*" element={
