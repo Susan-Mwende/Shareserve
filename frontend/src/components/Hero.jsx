@@ -5,7 +5,8 @@ const carousel1Image = "/carousel1.jpeg";
 const carousel2Image = "/carousel2.jpeg";
 const carousel3Image = "/carousel3.jpeg";
 const baby = "/baby.jpeg";
-const garden = "/garden.jpeg";
+const baby3 = "/baby3.jpeg";
+const garden = "/garden.jpg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
@@ -126,7 +127,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${baby})` }}
+            style={{ backgroundImage: `url(${baby3})` }}
           >
             <div className="hero-overlay">
               <Container>
