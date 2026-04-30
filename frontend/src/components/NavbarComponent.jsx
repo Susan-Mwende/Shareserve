@@ -28,7 +28,9 @@ function NavbarComponent() {
           boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
           zIndex: 1030,
           backdropFilter: 'blur(10px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.95)'
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          minHeight: '80px',
+          padding: '10px 0'
         }}
       >
         <Container>
@@ -45,7 +47,7 @@ function NavbarComponent() {
               <img 
                 src={logo} 
                 alt="ShareServe International" 
-                style={{ height: '50px', width: '120px', objectFit: 'contain', marginRight: '12px' }}
+                style={{ height: '60px', width: '150px', objectFit: 'contain', marginRight: '12px' }}
               />
               ShareServe International
             </div>
