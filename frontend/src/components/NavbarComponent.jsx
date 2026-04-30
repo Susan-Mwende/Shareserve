@@ -32,22 +32,23 @@ function NavbarComponent() {
         }}
       >
         <Container>
-          <Navbar.Brand as={Link} to="/" style={{ textDecoration: 'none', color: '#198754', display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
+          <Navbar.Brand as={Link} to="/" style={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
             <div 
               style={{ 
                 backgroundColor: '#F08000CC', 
-                padding: '8px', 
+                padding: '8px 16px', 
                 borderRadius: '8px',
-                marginRight: '10px'
+                display: 'flex',
+                alignItems: 'center'
               }}
             >
               <img 
                 src={logo} 
                 alt="ShareServe International" 
-                style={{ height: '50px', width: '50px', objectFit: 'cover' }}
+                style={{ height: '50px', width: '120px', objectFit: 'contain', marginRight: '12px' }}
               />
+              ShareServe International
             </div>
-            ShareServe International
           </Navbar.Brand>
           <Navbar.Toggle 
             style={{ borderColor: '#198754' }}
