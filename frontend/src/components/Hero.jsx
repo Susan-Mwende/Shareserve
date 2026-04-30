@@ -182,7 +182,17 @@ function Hero() {
               </Container>
             </div>
             <div className="hero-image-right">
-              <img src={garden} alt="Environmental Education" />
+              <img 
+                src={garden} 
+                alt="Environmental Education" 
+                onError={(e) => {
+                  console.error('Image failed to load:', garden);
+                  e.target.style.display = 'none';
+                }}
+                onLoad={() => {
+                  console.log('Image loaded successfully:', garden);
+                }}
+              />
             </div>
           </div>
         </Carousel.Item>
