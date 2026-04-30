@@ -124,12 +124,11 @@ function NavbarComponent() {
                   Donate
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link 
-                onClick={() => scrollToSection('footer')}
-                style={{ cursor: 'pointer', fontWeight: '500', color: '#333' }}
-              >
-                Contact
-              </Nav.Link>
+              <NavDropdown title="Contact" style={{ fontWeight: '500', color: '#333' }}>
+                <NavDropdown.Item as={Link} to="/contact" style={{ fontWeight: '500' }}>
+                  Contact Us
+                </NavDropdown.Item>
+              </NavDropdown>
               <Button 
                 variant="success" 
                 onClick={() => setShowPaymentModal(true)}
