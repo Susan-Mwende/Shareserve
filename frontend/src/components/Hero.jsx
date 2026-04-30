@@ -82,11 +82,11 @@ function Hero() {
   return (
     <>
       <Carousel 
-        interval={2000} 
+        interval={4000} 
         controls={true} 
         indicators={true}
         fade={false}
-        pause={false}
+        pause={'hover'}
         wrap={true}
         className="hero-carousel"
       >

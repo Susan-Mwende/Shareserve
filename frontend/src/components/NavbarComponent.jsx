@@ -33,11 +33,20 @@ function NavbarComponent() {
       >
         <Container>
           <Navbar.Brand as={Link} to="/" style={{ textDecoration: 'none', color: '#198754', display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
-            <img 
-              src={logo} 
-              alt="ShareServe International" 
-              style={{ height: '40px', marginRight: '10px' }}
-            />
+            <div 
+              style={{ 
+                backgroundColor: '#F08000CC', 
+                padding: '8px', 
+                borderRadius: '8px',
+                marginRight: '10px'
+              }}
+            >
+              <img 
+                src={logo} 
+                alt="ShareServe International" 
+                style={{ height: '50px', width: '50px', objectFit: 'cover' }}
+              />
+            </div>
             ShareServe International
           </Navbar.Brand>
           <Navbar.Toggle 
