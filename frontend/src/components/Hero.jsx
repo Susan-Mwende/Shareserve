@@ -1,12 +1,12 @@
 import { Container, Button, Modal, Form, Alert, Carousel } from "react-bootstrap";
 import { useState } from "react";
-// Using public folder paths for reliable image display
-const carousel1Image = "/carousel1.jpeg";
-const carousel2Image = "/carousel2.jpeg";
-const carousel3Image = "/carousel3.jpeg";
-const baby = "/baby.jpeg";
-const baby3 = "/baby3.jpeg";
-const garden = "/garden.jpg";
+// Import images from assets directory
+import carousel1Image from "../assets/carousel1.jpeg";
+import carousel2Image from "../assets/carousel2.jpeg";
+import carousel3Image from "../assets/carousel3.jpeg";
+import baby from "../assets/baby.jpeg";
+import baby3 from "../assets/baby3.jpeg";
+import garden from "../assets/garden.jpg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
@@ -127,7 +127,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel2Image})` }}
+            style={{ backgroundImage: `url(${baby3})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -183,13 +183,13 @@ function Hero() {
             </div>
             <div className="hero-image-right">
               <img 
-                src={carousel2Image} 
+                src={garden} 
                 alt="Environmental Education" 
                 onError={(e) => {
-                  console.error('Image failed to load:', carousel2Image);
+                  console.error('Image failed to load:', garden);
                 }}
                 onLoad={() => {
-                  console.log('Image loaded successfully:', carousel2Image);
+                  console.log('Image loaded successfully:', garden);
                 }}
               />
             </div>
