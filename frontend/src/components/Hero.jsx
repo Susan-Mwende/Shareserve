@@ -7,9 +7,6 @@ const carousel3Image = "/carousel3.jpeg";
 const baby = "/baby.jpeg";
 const baby3 = "/baby3.jpeg";
 const garden = "/garden.jpg";
-
-// Fallback images in case primary images don't load
-const fallbackImage = "/carousel2.jpeg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
@@ -130,7 +127,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${baby3})` }}
+            style={{ backgroundImage: `url(${carousel2Image})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -186,13 +183,13 @@ function Hero() {
             </div>
             <div className="hero-image-right">
               <img 
-                src={garden} 
+                src={carousel2Image} 
                 alt="Environmental Education" 
                 onError={(e) => {
-                  console.error('Image failed to load:', garden);
+                  console.error('Image failed to load:', carousel2Image);
                 }}
                 onLoad={() => {
-                  console.log('Image loaded successfully:', garden);
+                  console.log('Image loaded successfully:', carousel2Image);
                 }}
               />
             </div>
