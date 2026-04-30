@@ -4,6 +4,8 @@ import { useState } from "react";
 const carousel1Image = "/carousel1.jpeg";
 const carousel2Image = "/carousel2.jpeg";
 const carousel3Image = "/carousel3.jpeg";
+const baby = "/baby.jpeg";
+const garden = "/garden.jpeg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
