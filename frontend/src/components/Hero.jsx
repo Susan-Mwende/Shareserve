@@ -94,7 +94,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel1Image})` }}
+            style={{ backgroundImage: `url(${carousel2Image})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -124,13 +124,15 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel2Image})` }}
+            style={{ backgroundImage: `url(${baby})` }}
           >
             <div className="hero-overlay">
               <Container>
                 <div className="hero-content">
-                  <h1 className="hero-title">Restoring Kenya ‘s Natural environment; Leading reforestation effort and environmental conservation to combat climate change and preserve biodiversity for future generations</h1>
-                 
+                  <h1 className="hero-title">Restoring Kenya ‘s Natural environment</h1>
+                  <p className="hero-subtitle">
+                   Leading reforestation effort and environmental conservation to combat climate change and preserve biodiversity for future generations.
+                  </p>
                   <div className="mt-4">
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
                        Partner With Us
@@ -156,10 +158,10 @@ function Hero() {
             <div className="hero-content-left">
               <Container>
                 <div className="hero-content">
-                  <h1 className="hero-title">Environmental Education for All</h1>
+                  <h1 className="hero-title">Improving Livelihoods Through Climate Action</h1>
                   <p className="hero-subtitle">
-                    Teaching communities about sustainable practices, conservation techniques, and environmental stewardship to create lasting positive impact.
-                  </p>
+                   Establishing model school fruit gardens that improve food security, create income opportunities, and build stronger communities.
+                   </p>
                   <div className="mt-4">
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
                        Partner With Us
@@ -177,7 +179,7 @@ function Hero() {
               </Container>
             </div>
             <div className="hero-image-right">
-              <img src={carousel3Image} alt="Environmental Education" />
+              <img src={garden} alt="Environmental Education" />
             </div>
           </div>
         </Carousel.Item>
