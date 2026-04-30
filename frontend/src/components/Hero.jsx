@@ -130,12 +130,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ 
-              backgroundImage: `url(${baby3})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundColor: '#198754' // Fallback color
-            }}
+            style={{ backgroundImage: `url(${baby3})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -194,15 +189,7 @@ function Hero() {
                 src={garden} 
                 alt="Environmental Education" 
                 onError={(e) => {
-                  console.error('Primary image failed to load:', garden);
-                  // Try fallback image
-                  e.target.src = fallbackImage;
-                  e.target.onerror = () => {
-                    console.error('Fallback image also failed to load:', fallbackImage);
-                    // If both fail, show a solid color background
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.backgroundColor = '#198754';
-                  };
+                  console.error('Image failed to load:', garden);
                 }}
                 onLoad={() => {
                   console.log('Image loaded successfully:', garden);
