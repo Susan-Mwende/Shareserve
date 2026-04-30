@@ -127,7 +127,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${baby3})` }}
+            style={{ backgroundImage: `url(${carousel1Image})` }}
           >
             <div className="hero-overlay">
               <Container>
