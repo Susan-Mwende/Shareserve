@@ -7,6 +7,8 @@ dotenv.config();
 const router = express.Router();
 
 // Initialize Paystack
+console.log('🔑 Paystack secret key configured:', process.env.PAYSTACK_SECRET_KEY ? 'YES' : 'NO');
+
 const paystack = paystackLib(process.env.PAYSTACK_SECRET_KEY);
 
 // Initialize transaction
@@ -28,6 +30,12 @@ router.post('/initialize-transaction', async (req, res) => {
     const amountInKobo = amount * 100;
 
     // Initialize transaction
+    console.log('🚀 Calling Paystack API with:', {
+      amount: amountInKobo,
+      email: email,
+      currency: 'KES'
+    });
+
     const response = await paystack.transaction.initialize({
       amount: amountInKobo,
       email: email,
