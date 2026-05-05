@@ -25,23 +25,36 @@ export const PaystackProvider = ({ children }) => {
           return;
         }
 
-        // Create script element
+        // Create script element with better error handling
         const script = document.createElement('script');
         script.src = 'https://js.paystack.co/v1/inline.js';
         script.async = true;
+        script.crossOrigin = 'anonymous';
+        
+        // Set timeout for script loading
+        const timeout = setTimeout(() => {
+          reject(new Error('Paystack script loading timeout'));
+        }, 10000);
 
         script.onload = () => {
-          if (window.Paystack) {
-            resolve(window.Paystack);
-          } else {
-            reject(new Error('Paystack failed to load'));
-          }
+          clearTimeout(timeout);
+          // Give a small delay for the script to fully initialize
+          setTimeout(() => {
+            if (window.Paystack && typeof window.Paystack.setup === 'function') {
+              resolve(window.Paystack);
+            } else {
+              reject(new Error('Paystack loaded but not properly initialized'));
+            }
+          }, 100);
         };
 
-        script.onerror = () => {
+        script.onerror = (event) => {
+          clearTimeout(timeout);
+          console.error('Script loading error:', event);
           reject(new Error('Failed to load Paystack script'));
         };
 
+        // Add to document head
         document.head.appendChild(script);
       });
     };
@@ -50,9 +63,11 @@ export const PaystackProvider = ({ children }) => {
       try {
         const paystackInstance = await loadPaystack();
         setPaystack(paystackInstance);
+        setError(null);
       } catch (err) {
         console.error('Failed to initialize Paystack:', err);
         setError(err.message);
+        // Don't set paystack to null, keep trying or provide fallback
       } finally {
         setLoading(false);
       }
@@ -164,16 +179,13 @@ export const PaystackProvider = ({ children }) => {
     processPayment,
   };
 
+  // Allow children to render even with errors for better UX
   if (loading) {
-    return <div>Loading payment system...</div>;
-  }
-
-  if (error) {
-    return <div>Error loading payment system: {error}</div>;
-  }
-
-  if (!paystack) {
-    return <div>Payment system unavailable</div>;
+    return (
+      <PaystackContext.Provider value={value}>
+        {children}
+      </PaystackContext.Provider>
+    );
   }
 
   return (

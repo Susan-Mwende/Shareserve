@@ -20,7 +20,7 @@ const PaystackDonationModal = ({ show, onHide }) => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const { processPayment } = usePaystack();
+  const { processPayment, paystack, loading: paystackLoading, error: paystackError } = usePaystack();
 
   const predefinedAmounts = [100, 500, 1000, 2500, 5000, 10000, 20000]; // In KES
 
@@ -98,6 +98,20 @@ const PaystackDonationModal = ({ show, onHide }) => {
   const handlePaystackPayment = async () => {
     setLoading(true);
     setError('');
+
+    // Check if Paystack is available
+    if (!paystack) {
+      setError('Payment system is not available. Please refresh the page and try again.');
+      setLoading(false);
+      return;
+    }
+
+    // Check if there's a Paystack loading error
+    if (paystackError) {
+      setError(`Payment system error: ${paystackError}. Please refresh the page and try again.`);
+      setLoading(false);
+      return;
+    }
 
     try {
       await processPayment(
@@ -448,6 +462,9 @@ const PaystackDonationModal = ({ show, onHide }) => {
         <Modal.Title className="d-flex align-items-center">
           <span className="me-2">💝</span>
           Make a Donation
+          {paystackLoading && (
+            <Spinner as="span" animation="border" size="sm" className="ms-2" />
+          )}
         </Modal.Title>
       </Modal.Header>
       
@@ -469,6 +486,17 @@ const PaystackDonationModal = ({ show, onHide }) => {
               Payment Error
             </Alert.Heading>
             <p>{error}</p>
+          </Alert>
+        )}
+
+        {paystackError && !error && (
+          <Alert variant="warning" className="mb-4">
+            <Alert.Heading className="d-flex align-items-center">
+              <span className="me-2">⚠️</span>
+              Payment System Loading
+            </Alert.Heading>
+            <p>{paystackError}</p>
+            <p className="mb-0">You can still proceed, but payment may not work. Please refresh if needed.</p>
           </Alert>
         )}
 
