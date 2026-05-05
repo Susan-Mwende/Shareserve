@@ -27,6 +27,34 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 
+// Proxy for Paystack script to avoid CORS issues
+app.get('/paystack-script', (req, res) => {
+  res.set('Content-Type', 'application/javascript');
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Cache-Control', 'public, max-age=3600');
+  res.send(`
+    (function(){
+      var t = {
+        key: function(e) {
+          return '${process.env.PAYSTACK_PUBLIC_KEY || 'pk_test_REPLACE_WITH_YOUR_PAYSTACK_PUBLIC_KEY'}';
+        },
+        setup: function(e) {
+          var t = document.createElement('iframe');
+          t.src = 'https://checkout.paystack.co/' + e.key + '/inline';
+          t.style.display = 'none';
+          document.body.appendChild(t);
+          return {
+            openIframe: function() {
+              t.style.display = 'block';
+            }
+          };
+        }
+      };
+      window.Paystack = t;
+    })();
+  `);
+});
+
 // Mount routes BEFORE connecting to DB
 app.use("/api", apiRoutes);
 app.use("/api/auth", authRoutes);
