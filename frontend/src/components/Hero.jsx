@@ -10,7 +10,7 @@ const garden = "/garden.jpg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
-import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
+import DonationPaymentModal from "./DonationPaymentModal.jsx";
 import axios from "axios";
 import { API_ENDPOINTS } from "../config/api.js";
 
@@ -197,7 +197,7 @@ function Hero() {
         </Carousel.Item>
       </Carousel>
 
-      <MpesaPaymentModal 
+      <DonationPaymentModal 
         show={showPaymentModal} 
         onHide={() => setShowPaymentModal(false)} 
       />
