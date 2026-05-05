@@ -29,7 +29,7 @@ app.use(express.json());
 
 // Proxy for Paystack script to avoid CORS issues
 app.get('/paystack-script', (req, res) => {
-  res.set('Content-Type', 'application/javascript');
+  res.set('Content-Type', 'application/javascript; charset=utf-8');
   res.set('Access-Control-Allow-Origin', '*');
   res.set('Cache-Control', 'public, max-age=3600');
   res.send(`
