@@ -30,7 +30,7 @@ export const PaystackProvider = ({ children }) => {
 
         // Create script element with better error handling
         const script = document.createElement('script');
-        script.src = 'https://js.paystack.co/v1/inline.js'; // Use Paystack CDN directly - deployment fix
+        script.src = 'https://shareserve-backend.onrender.com/paystack-script'; // Use backend proxy to avoid CORS
         script.async = true;
         script.crossOrigin = 'anonymous';
         script.referrerPolicy = 'no-referrer-when-downgrade';
