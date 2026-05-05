@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
-import { StripeProvider } from "./contexts/StripeContext";
+import { PaystackProvider } from "./contexts/PaystackContext";
 import NavbarComponent from "@/components/NavbarComponent.jsx";
 import Hero from "@/components/Hero.jsx";
 import Values from "@/components/Values.jsx";
@@ -34,7 +34,7 @@ import ProtectedRoute from "@/components/ProtectedRoute.jsx";
 function App() {
   return (
     <AuthProvider>
-      <StripeProvider>
+      <PaystackProvider>
         <div style={{ width: "100vw", overflow: "hidden" }}>
           <Router>
             <Routes>
@@ -111,7 +111,7 @@ function App() {
           </Routes>
           </Router>
         </div>
-      </StripeProvider>
+      </PaystackProvider>
     </AuthProvider>
   );
 }

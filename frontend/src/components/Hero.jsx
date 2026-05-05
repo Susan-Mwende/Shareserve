@@ -10,7 +10,7 @@ const garden = "/garden.jpg";
 import "./Hero.css";
 import "./HeroCenter.css";
 import "./HeroContact.css";
-import LiveDonationModal from "./LiveDonationModal.jsx";
+import PaystackDonationModal from "./PaystackDonationModal.jsx";
 import axios from "axios";
 import { API_ENDPOINTS } from "../config/api.js";
 
@@ -197,7 +197,7 @@ function Hero() {
         </Carousel.Item>
       </Carousel>
 
-      <LiveDonationModal 
+      <PaystackDonationModal 
         show={showPaymentModal} 
         onHide={() => setShowPaymentModal(false)} 
       />

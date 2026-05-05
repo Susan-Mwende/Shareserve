@@ -21,6 +21,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^9.2.1",
     "nodemailer": "^6.10.1",
-    "stripe": "^22.1.0"
+    "paystack": "^2.0.1"
   }
 }
