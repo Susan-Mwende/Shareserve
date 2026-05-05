@@ -122,7 +122,20 @@ export const PaystackProvider = ({ children }) => {
         }),
       });
 
-      const data = await response.json();
+      console.log('📡 Response status:', response.status);
+      console.log('📡 Response headers:', response.headers);
+      
+      const responseText = await response.text();
+      console.log('📡 Raw response:', responseText);
+      
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('❌ JSON parse error:', parseError);
+        console.error('❌ Response text that failed to parse:', responseText);
+        throw new Error('Invalid JSON response from server');
+      }
 
       if (!data.success) {
         throw new Error(data.message || 'Failed to initialize transaction');
