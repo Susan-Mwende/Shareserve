@@ -19,8 +19,11 @@ export const PaystackProvider = ({ children }) => {
   useEffect(() => {
     const loadPaystack = () => {
       return new Promise((resolve, reject) => {
+        console.log('🔄 Starting to load Paystack script...');
+        
         // Check if Paystack is already loaded
         if (window.Paystack) {
+          console.log('✅ Paystack already loaded');
           resolve(window.Paystack);
           return;
         }
@@ -32,6 +35,8 @@ export const PaystackProvider = ({ children }) => {
         script.crossOrigin = 'anonymous';
         script.referrerPolicy = 'no-referrer-when-downgrade';
         
+        console.log('📡 Script element created, src:', script.src);
+        
         // Set timeout for script loading
         const timeout = setTimeout(() => {
           reject(new Error('Paystack script loading timeout'));
@@ -39,11 +44,18 @@ export const PaystackProvider = ({ children }) => {
 
         script.onload = () => {
           clearTimeout(timeout);
+          console.log('📥 Script loaded successfully');
           // Give a small delay for script to fully initialize
           setTimeout(() => {
+            console.log('🔍 Checking Paystack initialization...');
+            console.log('window.Paystack:', window.Paystack);
+            console.log('typeof window.Paystack.setup:', typeof window.Paystack.setup);
+            
             if (window.Paystack && typeof window.Paystack.setup === 'function') {
+              console.log('✅ Paystack properly initialized');
               resolve(window.Paystack);
             } else {
+              console.error('❌ Paystack loaded but not properly initialized');
               reject(new Error('Paystack loaded but not properly initialized'));
             }
           }, 200);
@@ -51,7 +63,7 @@ export const PaystackProvider = ({ children }) => {
 
         script.onerror = (event) => {
           clearTimeout(timeout);
-          console.error('Script loading error:', event);
+          console.error('❌ Script loading error:', event);
           reject(new Error('Failed to load Paystack script'));
         };
 
@@ -68,20 +80,23 @@ export const PaystackProvider = ({ children }) => {
 
     const initializePaystack = async () => {
       try {
+        console.log('🚀 Initializing Paystack...');
         const paystackInstance = await loadPaystack();
+        console.log('✅ Paystack loaded successfully:', paystackInstance);
         setPaystack(paystackInstance);
         setError(null);
       } catch (err) {
-        console.error('Failed to initialize Paystack:', err);
+        console.error('❌ Failed to initialize Paystack:', err);
         setError(err.message);
         // Try to load again after delay
         setTimeout(() => {
-          console.log('Attempting to reload Paystack...');
+          console.log('🔄 Attempting to reload Paystack...');
           loadPaystack().then(resolve => {
+            console.log('✅ Paystack reload successful');
             setPaystack(resolve);
             setError(null);
           }).catch(() => {
-            console.log('Retry failed, keeping error state');
+            console.log('❌ Retry failed, keeping error state');
           });
         }, 5000);
       } finally {
@@ -137,11 +152,15 @@ export const PaystackProvider = ({ children }) => {
   };
 
   const processPayment = async (paymentData, onSuccess, onError) => {
+    console.log('🔍 Paystack processPayment called with:', paymentData);
+    
     if (!paystack) {
+      console.error('❌ Paystack not initialized');
       throw new Error('Paystack not initialized');
     }
 
     try {
+      console.log('🚀 Initializing transaction...');
       // Initialize transaction with backend
       const { authorization_url, reference } = await initializeTransaction(
         paymentData.amount,
@@ -149,18 +168,22 @@ export const PaystackProvider = ({ children }) => {
         paymentData.metadata
       );
 
+      console.log('✅ Transaction initialized:', { authorization_url, reference });
+
       // Open Paystack popup
       const handler = paystack.setup({
-        key: 'pk_test_REPLACE_WITH_YOUR_PAYSTACK_PUBLIC_KEY', // Replace with your actual key
+        key: 'pk_test_fc30ee1c02db28f8fee4bdec208e993e00a64f2b', // Replace with your actual key
         email: paymentData.email,
         amount: paymentData.amount * 100, // Convert to kobo
         currency: 'KES',
         reference: reference,
         metadata: paymentData.metadata,
         callback: async (response) => {
+          console.log('🔄 Paystack callback received:', response);
           try {
             // Verify transaction with backend
             const verification = await verifyTransaction(response.reference);
+            console.log('✅ Transaction verified:', verification);
             
             if (verification.status === 'success') {
               onSuccess({
@@ -171,17 +194,20 @@ export const PaystackProvider = ({ children }) => {
               onError('Payment verification failed');
             }
           } catch (err) {
+            console.error('❌ Verification error:', err);
             onError(err.message);
           }
         },
         onClose: () => {
+          console.log('❌ Paystack popup closed');
           onError('Payment window was closed');
         },
       });
 
+      console.log('🎯 Opening Paystack popup...');
       handler.openIframe();
     } catch (err) {
-      console.error('Error processing Paystack payment:', err);
+      console.error('❌ Error processing Paystack payment:', err);
       throw err;
     }
   };
