@@ -11,6 +11,8 @@ const paystack = paystackLib(process.env.PAYSTACK_SECRET_KEY);
 
 // Initialize transaction
 router.post('/initialize-transaction', async (req, res) => {
+  console.log('🔍 Paystack initialize request:', req.body);
+  
   try {
     const { amount, email, metadata = {} } = req.body;
 
@@ -38,12 +40,17 @@ router.post('/initialize-transaction', async (req, res) => {
       callback_url: `${process.env.FRONTEND_URL}/donation-success`,
     });
 
-    res.json({
+    console.log('✅ Paystack response:', response.data);
+
+    const responseData = {
       success: true,
       authorization_url: response.data.authorization_url,
       reference: response.data.reference,
       access_code: response.data.access_code,
-    });
+    };
+
+    console.log('📤 Sending response:', responseData);
+    res.json(responseData);
   } catch (error) {
     console.error('Error initializing Paystack transaction:', error);
     res.status(500).json({ 
