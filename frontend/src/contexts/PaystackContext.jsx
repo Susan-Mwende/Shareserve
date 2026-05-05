@@ -30,10 +30,11 @@ export const PaystackProvider = ({ children }) => {
 
         // Create script element with better error handling
         const script = document.createElement('script');
-        script.src = '/paystack-script'; // Use local proxy to avoid CORS
+        script.src = 'https://js.paystack.co/v1/inline.js'; // Use Paystack CDN directly
         script.async = true;
         script.crossOrigin = 'anonymous';
         script.referrerPolicy = 'no-referrer-when-downgrade';
+        script.type = 'text/javascript';
         
         console.log('📡 Script element created, src:', script.src);
         
