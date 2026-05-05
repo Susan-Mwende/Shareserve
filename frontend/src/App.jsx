@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
+import { StripeProvider } from "./contexts/StripeContext";
 import NavbarComponent from "@/components/NavbarComponent.jsx";
 import Hero from "@/components/Hero.jsx";
 import Values from "@/components/Values.jsx";
@@ -33,48 +34,49 @@ import ProtectedRoute from "@/components/ProtectedRoute.jsx";
 function App() {
   return (
     <AuthProvider>
-      <div style={{ width: "100vw", overflow: "hidden" }}>
-        <Router>
-          <Routes>
-            <Route path="/" element={
-              <div style={{ width: "100%", paddingTop: "80px" }}>
-                <section>
-                  <Container>
-                    <NavbarComponent />
-                    <Hero />
-                    <section id="about">
-                      <About />
-                    </section>
-                    <Values />
-                    <section id="programs">
-                      <Programs />
-                    </section>
-                    <section id="projects">
-                      <Projects />
-                    </section>
-                    <Impact />
-                  </Container>
-                </section>
-                <section id="testimonials">
-                  <Container>
-                    <TestimonialsSection />
-                  </Container>
-                </section>
-                <section id="gallery">
-                  <Gallery />
-                </section>
-                <section id="blog">
-                  <Container>
-                    <BlogSection />
-                  </Container>
-                </section>
+      <StripeProvider>
+        <div style={{ width: "100vw", overflow: "hidden" }}>
+          <Router>
+            <Routes>
+              <Route path="/" element={
+                <div style={{ width: "100%", paddingTop: "80px" }}>
+                  <section>
+                    <Container>
+                      <NavbarComponent />
+                      <Hero />
+                      <section id="about">
+                        <About />
+                      </section>
+                      <Values />
+                      <section id="programs">
+                        <Programs />
+                      </section>
+                      <section id="projects">
+                        <Projects />
+                      </section>
+                      <Impact />
+                    </Container>
+                  </section>
+                  <section id="testimonials">
+                    <Container>
+                      <TestimonialsSection />
+                    </Container>
+                  </section>
+                  <section id="gallery">
+                    <Gallery />
+                  </section>
+                  <section id="blog">
+                    <Container>
+                      <BlogSection />
+                    </Container>
+                  </section>
 
-                {/* Professional Footer */}
-                <footer id="footer">
-                  <Footer />
-                </footer>
-              </div>
-            } />
+                  {/* Professional Footer */}
+                  <footer id="footer">
+                    <Footer />
+                  </footer>
+                </div>
+              } />
             <Route path="/about" element={
               <>
                 <NavbarComponent />
@@ -107,8 +109,9 @@ function App() {
             } />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
-        </Router>
-      </div>
+          </Router>
+        </div>
+      </StripeProvider>
     </AuthProvider>
   );
 }

@@ -9,6 +9,7 @@ import authRoutes from "./Routes/authRoutes.js";
 import mpesaRoutes from "./Routes/mpesaRoutes.js";
 import partnerRoutes from "./Routes/partnerRoutes.js";
 import adminRoutes from "./Routes/adminRoutes.js";
+import paymentRoutes from "./Routes/paymentRoutes.js";
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/mpesa", mpesaRoutes);
 app.use("/api/contact", partnerRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/payment", paymentRoutes);
 
 // Debug: Log available M-Pesa routes
 console.log('Available M-Pesa routes:');
