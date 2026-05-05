@@ -27,31 +27,38 @@ export const PaystackProvider = ({ children }) => {
 
         // Create script element with better error handling
         const script = document.createElement('script');
-        script.src = 'https://js.paystack.co/v1/inline.js';
+        script.src = '/paystack-script'; // Use local proxy to avoid CORS
         script.async = true;
         script.crossOrigin = 'anonymous';
+        script.referrerPolicy = 'no-referrer-when-downgrade';
         
         // Set timeout for script loading
         const timeout = setTimeout(() => {
           reject(new Error('Paystack script loading timeout'));
-        }, 10000);
+        }, 15000);
 
         script.onload = () => {
           clearTimeout(timeout);
-          // Give a small delay for the script to fully initialize
+          // Give a small delay for script to fully initialize
           setTimeout(() => {
             if (window.Paystack && typeof window.Paystack.setup === 'function') {
               resolve(window.Paystack);
             } else {
               reject(new Error('Paystack loaded but not properly initialized'));
             }
-          }, 100);
+          }, 200);
         };
 
         script.onerror = (event) => {
           clearTimeout(timeout);
           console.error('Script loading error:', event);
           reject(new Error('Failed to load Paystack script'));
+        };
+
+        // Fallback: Try alternative loading method
+        script.onabort = () => {
+          clearTimeout(timeout);
+          reject(new Error('Paystack script loading was aborted'));
         };
 
         // Add to document head
@@ -67,7 +74,16 @@ export const PaystackProvider = ({ children }) => {
       } catch (err) {
         console.error('Failed to initialize Paystack:', err);
         setError(err.message);
-        // Don't set paystack to null, keep trying or provide fallback
+        // Try to load again after delay
+        setTimeout(() => {
+          console.log('Attempting to reload Paystack...');
+          loadPaystack().then(resolve => {
+            setPaystack(resolve);
+            setError(null);
+          }).catch(() => {
+            console.log('Retry failed, keeping error state');
+          });
+        }, 5000);
       } finally {
         setLoading(false);
       }
