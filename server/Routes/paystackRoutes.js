@@ -1,12 +1,13 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import paystackLib from 'paystack';
 
 dotenv.config();
 
 const router = express.Router();
 
 // Initialize Paystack
-const paystack = (require('paystack'))(process.env.PAYSTACK_SECRET_KEY);
+const paystack = paystackLib(process.env.PAYSTACK_SECRET_KEY);
 
 // Initialize transaction
 router.post('/initialize-transaction', async (req, res) => {
