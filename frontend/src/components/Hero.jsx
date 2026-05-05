@@ -127,7 +127,7 @@ function Hero() {
         <Carousel.Item>
           <div
             className="hero-slide text-white"
-            style={{ backgroundImage: `url(${carousel1Image})` }}
+            style={{ backgroundImage: `url(${baby3})` }}
           >
             <div className="hero-overlay">
               <Container>
@@ -183,13 +183,13 @@ function Hero() {
             </div>
             <div className="hero-image-right">
               <img 
-                src={carousel3Image} 
+                src={garden} 
                 alt="Environmental Education" 
                 onError={(e) => {
-                  console.error('Image failed to load:', carousel3Image);
+                  console.error('Image failed to load:', garden);
                 }}
                 onLoad={() => {
-                  console.log('Image loaded successfully:', carousel3Image);
+                  console.log('Image loaded successfully:', garden);
                 }}
               />
             </div>
