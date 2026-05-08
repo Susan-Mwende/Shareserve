@@ -7,9 +7,15 @@ dotenv.config();
 const router = express.Router();
 
 // Initialize Paystack
-console.log('🔑 Paystack secret key configured:', process.env.PAYSTACK_SECRET_KEY ? 'YES' : 'NO');
+const paystackSecretKey = process.env.PAYSTACK_SECRET_KEY;
+console.log('🔑 Paystack secret key configured:', paystackSecretKey ? 'YES' : 'NO');
+console.log('🔑 Paystack secret key length:', paystackSecretKey ? paystackSecretKey.length : 0);
 
-const paystack = paystackLib(process.env.PAYSTACK_SECRET_KEY);
+if (!paystackSecretKey || paystackSecretKey === 'sk_test_REPLACE_WITH_YOUR_PAYSTACK_SECRET_KEY') {
+  console.error('❌ Paystack secret key is not configured properly');
+}
+
+const paystack = paystackLib(paystackSecretKey);
 
 // Initialize transaction
 router.post('/initialize-transaction', async (req, res) => {
@@ -36,17 +42,35 @@ router.post('/initialize-transaction', async (req, res) => {
       currency: 'KES'
     });
 
-    const response = await paystack.transaction.initialize({
-      amount: amountInKobo,
-      email: email,
-      currency: 'KES', // Kenyan Shillings
-      metadata: {
-        ...metadata,
-        source: 'shareserve-website',
-        timestamp: new Date().toISOString()
-      },
-      callback_url: `${process.env.FRONTEND_URL}/donation-success`,
-    });
+    // Check if Paystack is properly initialized
+    if (!paystackSecretKey || paystackSecretKey === 'sk_test_REPLACE_WITH_YOUR_PAYSTACK_SECRET_KEY') {
+      console.error('❌ Cannot initialize transaction: Paystack secret key not configured');
+      return res.status(500).json({
+        success: false,
+        message: 'Paystack payment gateway is not properly configured. Please contact support.'
+      });
+    }
+
+    let response;
+    try {
+      response = await paystack.transaction.initialize({
+        amount: amountInKobo,
+        email: email,
+        currency: 'KES', // Kenyan Shillings
+        metadata: {
+          ...metadata,
+          source: 'shareserve-website',
+          timestamp: new Date().toISOString()
+        },
+        callback_url: `${process.env.FRONTEND_URL}/donation-success`,
+      });
+    } catch (paystackError) {
+      console.error('❌ Paystack API error:', paystackError);
+      return res.status(500).json({
+        success: false,
+        message: 'Paystack API error: ' + (paystackError.message || 'Unknown error')
+      });
+    }
 
     console.log('✅ Paystack response:', response.data);
 
