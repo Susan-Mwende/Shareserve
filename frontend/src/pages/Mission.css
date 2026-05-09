@@ -1,0 +1,68 @@
+.mission-header {
+  background: linear-gradient(135deg, #198754 0%, #2c3e50 100%);
+  color: white;
+  padding: 4rem 0;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.mission-content {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mission-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.mission-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  background: #f8f9fa;
+  border-radius: 50%;
+  border: 3px solid #198754;
+}
+
+.cta-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .mission-header {
+    padding: 2rem 0;
+  }
+  
+  .mission-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .mission-card {
+    margin-bottom: 1.5rem;
+  }
+}
