@@ -37,7 +37,7 @@ function Footer() {
           </Col>
 
           {/* Quick Links */}
-          <Col md={6} className="mb-4">
+          <Col md={3} className="mb-4">
             <h5 className="footer-title" style={{ color: "#198754" }}>
               Quick Links
             </h5>
@@ -76,7 +76,18 @@ function Footer() {
             </Nav>
           </Col>
 
-          {/* Contact Info */}
+          {/* Get Involved */}
+          <Col md={3} className="mb-4">
+            <h5 className="footer-title" style={{ color: "#198754" }}>
+              Get Involved
+            </h5>
+            <Nav className="flex-column">
+              <Nav.Link
+                href="#volunteer"
+                className="footer-link"
+                style={{ color: "#ffffff" }}
+                onMouseEnter={(e) => (e.target.style.color = "#198754")}
+                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
               >
                 Volunteer
               </Nav.Link>
@@ -85,6 +96,8 @@ function Footer() {
                 href="#partner"
                 className="footer-link"
                 style={{ color: "#ffffff" }}
+                onMouseEnter={(e) => (e.target.style.color = "#198754")}
+                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
               >
                 Partner With Us
               </Nav.Link>
@@ -93,6 +106,8 @@ function Footer() {
                 href="#careers"
                 className="footer-link"
                 style={{ color: "#ffffff" }}
+                onMouseEnter={(e) => (e.target.style.color = "#198754")}
+                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
               >
                 Careers
               </Nav.Link>
