@@ -104,8 +104,19 @@ function About() {
                 The dedicated individuals leading our environmental mission
               </p>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </Col>
+        <Col md={6}>
+          <div className="about-image">
+            <img 
+              src={aboutImage} 
+              alt="ShareServe community development and empowerment" 
+              className="img-fluid rounded shadow"
+              style={{ width: "100%", height: "500px", objectFit: "cover" }}
+            />
+          </div>
+        </Col>
+      </Row>
 
         <Row>
           {aboutData.team.map((member, index) => (
@@ -127,18 +138,6 @@ function About() {
               </Card>
             </Col>
           ))}
-        </Row>
-        <Row>
-          <Col md={6}>
-            <div className="about-image">
-              <img 
-                src={aboutImage} 
-                alt="ShareServe community development and empowerment" 
-                className="img-fluid rounded shadow"
-                style={{ width: "100%", height: "500px", objectFit: "cover" }}
-              />
-            </div>
-          </Col>
         </Row>
 
       <MpesaPaymentModal 
