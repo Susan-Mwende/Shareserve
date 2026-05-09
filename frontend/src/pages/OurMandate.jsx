@@ -113,6 +113,7 @@ function OurMandate() {
                 </Card.Text>
               </Card.Body>
             </Card>
+          </Col>
         ))}
       </Row>
     </Container>
