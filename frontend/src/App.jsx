@@ -25,6 +25,10 @@ import Events from "@/pages/Events.jsx";
 import Testimonials from "@/pages/Testimonials.jsx";
 import Partner from "@/pages/Partner.jsx";
 import Contact from "@/pages/Contact.jsx";
+import OurMandate from "@/pages/OurMandate.jsx";
+import ImpactStories from "@/pages/ImpactStories.jsx";
+import Career from "@/pages/Career.jsx";
+import Partnership from "@/pages/Partnership.jsx";
 import BlogSection from "@/components/BlogSection.jsx";
 import TestimonialsSection from "@/components/TestimonialsSection.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
@@ -100,6 +104,10 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/partner" element={<Partner />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/our-mandate" element={<OurMandate />} />
+            <Route path="/impact-stories" element={<ImpactStories />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/partnership" element={<Partnership />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin/*" element={

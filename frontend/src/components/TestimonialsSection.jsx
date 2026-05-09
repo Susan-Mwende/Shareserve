@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function TestimonialsSection() {
@@ -18,6 +18,22 @@ function TestimonialsSection() {
       location: "Kisumu County",
       quote: "The training I received through the livelihood program helped me improve my farming techniques. My crop yield has doubled!",
       image: "/images/livelihood.jpg"
+    },
+    {
+      id: 3,
+      name: "Grace Muthoni",
+      role: "Community Health Worker",
+      location: "Nairobi County",
+      quote: "The health camps organized by ShareServe have made healthcare accessible to many in our community. I'm proud to be part of this initiative.",
+      image: "/images/health.jpg"
+    },
+    {
+      id: 4,
+      name: "Peter Kamau",
+      role: "Environmental Volunteer",
+      location: "Nakuru County",
+      quote: "Planting trees with ShareServe has been a rewarding experience. We've seen our community transform as we restore the environment together.",
+      image: "/images/environment.jpg"
     }
   ];
 
@@ -35,36 +51,38 @@ function TestimonialsSection() {
           </Col>
         </Row>
 
-        <Row className="g-4">
-          {testimonials.map((testimonial) => (
-            <Col lg={6} key={testimonial.id}>
-              <Card className="h-100 shadow-sm">
-                <Card.Body className="d-flex flex-column">
-                  <div className="d-flex align-items-center mb-3">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="rounded-circle me-3"
-                      style={{ width: "60px", height: "60px", objectFit: "cover" }}
-                    />
-                    <div>
-                      <Card.Title className="h5 mb-1">{testimonial.name}</Card.Title>
-                      <small className="text-muted d-block">{testimonial.role}</small>
-                      <small className="text-muted">
+        <Row>
+          <Col lg={8} className="mx-auto">
+            <Carousel interval={5000} indicators={true} controls={true}>
+              {testimonials.map((testimonial) => (
+                <Carousel.Item key={testimonial.id}>
+                  <Card className="shadow-sm border-0">
+                    <Card.Body className="p-4 text-center">
+                      <div className="mb-3">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="rounded-circle"
+                          style={{ width: "80px", height: "80px", objectFit: "cover" }}
+                        />
+                      </div>
+                      <Card.Title className="h4 mb-1">{testimonial.name}</Card.Title>
+                      <small className="text-muted d-block mb-2">{testimonial.role}</small>
+                      <small className="text-muted d-block mb-3">
                         <i className="fas fa-map-marker-alt me-1"></i>
                         {testimonial.location}
                       </small>
-                    </div>
-                  </div>
-                  <Card.Text className="text-muted flex-grow-1" style={{ fontStyle: "italic" }}>
-                    <i className="fas fa-quote-left me-2 text-success"></i>
-                    {testimonial.quote}
-                    <i className="fas fa-quote-right ms-2 text-success"></i>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
+                      <Card.Text className="text-muted fst-italic px-md-4">
+                        <i className="fas fa-quote-left me-2 text-success"></i>
+                        {testimonial.quote}
+                        <i className="fas fa-quote-right ms-2 text-success"></i>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Col>
         </Row>
 
         <Row className="mt-4">

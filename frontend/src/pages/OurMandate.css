@@ -1,0 +1,66 @@
+.mandate-header {
+  background: linear-gradient(135deg, #198754 0%, #2c3e50 100%);
+  color: white;
+  padding: 2rem 0;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.mandate-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.mandate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.value-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f8f9fa;
+}
+
+.value-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.display-4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.card-body h3 {
+  color: #F08000CC;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-body h5 {
+  color: #F08000CC;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: #495057;
+  line-height: 1.6;
+}

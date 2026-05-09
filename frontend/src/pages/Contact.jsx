@@ -42,12 +42,12 @@ function Contact() {
     {
       icon: "fas fa-map-marker-alt",
       title: "Address",
-      details: "Nairobi, Kenya"
+      details: "Nazareth Court, Katani Road, House No. 3, P.O Box 8981-00300, Nairobi"
     },
     {
       icon: "fas fa-phone",
       title: "Phone",
-      details: "+254 700 123 456"
+      details: "+254 722322327"
     },
     {
       icon: "fas fa-envelope",

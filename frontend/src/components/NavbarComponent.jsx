@@ -86,27 +86,93 @@ function NavbarComponent() {
                 <NavDropdown.Item as={Link} to="/team" style={{ fontWeight: '500' }}>
                   Meet Our Team
                 </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} to="/about#foundation" style={{ fontWeight: '500' }}>
+                  Our Foundation
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/our-mandate" style={{ fontWeight: '500' }}>
+                  Our Mandate, Vision & Values
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 
-                title="Our Work" 
-                id="work-dropdown"
+                title="Environment and Climate Action" 
+                id="environment-dropdown"
                 style={{ fontWeight: '500', color: '#333' }}
               >
-                <NavDropdown.Item onClick={() => scrollToSection('projects')} style={{ fontWeight: '500' }}>
-                  Featured Projects
+                <NavDropdown.Item as={Link} to="/environment/training" style={{ fontWeight: '500' }}>
+                  Training and awareness campaigns
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/education" style={{ fontWeight: '500' }}>
-                  Education
+                <NavDropdown.Item as={Link} to="/environment/green-clubs" style={{ fontWeight: '500' }}>
+                  Establishment of Green Clubs
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/livelihood" style={{ fontWeight: '500' }}>
-                  Livelihood
+                <NavDropdown.Item as={Link} to="/environment/fruit-orchards" style={{ fontWeight: '500' }}>
+                  Establishment of Demo Fruit Orchards
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/environment" style={{ fontWeight: '500' }}>
-                  Environment
+                <NavDropdown.Item as={Link} to="/environment/leadership" style={{ fontWeight: '500' }}>
+                  Leadership Development
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/health" style={{ fontWeight: '500' }}>
-                  Health
+                <NavDropdown.Item as={Link} to="/environment/tree-planting" style={{ fontWeight: '500' }}>
+                  Tree planting and care
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/environment/conservation" style={{ fontWeight: '500' }}>
+                  Conservation
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown 
+                title="Livelihood and economic empowerment" 
+                id="livelihood-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
+              >
+                <NavDropdown.Item as={Link} to="/livelihood/fruit-orchards" style={{ fontWeight: '500' }}>
+                  Fruit Orchards
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/livelihood/environment-training" style={{ fontWeight: '500' }}>
+                  Environment Training and awareness
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/livelihood/environmental-ambassadors" style={{ fontWeight: '500' }}>
+                  Establishment of Community Environmental Ambassadors
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/livelihood/conservation" style={{ fontWeight: '500' }}>
+                  Conservation
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/livelihood/nursery" style={{ fontWeight: '500' }}>
+                  Nursery Establishment for income generation
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/livelihood/clean-energy" style={{ fontWeight: '500' }}>
+                  Clean cooking/energy campaigns
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/livelihood/vsla" style={{ fontWeight: '500' }}>
+                  VSLAs
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown 
+                title="Education" 
+                id="education-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
+              >
+                <NavDropdown.Item as={Link} to="/education/education-support" style={{ fontWeight: '500' }}>
+                  Education support i.e provision of education levies, uniforms etc
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/education/mentorship" style={{ fontWeight: '500' }}>
+                  Mentorship and mental health
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/education/school-leadership" style={{ fontWeight: '500' }}>
+                  School leadership empowerment program
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown 
+                title="Impact" 
+                id="impact-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
+              >
+                <NavDropdown.Item as={Link} to="/impact-stories" style={{ fontWeight: '500' }}>
+                  Impact Stories
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/annual-report" style={{ fontWeight: '500' }}>
+                  Annual Report
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/testimonials" style={{ fontWeight: '500' }}>
+                  Testimonial
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 
@@ -125,12 +191,36 @@ function NavbarComponent() {
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 
+                title="Stay Informed" 
+                id="stay-informed-dropdown"
+                style={{ fontWeight: '500', color: '#333' }}
+              >
+                <NavDropdown.Item as={Link} to="/news" style={{ fontWeight: '500' }}>
+                  News
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/blogs" style={{ fontWeight: '500' }}>
+                  Blogs
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/events" style={{ fontWeight: '500' }}>
+                  Events
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/gallery" style={{ fontWeight: '500' }}>
+                  Gallery
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/publications" style={{ fontWeight: '500' }}>
+                  Publications
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown 
                 title="Get Involved" 
                 id="get-involved-dropdown"
                 style={{ fontWeight: '500', color: '#333' }}
               >
-                <NavDropdown.Item as={Link} to="/partner" style={{ fontWeight: '500' }}>
-                  Partner With Us
+                <NavDropdown.Item as={Link} to="/partnership" style={{ fontWeight: '500' }}>
+                  Partnership
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/career" style={{ fontWeight: '500' }}>
+                  Career
                 </NavDropdown.Item>
                 <NavDropdown.Item onClick={() => setShowPaymentModal(true)} style={{ fontWeight: '500' }}>
                   Donate

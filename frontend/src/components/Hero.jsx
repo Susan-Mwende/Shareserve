@@ -102,7 +102,7 @@ function Hero() {
             <div className="hero-overlay">
               <Container>
                 <div className="hero-content">
-                  <h1 className="hero-title">Raising 100,000 + Young Environmental Champions</h1>
+                  <h1 className="hero-title">Raising 100,000+ Young Environmental Champions by 2036</h1>
                  
                   <div className="mt-4">
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
@@ -134,7 +134,7 @@ function Hero() {
                 <div className="hero-content">
                   <h1 className="hero-title">Restoring Kenya ‘s Natural environment</h1>
                   <p className="hero-subtitle">
-                   Leading reforestation effort and environmental conservation to combat climate change and preserve biodiversity for future generations.
+                  Plant and grow 1,000,000+  indigenous and fruit trees by year 2036.
                   </p>
                   <div className="mt-4">
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>
@@ -163,7 +163,7 @@ function Hero() {
                 <div className="hero-content">
                   <h1 className="hero-title">Improving Livelihoods Through Climate Action</h1>
                   <p className="hero-subtitle">
-                   Establishing model school fruit gardens that improve food security, create income opportunities, and build stronger communities.
+                  Establishing model school fruit gardens that improve food security, create income opportunities, and build stronger communities.
                    </p>
                   <div className="mt-4">
                     <Button variant="outline-light" className="me-2 btn-lg" style={{backgroundColor:'#F08000'}} onClick={() => openContactModal('partner')}>

@@ -1,41 +1,16 @@
 import { Container, Row, Col, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import logo from "../assets/ShareServe logo.jpeg";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
-import axios from "axios";
-import { API_ENDPOINTS } from "../config/api.js";
 
 function Footer() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const [contactInfo, setContactInfo] = useState({
-    email: "info@shareserve.org",
-    phone: "+254 123 456 789",
-    address: "Nairobi, Kenya",
-    workingHours: {
-      weekdays: "Mon - Fri: 9:00 AM - 5:00 PM",
-      weekends: "Closed"
-    },
-    socialMedia: {}
-  });
-
-  useEffect(() => {
-    fetchContactInfo();
-  }, []);
-
-  const fetchContactInfo = async () => {
-    try {
-      const response = await axios.get(API_ENDPOINTS.CONTACT);
-      setContactInfo(response.data);
-    } catch (error) {
-      console.error("Failed to fetch contact info:", error);
-    }
-  };
   return (
     <>
       <footer className="footer-section" style={{ backgroundColor: '#000000', color: '#ffffff' }}>
       <Container>
-        <Row>
+        <Row className="g-4">
           {/* Organization Info */}
           <Col md={3} className="mb-4">
             <div className="d-flex align-items-center mb-3">
@@ -62,7 +37,7 @@ function Footer() {
           </Col>
 
           {/* Quick Links */}
-          <Col md={3} className="mb-4">
+          <Col md={6} className="mb-4">
             <h5 className="footer-title" style={{ color: "#198754" }}>
               Quick Links
             </h5>
@@ -101,18 +76,7 @@ function Footer() {
             </Nav>
           </Col>
 
-          {/* Get Involved */}
-          <Col md={3} className="mb-4">
-            <h5 className="footer-title" style={{ color: "#198754" }}>
-              Get Involved
-            </h5>
-            <Nav className="flex-column">
-              <Nav.Link
-                href="#volunteer"
-                className="footer-link"
-                style={{ color: "#ffffff" }}
-                onMouseEnter={(e) => (e.target.style.color = "#198754")}
-                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
+          {/* Contact Info */}
               >
                 Volunteer
               </Nav.Link>
@@ -121,8 +85,6 @@ function Footer() {
                 href="#partner"
                 className="footer-link"
                 style={{ color: "#ffffff" }}
-                onMouseEnter={(e) => (e.target.style.color = "#198754")}
-                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
               >
                 Partner With Us
               </Nav.Link>
@@ -131,8 +93,6 @@ function Footer() {
                 href="#careers"
                 className="footer-link"
                 style={{ color: "#ffffff" }}
-                onMouseEnter={(e) => (e.target.style.color = "#198754")}
-                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
               >
                 Careers
               </Nav.Link>
@@ -150,32 +110,32 @@ function Footer() {
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">?</span>
-                {contactInfo.email}
+                <span className="me-2">📧</span>
+                info@shareserve.org
               </div>
 
               <div
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">?</span>
-                {contactInfo.phone}
+                <span className="me-2">📞</span>
+                +254 123 456 789
               </div>
 
               <div
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">?</span>
-                {contactInfo.address}
+                <span className="me-2">📍</span>
+                Nairobi, Kenya
               </div>
 
               <div
                 className="mb-2"
                 style={{ color: "#f8f9fa" }}
               >
-                <span className="me-2">?</span>
-                {contactInfo.workingHours?.weekdays || "Mon - Fri: 9:00 AM - 5:00 PM"}
+                <span className="me-2">🕐</span>
+                Mon - Fri: 9:00 AM - 5:00 PM
               </div>
             </div>
           </Col>

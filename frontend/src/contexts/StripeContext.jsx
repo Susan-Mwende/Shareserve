@@ -22,7 +22,7 @@ export const StripeProvider = ({ children }) => {
     const initializeStripe = async () => {
       try {
         // Use your publishable key - for production, use your live key
-        const stripeInstance = await loadStripe('pk_test_51234567890abcdef'); // Replace with your actual key
+        const stripeInstance = await loadStripe('pk_test_REPLACE_WITH_YOUR_ACTUAL_PUBLISHABLE_KEY'); // Replace with your actual key
         setStripe(stripeInstance);
       } catch (err) {
         console.error('Failed to initialize Stripe:', err);

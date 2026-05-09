@@ -9,7 +9,7 @@ router.get('/partner', (req, res) => {
 });
 
 // Contact form for partnerships and join requests
-const handlePartnerContact = async (req, res) => {
+router.post('/partner', async (req, res) => {
   try {
     const { name, email, subject, message, type, recipient } = req.body;
 
@@ -130,9 +130,6 @@ const handlePartnerContact = async (req, res) => {
       message: 'Failed to send message. Please try again.'
     });
   }
-};
-
-router.post('/', handlePartnerContact);
-router.post('/partner', handlePartnerContact);
+});
 
 export default router;
