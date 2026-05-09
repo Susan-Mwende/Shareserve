@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import "./Mission.css";
-import carousel3Image from "../assets/carousel3.jpeg";
+import carousel3Image from "../assets/baby3.jpeg";
 import NavbarComponent from "@/components/NavbarComponent.jsx";
 import Footer from "@/components/Footer.jsx";
 import axios from "axios";
