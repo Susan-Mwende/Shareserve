@@ -1,0 +1,79 @@
+.health-header {
+  background: linear-gradient(135deg, #198754 0%, #2c3e50 100%);
+  color: white;
+  padding: 4rem 0;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+}
+
+.health-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.health-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.program-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #f8f9fa;
+  border-radius: 50%;
+  border: 3px solid #198754;
+}
+
+.impact-badge {
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.services-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-item {
+  transition: transform 0.2s ease;
+}
+
+.service-item:hover {
+  transform: translateX(5px);
+}
+
+.cta-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .health-header {
+    padding: 2rem 0;
+  }
+  
+  .program-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .health-card {
+    margin-bottom: 1.5rem;
+  }
+}
