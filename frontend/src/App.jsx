@@ -76,11 +76,6 @@ function App() {
                       <BlogSection />
                     </Container>
                   </section>
-
-                  {/* Professional Footer */}
-                  <footer id="footer">
-                    <Footer />
-                  </footer>
                 </div>
               } />
             <Route path="/about" element={
