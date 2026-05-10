@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Badge, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -6,10 +6,23 @@ import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
 import { API_ENDPOINTS } from "../config/api.js";
 import livelihoodImage from "../assets/livelihood.jpg";
+import carousel2 from "../assets/carousel2.jpeg";
+import carousel4 from "../assets/arousel4.jpeg";
 
 function Livelihood() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
+
+  const carouselImages = [
+    livelihoodImage,
+    carousel2,
+    carousel4
+  ];
 
   useEffect(() => {
     fetchProjects();
@@ -103,51 +116,50 @@ function Livelihood() {
         {/* Hero Section */}
         <div
           style={{
-            position: "relative",
             height: "500px",
             marginBottom: "50px",
-            overflow: "hidden",
+            backgroundColor: "#f8f9fa",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundImage: `url(${livelihoodImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "brightness(0.7)",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: "linear-gradient(135deg, rgba(240, 128, 0, 0.8) 0%, rgba(255, 107, 53, 0.8) 100%)",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <Container>
-              <Row className="align-items-center">
-                <Col lg={12} className="text-center text-white">
-                  <h1 className="display-4 fw-bold mb-4">
-                    💼 Livelihood & Economic Empowerment
+          <Container className="h-100">
+            <Row className="align-items-center h-100">
+              <Col lg={6}>
+                <Carousel 
+                  activeIndex={index} 
+                  onSelect={handleSelect} 
+                  interval={3000}
+                  controls={true}
+                  indicators={true}
+                  style={{ borderRadius: "10px", overflow: "hidden" }}
+                >
+                  {carouselImages.map((image, idx) => (
+                    <Carousel.Item key={idx}>
+                      <img
+                        src={image}
+                        alt={`Livelihood ${idx + 1}`}
+                        style={{
+                          width: "100%",
+                          height: "400px",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+              </Col>
+              <Col lg={6}>
+                <div style={{ paddingLeft: "30px" }}>
+                  <h1 className="display-4 fw-bold mb-4" style={{ color: "#F08000" }}>
+                    Livelihood & Economic Empowerment
                   </h1>
-                  <p className="lead mb-0">
+                  <p className="lead mb-0" style={{ color: "#333" }}>
                     Creating sustainable economic opportunities and empowering communities
                     through skills development, entrepreneurship, and financial inclusion.
                   </p>
-                </Col>
-              </Row>
-            </Container>
-          </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
 
         <Container id="programs">
