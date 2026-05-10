@@ -50,6 +50,9 @@ function App() {
                     <Container>
                       <NavbarComponent />
                       <Hero />
+                      <section id="about">
+                        <WhoWeAre />
+                      </section>
                       <Values />
                       <section id="programs">
                         <Programs />
