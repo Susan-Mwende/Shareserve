@@ -1,5 +1,4 @@
-import { Container, Row, Col, Card, Button, Carousel } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 
 function TestimonialsSection() {
   const testimonials = [
@@ -85,17 +84,6 @@ function TestimonialsSection() {
           </Col>
         </Row>
 
-        <Row className="mt-4">
-          <Col className="text-center">
-            <Button 
-              as={Link} 
-              to="/testimonials" 
-              variant="outline-success"
-            >
-              Read More Testimonials
-            </Button>
-          </Col>
-        </Row>
       </Container>
     </div>
   );

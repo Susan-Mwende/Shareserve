@@ -124,21 +124,6 @@ function NavbarComponent() {
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 
-                title="Resources" 
-                id="resources-dropdown"
-                style={{ fontWeight: '500', color: '#333' }}
-              >
-                <NavDropdown.Item as={Link} to="/blog" style={{ fontWeight: '500' }}>
-                  Blog/News
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/events" style={{ fontWeight: '500' }}>
-                  Events
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/testimonials" style={{ fontWeight: '500' }}>
-                  Testimonials
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown 
                 title="Stay Informed" 
                 id="stay-informed-dropdown"
                 style={{ fontWeight: '500', color: '#333' }}

@@ -1,5 +1,4 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 function BlogSection() {
   const blogPosts = [
@@ -68,17 +67,6 @@ function BlogSection() {
           ))}
         </Row>
 
-        <Row className="mt-4">
-          <Col className="text-center">
-            <Button 
-              as={Link} 
-              to="/blog" 
-              variant="outline-success"
-            >
-              View All Blog Posts
-            </Button>
-          </Col>
-        </Row>
       </Container>
     </div>
   );

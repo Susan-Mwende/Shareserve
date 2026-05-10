@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { FaLeaf, FaUsers, FaGraduationCap, FaHeart } from "react-icons/fa";
+import { FaLeaf, FaUsers, FaSun, FaHandshake, FaLightbulb } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_ENDPOINTS } from "../config/api.js";
@@ -24,23 +24,28 @@ function Values() {
         setValues([
           {
             icon: <FaLeaf />,
-            title: "Sustainability",
-            description: "We promote environmental stewardship and sustainable practices that ensure long-term community well-being and resource conservation for future generations."
+            title: "Environmental Stewardship",
+            description: "We are committed to protecting and restoring our natural environment through sustainable practices and conservation efforts."
           },
           {
             icon: <FaUsers />, 
-            title: "Community Development",
-            description: "We empower communities to work together, building strong social networks and collective capacity to address local challenges and opportunities."
+            title: "Community Empowerment",
+            description: "We believe in empowering local communities with knowledge, resources, and opportunities for sustainable development."
           },
           {
-            icon: <FaGraduationCap />,
-            title: "Education & Innovation",
-            description: "We provide quality education and embrace innovative solutions that equip individuals with knowledge and skills for personal and community growth."
+            icon: <FaSun />,
+            title: "Climate Action",
+            description: "We actively work to mitigate climate change impacts and promote adaptation strategies for vulnerable communities."
           },
           {
-            icon: <FaHeart />,
-            title: "Stewardship of Creation",
-            description: "We care for and protect our natural environment, recognizing our responsibility to preserve creation for current and future generations."
+            icon: <FaHandshake />,
+            title: "Integrity",
+            description: "We operate with transparency, accountability, and ethical standards in all our programs and partnerships."
+          },
+          {
+            icon: <FaLightbulb />,
+            title: "Innovation",
+            description: "We embrace innovative solutions and technologies to address environmental and development challenges."
           }
         ]);
       }
@@ -51,23 +56,28 @@ function Values() {
       setValues([
         {
           icon: <FaLeaf />,
-          title: "Sustainability",
-          description: "We promote environmental stewardship and sustainable practices that ensure long-term community well-being and resource conservation for future generations."
+          title: "Environmental Stewardship",
+          description: "We are committed to protecting and restoring our natural environment through sustainable practices and conservation efforts."
         },
         {
           icon: <FaUsers />, 
-          title: "Community Development",
-          description: "We empower communities to work together, building strong social networks and collective capacity to address local challenges and opportunities."
+          title: "Community Empowerment",
+          description: "We believe in empowering local communities with knowledge, resources, and opportunities for sustainable development."
         },
         {
-          icon: <FaGraduationCap />,
-          title: "Education & Innovation",
-          description: "We provide quality education and embrace innovative solutions that equip individuals with knowledge and skills for personal and community growth."
+          icon: <FaSun />,
+          title: "Climate Action",
+          description: "We actively work to mitigate climate change impacts and promote adaptation strategies for vulnerable communities."
         },
         {
-          icon: <FaHeart />,
-          title: "Stewardship of Creation",
-          description: "We care for and protect our natural environment, recognizing our responsibility to preserve creation for current and future generations."
+          icon: <FaHandshake />,
+          title: "Integrity",
+          description: "We operate with transparency, accountability, and ethical standards in all our programs and partnerships."
+        },
+        {
+          icon: <FaLightbulb />,
+          title: "Innovation",
+          description: "We embrace innovative solutions and technologies to address environmental and development challenges."
         }
       ]);
       setLoading(false);
@@ -88,7 +98,7 @@ function Values() {
         
         <Row className="g-4 justify-content-center">
           {values.map((value, index) => (
-            <Col xs={12} sm={6} md={4} lg={3} xl={3} className="d-flex justify-content-center" key={index}>
+            <Col xs={12} sm={6} md={4} lg={2} xl={2} className="d-flex justify-content-center" key={index}>
               <Card className="h-80 value-card">
                 <Card.Body className="text-center">
                   <div className="value-icon">
