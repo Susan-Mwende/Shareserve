@@ -59,7 +59,6 @@ function App() {
                     <section id="projects">
                       <Projects />
                     </section>
-                    <Impact />
                   </Container>
                   <section id="gallery">
                     <Gallery />
