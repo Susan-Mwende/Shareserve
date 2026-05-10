@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card, Button, Badge, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
@@ -13,6 +13,11 @@ function Livelihood() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [index, setIndex] = useState(0);
+  const [householdsCount, setHouseholdsCount] = useState(0);
+  const [vslaCount, setVslaCount] = useState(0);
+  const [orchardsCount, setOrchardsCount] = useState(0);
+  const [trainedCount, setTrainedCount] = useState(0);
+  const impactRef = useRef(null);
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
@@ -23,6 +28,57 @@ function Livelihood() {
     carousel2,
     carousel4
   ];
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (impactRef.current) {
+      observer.observe(impactRef.current);
+    }
+
+    return () => {
+      if (impactRef.current) {
+        observer.unobserve(impactRef.current);
+      }
+    };
+  }, []);
+
+  const animateCounters = () => {
+    const animateValue = (start, end, duration, setter) => {
+      const startTime = Date.now();
+      const animate = () => {
+        const currentTime = Date.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(start + (end - start) * progress);
+        setter(currentValue);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      animate();
+    };
+
+    animateValue(0, 500, 2000, setHouseholdsCount);
+    animateValue(0, 50, 1500, setVslaCount);
+    animateValue(0, 30, 1000, setOrchardsCount);
+    animateValue(0, 2000, 1800, setTrainedCount);
+  };
 
   useEffect(() => {
     fetchProjects();
@@ -116,50 +172,60 @@ function Livelihood() {
         {/* Hero Section */}
         <div
           style={{
+            position: "relative",
             height: "500px",
             marginBottom: "50px",
-            backgroundColor: "#f8f9fa",
+            overflow: "hidden",
           }}
         >
-          <Container className="h-100">
-            <Row className="align-items-center h-100">
-              <Col lg={6}>
-                <Carousel 
-                  activeIndex={index} 
-                  onSelect={handleSelect} 
-                  interval={3000}
-                  controls={true}
-                  indicators={true}
-                  style={{ borderRadius: "10px", overflow: "hidden" }}
-                >
-                  {carouselImages.map((image, idx) => (
-                    <Carousel.Item key={idx}>
-                      <img
-                        src={image}
-                        alt={`Livelihood ${idx + 1}`}
-                        style={{
-                          width: "100%",
-                          height: "400px",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </Carousel.Item>
-                  ))}
-                </Carousel>
-              </Col>
-              <Col lg={6}>
-                <div style={{ paddingLeft: "30px" }}>
-                  <h1 className="display-4 fw-bold mb-4" style={{ color: "#F08000" }}>
+          <Carousel 
+            activeIndex={index} 
+            onSelect={handleSelect} 
+            interval={3000}
+            controls={true}
+            indicators={true}
+            style={{ height: "100%" }}
+          >
+            {carouselImages.map((image, idx) => (
+              <Carousel.Item key={idx}>
+                <img
+                  src={image}
+                  alt={`Livelihood ${idx + 1}`}
+                  style={{
+                    width: "100%",
+                    height: "500px",
+                    objectFit: "cover",
+                  }}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "linear-gradient(135deg, rgba(240, 128, 0, 0.7) 0%, rgba(255, 107, 53, 0.7) 100%)",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Container>
+              <Row className="align-items-center">
+                <Col lg={12} className="text-center text-white">
+                  <h1 className="display-4 fw-bold mb-4">
                     Livelihood & Economic Empowerment
                   </h1>
-                  <p className="lead mb-0" style={{ color: "#333" }}>
+                  <p className="lead mb-0">
                     Creating sustainable economic opportunities and empowering communities
                     through skills development, entrepreneurship, and financial inclusion.
                   </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+                </Col>
+              </Row>
+            </Container>
+          </div>
         </div>
 
         <Container id="programs">
@@ -254,7 +320,7 @@ function Livelihood() {
           {renderProjectSection("completed", "✅ Completed Projects")}
 
           {/* Impact Stats */}
-          <Row id="impact" className="mt-5 mb-5">
+          <Row id="impact" className="mt-5 mb-5" ref={impactRef}>
             <Col lg={12}>
               <h2 className="text-center mb-5" style={{ color: "#F08000" }}>
                 Our Economic Impact
@@ -263,7 +329,7 @@ function Livelihood() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-warning text-dark">
                 <Card.Body>
-                  <h2 className="fw-bold">500+</h2>
+                  <h2 className="fw-bold">{householdsCount}+</h2>
                   <p>Households Empowered</p>
                 </Card.Body>
               </Card>
@@ -271,7 +337,7 @@ function Livelihood() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-info text-white">
                 <Card.Body>
-                  <h2 className="fw-bold">50</h2>
+                  <h2 className="fw-bold">{vslaCount}</h2>
                   <p>VSLA Groups Formed</p>
                 </Card.Body>
               </Card>
@@ -279,7 +345,7 @@ function Livelihood() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-success text-white">
                 <Card.Body>
-                  <h2 className="fw-bold">30</h2>
+                  <h2 className="fw-bold">{orchardsCount}</h2>
                   <p>Orchards Established</p>
                 </Card.Body>
               </Card>
@@ -287,7 +353,7 @@ function Livelihood() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-primary text-white">
                 <Card.Body>
-                  <h2 className="fw-bold">2,000+</h2>
+                  <h2 className="fw-bold">{trainedCount.toLocaleString()}+</h2>
                   <p>People Trained</p>
                 </Card.Body>
               </Card>
@@ -313,10 +379,7 @@ function Livelihood() {
                     <Button variant="light" size="lg">
                       💼 Support Skills Training
                     </Button>
-                    <Button variant="outline-light" size="lg">
-                      💚 Donate Now
-                    </Button>
-                    <Button variant="outline-light" size="lg">
+                    <Button as={Link} to="/contact" variant="outline-light" size="lg">
                       📧 Subscribe to Updates
                     </Button>
                   </div>
