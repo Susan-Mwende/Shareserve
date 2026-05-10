@@ -62,12 +62,6 @@ function App() {
                       </section>
                       <Impact />
                     </Container>
-                  </section>
-                  <section id="testimonials">
-                    <Container>
-                      <TestimonialsSection />
-                    </Container>
-                  </section>
                   <section id="gallery">
                     <Gallery />
                   </section>
