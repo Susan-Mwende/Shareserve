@@ -87,7 +87,7 @@ function App() {
               <>
                 <NavbarComponent />
                 <div style={{ paddingTop: '80px' }}>
-                  <About />
+                  <WhoWeAre />
                 </div>
                 <Footer />
               </>
