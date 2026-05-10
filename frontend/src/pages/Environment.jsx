@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
 import { API_ENDPOINTS } from "../config/api.js";
@@ -9,10 +9,62 @@ import carouselImage from "../assets/carousel1.jpeg";
 function Environment() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [treesCount, setTreesCount] = useState(0);
+  const [clubsCount, setClubsCount] = useState(0);
+  const [orchardsCount, setOrchardsCount] = useState(0);
+  const [leadersCount, setLeadersCount] = useState(0);
+  const impactRef = useRef(null);
 
   useEffect(() => {
     fetchProjects();
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (impactRef.current) {
+      observer.observe(impactRef.current);
+    }
+
+    return () => {
+      if (impactRef.current) {
+        observer.unobserve(impactRef.current);
+      }
+    };
+  }, []);
+
+  const animateCounters = () => {
+    const animateValue = (start, end, duration, setter) => {
+      const startTime = Date.now();
+      const animate = () => {
+        const currentTime = Date.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(start + (end - start) * progress);
+        setter(currentValue);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      animate();
+    };
+
+    animateValue(0, 50000, 2000, setTreesCount);
+    animateValue(0, 100, 1500, setClubsCount);
+    animateValue(0, 25, 1000, setOrchardsCount);
+    animateValue(0, 5000, 1800, setLeadersCount);
+  };
 
   const fetchProjects = async () => {
     try {
@@ -117,51 +169,39 @@ function Environment() {
         {/* Hero Section */}
         <div
           style={{
-            position: "relative",
             height: "500px",
             marginBottom: "50px",
-            overflow: "hidden",
+            backgroundColor: "#f8f9fa",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundImage: `url(${carouselImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "brightness(0.7)",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: "linear-gradient(135deg, rgba(25, 135, 84, 0.8) 0%, rgba(45, 106, 79, 0.8) 100%)",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <Container>
-              <Row className="align-items-center">
-                <Col lg={12} className="text-center text-white">
-                  <h1 className="display-4 fw-bold mb-4">
+          <Container className="h-100">
+            <Row className="align-items-center h-100">
+              <Col lg={6}>
+                <img
+                  src={carouselImage}
+                  alt="Environment & Climate Action"
+                  style={{
+                    width: "100%",
+                    height: "400px",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                  }}
+                />
+              </Col>
+              <Col lg={6}>
+                <div style={{ paddingLeft: "30px" }}>
+                  <h1 className="display-4 fw-bold mb-4" style={{ color: "#198754" }}>
                     🌱 Environment & Climate Action
                   </h1>
-                  <p className="lead mb-0">
+                  <p className="lead mb-0" style={{ color: "#333" }}>
                     Leading transformative environmental initiatives that protect our planet,
                     empower communities, and create sustainable futures for generations to come.
                   </p>
-                </Col>
-              </Row>
-            </Container>
-          </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
 
         <Container id="programs">
@@ -173,13 +213,28 @@ function Environment() {
               </h2>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#198754",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     🌳
@@ -192,13 +247,28 @@ function Environment() {
               </Card>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#198754",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     🏫
@@ -211,13 +281,28 @@ function Environment() {
               </Card>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#198754",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     🍎
@@ -230,13 +315,28 @@ function Environment() {
               </Card>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#198754",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     👥
@@ -256,7 +356,7 @@ function Environment() {
           {renderProjectSection("completed", "✅ Completed Projects")}
 
           {/* Impact Stats */}
-          <Row id="impact" className="mt-5 mb-5">
+          <Row id="impact" className="mt-5 mb-5" ref={impactRef}>
             <Col lg={12}>
               <h2 className="text-center mb-5" style={{ color: "#198754" }}>
                 Our Environmental Impact
@@ -265,7 +365,7 @@ function Environment() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-success text-white">
                 <Card.Body>
-                  <h2 className="fw-bold">50,000+</h2>
+                  <h2 className="fw-bold">{treesCount.toLocaleString()}+</h2>
                   <p>Trees Planted</p>
                 </Card.Body>
               </Card>
@@ -273,7 +373,7 @@ function Environment() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-info text-white">
                 <Card.Body>
-                  <h2 className="fw-bold">100+</h2>
+                  <h2 className="fw-bold">{clubsCount}+</h2>
                   <p>Green Clubs Established</p>
                 </Card.Body>
               </Card>
@@ -281,7 +381,7 @@ function Environment() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-warning text-dark">
                 <Card.Body>
-                  <h2 className="fw-bold">25</h2>
+                  <h2 className="fw-bold">{orchardsCount}</h2>
                   <p>Demo Orchards Created</p>
                 </Card.Body>
               </Card>
@@ -289,7 +389,7 @@ function Environment() {
             <Col lg={3} md={6} className="mb-4">
               <Card className="text-center border-0 shadow-sm bg-primary text-white">
                 <Card.Body>
-                  <h2 className="fw-bold">5,000+</h2>
+                  <h2 className="fw-bold">{leadersCount.toLocaleString()}+</h2>
                   <p>Young Leaders Trained</p>
                 </Card.Body>
               </Card>
@@ -319,7 +419,7 @@ function Environment() {
                     <Button variant="outline-light" size="lg">
                       💚 Donate Now
                     </Button>
-                    <Button variant="outline-light" size="lg">
+                    <Button as={Link} to="/contact" variant="outline-light" size="lg">
                       📧 Subscribe to Updates
                     </Button>
                   </div>
