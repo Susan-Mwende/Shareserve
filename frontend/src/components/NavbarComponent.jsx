@@ -71,16 +71,15 @@ function NavbarComponent() {
                 style={{ fontWeight: '500', color: '#333' }}
               >
                 <NavDropdown.Item as={Link} to="/about" style={{ fontWeight: '500' }}>
-                  Who We Are
+                  About Us
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/about#foundation" style={{ fontWeight: '500' }}>
+                <NavDropdown.Item as={Link} to="/foundation" style={{ fontWeight: '500' }}>
                   Our Foundation
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/about#mandate" style={{ fontWeight: '500' }}>
+                <NavDropdown.Item as={Link} to="/our-mandate" style={{ fontWeight: '500' }}>
                   Our Mandate, Vision & Values
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/about#team" style={{ fontWeight: '500' }}>
+                <NavDropdown.Item as={Link} to="/team" style={{ fontWeight: '500' }}>
                   Meet Our Team
                 </NavDropdown.Item>
               </NavDropdown>
