@@ -4,8 +4,12 @@ import Footer from "../components/Footer.jsx";
 import aboutImage from "../assets/livelihood.jpg";
 
 function WhoWeAre({ showFooter = true }) {
+  const divStyle = showFooter 
+    ? { paddingTop: "100px", backgroundColor: "#f8f9fa", minHeight: "100vh" } 
+    : {};
+  
   const content = (
-    <div style={showFooter ? { paddingTop: "100px", backgroundColor: "#f8f9fa", minHeight: "100vh" } : {}}>
+    <div style={divStyle}>
         <Container className="py-5">
           <Row className="align-items-center">
             <Col lg={6} className="mb-4">

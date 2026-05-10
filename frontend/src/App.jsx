@@ -104,7 +104,15 @@ function App() {
               <Route path="/partnership" element={<Partnership />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/who-we-are" element={<WhoWeAre />} />
+              <Route path="/who-we-are" element={
+                <>
+                  <NavbarComponent />
+                  <div style={{ paddingTop: "80px" }}>
+                    <WhoWeAre showFooter={false} />
+                  </div>
+                  <Footer />
+                </>
+              } />
               <Route path="/our-foundation" element={<OurFoundation />} />
               <Route path="/admin/*" element={
                 <ProtectedRoute>
