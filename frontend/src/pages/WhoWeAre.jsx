@@ -1,15 +1,12 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import NavbarComponent from "../components/NavbarComponent.jsx";
-import Footer from "../components/Footer.jsx";
-import aboutImage from "../assets/livelihood.jpg";
+import aboutImage from "../assets/small baby.jpeg";
 
-function WhoWeAre({ showFooter = true }) {
-  const divStyle = showFooter 
-    ? { paddingTop: "100px", backgroundColor: "#f8f9fa", minHeight: "100vh" } 
-    : {};
-  
-  const content = (
-    <div style={divStyle}>
+function WhoWeAre() {
+  return (
+    <>
+      <NavbarComponent />
+      <div style={{ paddingTop: "100px", backgroundColor: "#f8f9fa", minHeight: "100vh" }}>
         <Container className="py-5">
           <Row className="align-items-center">
             <Col lg={6} className="mb-4">
@@ -33,19 +30,8 @@ function WhoWeAre({ showFooter = true }) {
           </Row>
         </Container>
       </div>
+    </>
   );
-
-  if (showFooter) {
-    return (
-      <>
-        <NavbarComponent />
-        {content}
-        <Footer />
-      </>
-    );
-  }
-
-  return content;
 }
 
 export default WhoWeAre;

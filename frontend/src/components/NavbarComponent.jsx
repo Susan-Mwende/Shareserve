@@ -96,16 +96,16 @@ function NavbarComponent() {
                 style={{ fontWeight: '500', color: '#333' }}
               >
                 <NavDropdown.Item as={Link} to="/environment" style={{ fontWeight: '500' }}>
-                  🌱 Environment & Climate Action
+                  Environment & Climate Action
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/livelihood" style={{ fontWeight: '500' }}>
-                  💼 Livelihood & Economic Empowerment
+                  Livelihood & Economic Empowerment
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/education" style={{ fontWeight: '500' }}>
-                  📚 Education
+                  Education
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/health" style={{ fontWeight: '500' }}>
-                  🏥 Health
+                  Health
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 
