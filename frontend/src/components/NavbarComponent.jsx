@@ -104,9 +104,6 @@ function NavbarComponent() {
                 <NavDropdown.Item as={Link} to="/education" style={{ fontWeight: '500' }}>
                   Education
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/health" style={{ fontWeight: '500' }}>
-                  Health
-                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 
                 title="Impact" 

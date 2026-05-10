@@ -5,15 +5,6 @@ function BlogSection() {
   const blogPosts = [
     {
       id: 1,
-      title: "Community Health Initiative Launches in Rural Areas",
-      date: "April 10, 2026",
-      preview: "Our new mobile health clinics are bringing essential medical services to remote communities that have historically lacked access to quality healthcare...",
-      category: "Health",
-      image: "/images/health.jpg",
-      link: "/blog/health-initiative"
-    },
-    {
-      id: 2,
       title: "Education Program Reaches 1000 Students Milestone",
       date: "April 5, 2026",
       preview: "We are celebrating a major achievement as our education programs now support over 1000 students across rural Kenya...",
@@ -22,7 +13,7 @@ function BlogSection() {
       link: "/blog/education-milestone"
     },
     {
-      id: 3,
+      id: 2,
       title: "Tree Planting Campaign: 5000 Trees Planted",
       date: "March 28, 2026",
       preview: "Our environmental conservation efforts have achieved remarkable success with the planting of 5000 trees across degraded landscapes...",

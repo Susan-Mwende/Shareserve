@@ -5,6 +5,7 @@ import axios from "axios";
 import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
 import { API_ENDPOINTS } from "../config/api.js";
+import livelihoodImage from "../assets/livelihood.jpg";
 
 function Livelihood() {
   const [projects, setProjects] = useState([]);
@@ -102,46 +103,51 @@ function Livelihood() {
         {/* Hero Section */}
         <div
           style={{
-            background: "linear-gradient(135deg, #F08000 0%, #ff6b35 100%)",
-            color: "white",
-            padding: "80px 0",
+            position: "relative",
+            height: "500px",
             marginBottom: "50px",
+            overflow: "hidden",
           }}
         >
-          <Container>
-            <Row className="align-items-center">
-              <Col lg={6}>
-                <h1 className="display-4 fw-bold mb-4">
-                  💼 Livelihood & Economic Empowerment
-                </h1>
-                <p className="lead mb-4">
-                  Creating sustainable economic opportunities and empowering communities
-                  through skills development, entrepreneurship, and financial inclusion.
-                </p>
-                <div className="d-flex gap-3 flex-wrap">
-                  <Button variant="light" size="lg" href="#programs">
-                    Explore Programs
-                  </Button>
-                  <Button variant="outline-light" size="lg" href="#impact">
-                    Our Impact
-                  </Button>
-                </div>
-              </Col>
-              <Col lg={6}>
-                <div className="text-center">
-                  <div
-                    style={{
-                      fontSize: "120px",
-                      opacity: "0.3",
-                      animation: "float 3s ease-in-out infinite",
-                    }}
-                  >
-                    💰
-                  </div>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: `url(${livelihoodImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "brightness(0.7)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "linear-gradient(135deg, rgba(240, 128, 0, 0.8) 0%, rgba(255, 107, 53, 0.8) 100%)",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Container>
+              <Row className="align-items-center">
+                <Col lg={12} className="text-center text-white">
+                  <h1 className="display-4 fw-bold mb-4">
+                    💼 Livelihood & Economic Empowerment
+                  </h1>
+                  <p className="lead mb-0">
+                    Creating sustainable economic opportunities and empowering communities
+                    through skills development, entrepreneurship, and financial inclusion.
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </div>
         </div>
 
         <Container id="programs">

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
 import { API_ENDPOINTS } from "../config/api.js";
+import carouselImage from "../assets/carousel1.jpeg";
 
 function Environment() {
   const [projects, setProjects] = useState([]);
@@ -116,46 +117,51 @@ function Environment() {
         {/* Hero Section */}
         <div
           style={{
-            background: "linear-gradient(135deg, #198754 0%, #2d6a4f 100%)",
-            color: "white",
-            padding: "80px 0",
+            position: "relative",
+            height: "500px",
             marginBottom: "50px",
+            overflow: "hidden",
           }}
         >
-          <Container>
-            <Row className="align-items-center">
-              <Col lg={6}>
-                <h1 className="display-4 fw-bold mb-4">
-                  🌱 Environment & Climate Action
-                </h1>
-                <p className="lead mb-4">
-                  Leading transformative environmental initiatives that protect our planet,
-                  empower communities, and create sustainable futures for generations to come.
-                </p>
-                <div className="d-flex gap-3 flex-wrap">
-                  <Button variant="light" size="lg" href="#programs">
-                    Explore Programs
-                  </Button>
-                  <Button variant="outline-light" size="lg" href="#impact">
-                    Our Impact
-                  </Button>
-                </div>
-              </Col>
-              <Col lg={6}>
-                <div className="text-center">
-                  <div
-                    style={{
-                      fontSize: "120px",
-                      opacity: "0.3",
-                      animation: "float 3s ease-in-out infinite",
-                    }}
-                  >
-                    🌍
-                  </div>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: `url(${carouselImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "brightness(0.7)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "linear-gradient(135deg, rgba(25, 135, 84, 0.8) 0%, rgba(45, 106, 79, 0.8) 100%)",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Container>
+              <Row className="align-items-center">
+                <Col lg={12} className="text-center text-white">
+                  <h1 className="display-4 fw-bold mb-4">
+                    🌱 Environment & Climate Action
+                  </h1>
+                  <p className="lead mb-0">
+                    Leading transformative environmental initiatives that protect our planet,
+                    empower communities, and create sustainable futures for generations to come.
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </div>
         </div>
 
         <Container id="programs">
