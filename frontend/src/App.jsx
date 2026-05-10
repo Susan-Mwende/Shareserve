@@ -50,9 +50,6 @@ function App() {
                     <Container>
                       <NavbarComponent />
                       <Hero />
-                      <section id="about">
-                        <About />
-                      </section>
                       <Values />
                       <section id="programs">
                         <Programs />
@@ -92,7 +89,7 @@ function App() {
                 <Footer />
               </>
             } />
-            <Route path="/about-full" element={<AboutPage />} />
+            <Route path="/foundation" element={<OurFoundation />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/vision" element={<Vision />} />
             <Route path="/values" element={<ValuesPage />} />
