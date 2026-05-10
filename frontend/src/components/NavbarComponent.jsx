@@ -73,25 +73,15 @@ function NavbarComponent() {
                 <NavDropdown.Item as={Link} to="/about" style={{ fontWeight: '500' }}>
                   Who We Are
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/mission" style={{ fontWeight: '500' }}>
-                  Our Mission
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/vision" style={{ fontWeight: '500' }}>
-                  Our Vision
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/values" style={{ fontWeight: '500' }}>
-                  Our Values
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/team" style={{ fontWeight: '500' }}>
-                  Meet Our Team
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
                 <NavDropdown.Item as={Link} to="/about#foundation" style={{ fontWeight: '500' }}>
                   Our Foundation
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/our-mandate" style={{ fontWeight: '500' }}>
+                <NavDropdown.Item as={Link} to="/about#mandate" style={{ fontWeight: '500' }}>
                   Our Mandate, Vision & Values
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} to="/about#team" style={{ fontWeight: '500' }}>
+                  Meet Our Team
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 

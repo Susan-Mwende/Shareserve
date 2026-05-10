@@ -16,25 +16,25 @@ const values = [
     icon: "🤝",
     title: "Stewardship with Integrity",
     description:
-      "Acting as responsible custodians of resources while upholding honesty, transparency, and accountability in everything we do.",
+      "Acting as responsible custodians of the resources while upholding honesty, transparency, and accountability.",
   },
   {
     icon: "🌍",
-    title: "Collaboration & Inclusivity",
+    title: "Collaboration and Inclusivity",
     description:
-      "We work with schools, communities, governments, and partners to achieve shared goals — ensuring women, youth, and marginalized groups are central to climate and livelihood solutions.",
+      "We work with schools, communities, governments, and partners to achieve shared goals and amplify impact. We ensure that women, youth, and marginalized groups are central to climate and livelihood solutions.",
   },
   {
     icon: "💡",
     title: "Empowerment",
     description:
-      "We equip young people and communities with the skills, knowledge, and opportunities to lead their own transformation.",
+      "We equip young people and communities with skills, knowledge, and opportunities to lead their own transformation.",
   },
   {
     icon: "♻️",
     title: "Sustainability",
     description:
-      "We prioritize solutions that are environmentally sound, economically viable, and socially inclusive for lasting impact.",
+      "We prioritize solutions that are environmentally sound, economically viable and socially inclusive for lasting impact.",
   },
 ];
 
@@ -140,7 +140,7 @@ function AboutPage() {
                     marginBottom: "1.8rem",
                   }}
                 >
-                  ShareServe International is a mission-driven organization
+                  Shareserve International is a mission driven organization
                   working in rural Kenya to address environmental degradation and
                   economic vulnerability through youth empowerment and
                   sustainable solutions.
@@ -184,7 +184,7 @@ function AboutPage() {
         <Container className="py-5">
 
           {/* ── Foundation ── */}
-          <Row className="mb-5">
+          <Row className="mb-5" id="foundation">
             <Col>
               <div
                 style={{
@@ -224,7 +224,7 @@ function AboutPage() {
           </Row>
 
           {/* ── Mandate & Vision ── */}
-          <Row className="g-4 mb-5">
+          <Row className="g-4 mb-5" id="mandate">
             <Col md={6}>
               <div
                 style={{
@@ -253,8 +253,8 @@ function AboutPage() {
                 >
                   Raising Environmental Champions who will provide
                   transformative leadership in climate action, advocating for
-                  the protection, conservation, restoration, and regeneration of
-                  our ecosystems.
+                  protection, conservation, restoration and regeneration of
+                  our Ecosystems.
                 </p>
               </div>
             </Col>
@@ -361,7 +361,7 @@ function AboutPage() {
           </Row>
 
           {/* ── Team ── */}
-          <Row className="mb-5">
+          <Row className="mb-5" id="team">
             <Col>
               <h2
                 style={{
@@ -424,21 +424,18 @@ function AboutPage() {
                             background: "#ffffff",
                           }}
                         >
-                          <div
+                          <img
+                            src={`https://via.placeholder.com/150/198754/ffffff?text=${m.role.charAt(0)}`}
+                            alt={m.role}
                             style={{
-                              width: "44px",
-                              height: "44px",
+                              width: "50px",
+                              height: "50px",
                               borderRadius: "50%",
-                              background: `${dept.color}18`,
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              fontSize: "1.3rem",
+                              objectFit: "cover",
+                              border: `2px solid ${dept.color}`,
                               flexShrink: 0,
                             }}
-                          >
-                            {m.icon}
-                          </div>
+                          />
                           <span
                             style={{
                               color: "#111827",
