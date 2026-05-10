@@ -28,8 +28,16 @@ function Programs() {
       title: 'Education',
       description: 'Education support including provision of education levies and uniforms, mentorship and mental health programs, and school leadership empowerment.',
       color: '#0d6efd',
-      image: '/images/health.jpg',
+      image: '/images/education.jpg',
       link: '/education'
+    },
+    {
+      id: 'health',
+      title: 'Health',
+      description: 'Comprehensive healthcare services including mobile health clinics, maternal and child health programs, disease prevention campaigns, and community health worker training.',
+      color: '#dc3545',
+      image: '/images/health.jpg',
+      link: '/health'
     },
   ];
 
@@ -42,11 +50,11 @@ function Programs() {
       <Container>
         <h2 className="section-title text-center">Our Work</h2>
         <p className="section-subtitle text-center">
-          Three core program areas designed to create lasting change for communities and ecosystems in rural Kenya
+          Four core program areas designed to create lasting change for communities and ecosystems in rural Kenya
         </p>
         <Row className="g-4 justify-content-center">
           {programCategories.map((category) => (
-            <Col lg={4} md={6} className="mb-4" key={category.id}>
+            <Col lg={3} md={6} className="mb-4" key={category.id}>
               <div
                 className={`flip-card ${flippedCard === category.id ? 'flipped' : ''}`}
                 onClick={() => handleCardClick(category.id)}

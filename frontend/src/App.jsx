@@ -64,10 +64,14 @@ function App() {
                   <section id="gallery">
                     <Gallery />
                   </section>
+                  <section id="testimonials">
+                    <Container>
+                      <TestimonialsSection />
+                    </Container>
+                  </section>
                   <section id="blog">
                     <Container>
                       <BlogSection />
-                      <TestimonialsSection />
                     </Container>
                   </section>
                   <Footer />
