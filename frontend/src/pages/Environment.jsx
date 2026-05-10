@@ -60,10 +60,10 @@ function Environment() {
       animate();
     };
 
-    animateValue(0, 50000, 2000, setTreesCount);
-    animateValue(0, 100, 1500, setClubsCount);
-    animateValue(0, 25, 1000, setOrchardsCount);
-    animateValue(0, 5000, 1800, setLeadersCount);
+    animateValue(0, 75432, 2000, setTreesCount);
+    animateValue(0, 147, 1500, setClubsCount);
+    animateValue(0, 38, 1000, setOrchardsCount);
+    animateValue(0, 6789, 1800, setLeadersCount);
   };
 
   const fetchProjects = async () => {

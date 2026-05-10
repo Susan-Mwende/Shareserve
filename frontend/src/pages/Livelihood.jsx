@@ -6,8 +6,8 @@ import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
 import { API_ENDPOINTS } from "../config/api.js";
 import livelihoodImage from "../assets/livelihood.jpg";
-import carousel2 from "../assets/carousel2.jpeg";
-import carousel4 from "../assets/arousel4.jpeg";
+import heroImage from "../assets/hero.jpg";
+import gardenImage from "../assets/garden.jpg";
 
 function Livelihood() {
   const [projects, setProjects] = useState([]);
@@ -25,8 +25,8 @@ function Livelihood() {
 
   const carouselImages = [
     livelihoodImage,
-    carousel2,
-    carousel4
+    heroImage,
+    gardenImage
   ];
 
   useEffect(() => {
@@ -207,7 +207,7 @@ function Livelihood() {
               left: 0,
               right: 0,
               bottom: 0,
-              background: "linear-gradient(135deg, rgba(240, 128, 0, 0.7) 0%, rgba(255, 107, 53, 0.7) 100%)",
+              background: "linear-gradient(135deg, rgba(240, 128, 0, 0.3) 0%, rgba(255, 107, 53, 0.3) 100%)",
               display: "flex",
               alignItems: "center",
             }}
@@ -237,13 +237,28 @@ function Livelihood() {
               </h2>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#F08000",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     🌳
@@ -256,13 +271,28 @@ function Livelihood() {
               </Card>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#F08000",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     🏫
@@ -275,13 +305,28 @@ function Livelihood() {
               </Card>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#F08000",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     👥
@@ -294,13 +339,28 @@ function Livelihood() {
               </Card>
             </Col>
             <Col lg={3} md={6} className="mb-4">
-              <Card className="h-100 text-center border-0 shadow-sm">
+              <Card 
+                className="h-100 text-center border-0 shadow-sm initiative-card"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}
+              >
                 <Card.Body>
                   <div
                     style={{
                       fontSize: "3rem",
                       marginBottom: "1rem",
                       color: "#F08000",
+                      transition: 'transform 0.3s ease'
                     }}
                   >
                     💵

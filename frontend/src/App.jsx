@@ -35,6 +35,8 @@ import TestimonialsSection from "@/components/TestimonialsSection.jsx";
 import AdminDashboard from "@/pages/AdminDashboard.jsx";
 import Login from "@/components/Login.jsx";
 import ProtectedRoute from "@/components/ProtectedRoute.jsx";
+import BlogEducationMilestone from "@/pages/BlogEducationMilestone.jsx";
+import BlogTreePlanting from "@/pages/BlogTreePlanting.jsx";
 
 function App() {
   return (
@@ -108,6 +110,8 @@ function App() {
               <Route path="/partnership" element={<Partnership />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/blog/education-milestone" element={<BlogEducationMilestone />} />
+              <Route path="/blog/tree-planting-campaign" element={<BlogTreePlanting />} />
               <Route path="/who-we-are" element={
                 <>
                   <NavbarComponent />
