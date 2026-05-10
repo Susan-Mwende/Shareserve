@@ -126,10 +126,10 @@ function Career() {
         <Col md={12}>
           <div className="career-header text-center mb-5">
             <h1 className="display-4" style={{ color: "#198754", fontWeight: "bold" }}>
-              Join Our Team
+              Career Opportunities
             </h1>
             <p className="lead text-muted">
-              Be part of the environmental change in Kenya
+              Currently there are no job positions available. Please check back later for new opportunities.
             </p>
           </div>
         </Col>

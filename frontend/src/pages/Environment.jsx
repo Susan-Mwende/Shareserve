@@ -169,39 +169,50 @@ function Environment() {
         {/* Hero Section */}
         <div
           style={{
+            position: "relative",
             height: "500px",
             marginBottom: "50px",
-            backgroundColor: "#f8f9fa",
+            overflow: "hidden",
           }}
         >
-          <Container className="h-100">
-            <Row className="align-items-center h-100">
-              <Col lg={6}>
-                <img
-                  src={carouselImage}
-                  alt="Environment & Climate Action"
-                  style={{
-                    width: "100%",
-                    height: "400px",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-                  }}
-                />
-              </Col>
-              <Col lg={6}>
-                <div style={{ paddingLeft: "30px" }}>
-                  <h1 className="display-4 fw-bold mb-4" style={{ color: "#198754" }}>
+          <img
+            src={carouselImage}
+            alt="Environment & Climate Action"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              background: "linear-gradient(135deg, rgba(25, 135, 84, 0.7) 0%, rgba(45, 106, 79, 0.7) 100%)",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Container>
+              <Row className="align-items-center">
+                <Col lg={12} className="text-center text-white">
+                  <h1 className="display-4 fw-bold mb-4">
                     🌱 Environment & Climate Action
                   </h1>
-                  <p className="lead mb-0" style={{ color: "#333" }}>
+                  <p className="lead mb-0">
                     Leading transformative environmental initiatives that protect our planet,
                     empower communities, and create sustainable futures for generations to come.
                   </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+                </Col>
+              </Row>
+            </Container>
+          </div>
         </div>
 
         <Container id="programs">

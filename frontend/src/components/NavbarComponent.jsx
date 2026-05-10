@@ -128,7 +128,7 @@ function NavbarComponent() {
                 <NavDropdown.Item as={Link} to="/news" style={{ fontWeight: '500' }}>
                   News
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/blogs" style={{ fontWeight: '500' }}>
+                <NavDropdown.Item as={Link} to="/#blog" style={{ fontWeight: '500' }}>
                   Blogs
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/events" style={{ fontWeight: '500' }}>
@@ -137,7 +137,7 @@ function NavbarComponent() {
                 <NavDropdown.Item as={Link} to="/gallery" style={{ fontWeight: '500' }}>
                   Gallery
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/publications" style={{ fontWeight: '500' }}>
+                <NavDropdown.Item as={Link} to="/#blog" style={{ fontWeight: '500' }}>
                   Publications
                 </NavDropdown.Item>
               </NavDropdown>

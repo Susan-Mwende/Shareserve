@@ -18,17 +18,16 @@ function Education() {
             overflow: "hidden",
           }}
         >
-          <div
+          <img
+            src={educationImage}
+            alt="Education Programs"
             style={{
               position: "absolute",
               top: 0,
               left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundImage: `url(${educationImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "brightness(0.7)",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
             }}
           />
           <div
@@ -36,9 +35,9 @@ function Education() {
               position: "absolute",
               top: 0,
               left: 0,
-              right: 0,
-              bottom: 0,
-              background: "linear-gradient(135deg, rgba(0, 4, 40, 0.8) 0%, rgba(0, 78, 146, 0.8) 100%)",
+              width: "100%",
+              height: "100%",
+              background: "linear-gradient(135deg, rgba(0, 4, 40, 0.7) 0%, rgba(0, 78, 146, 0.7) 100%)",
               display: "flex",
               alignItems: "center",
             }}

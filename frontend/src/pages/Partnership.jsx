@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_ENDPOINTS } from "../config/api.js";
 import "./Partnership.css";
+import "./PartnershipHero.css";
+import heroImage from "../assets/hero.jpg";
 
 function Partnership() {
   const [partnershipData, setPartnershipData] = useState({
@@ -155,16 +157,52 @@ function Partnership() {
   }
 
   return (
+    <div className="partnership-hero">
+      <img
+        src={heroImage}
+        alt="Partnership"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "linear-gradient(135deg, rgba(25, 135, 84, 0.7) 0%, rgba(45, 106, 79, 0.7) 100%)",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Container>
+          <Row className="align-items-center">
+            <Col lg={12} className="text-center text-white">
+              <h1 className="display-4 fw-bold mb-4">
+                Partner With Us
+              </h1>
+              <p className="lead mb-0">
+                Join us in creating environmental impact across Kenya
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </div>
     <Container className="mt-5" id="partnership">
       <Row className="mb-5">
         <Col md={12}>
           <div className="partnership-header text-center mb-5">
-            <h1 className="display-4" style={{ color: "#198754", fontWeight: "bold" }}>
-              Partner With Us
-            </h1>
-            <p className="lead text-muted">
-              Join us in creating environmental impact across Kenya
-            </p>
+            <h2 className="display-5" style={{ color: "#198754", fontWeight: "bold" }}>
+              Partnership Opportunities
+            </h2>
           </div>
         </Col>
       </Row>
