@@ -3,11 +3,9 @@ import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
 import aboutImage from "../assets/livelihood.jpg";
 
-function WhoWeAre() {
-  return (
-    <>
-      <NavbarComponent />
-      <div style={{ paddingTop: "100px", backgroundColor: "#f8f9fa", minHeight: "100vh" }}>
+function WhoWeAre({ showFooter = true }) {
+  const content = (
+    <div style={showFooter ? { paddingTop: "100px", backgroundColor: "#f8f9fa", minHeight: "100vh" } : {}}>
         <Container className="py-5">
           <Row className="align-items-center">
             <Col lg={6} className="mb-4">
@@ -31,9 +29,19 @@ function WhoWeAre() {
           </Row>
         </Container>
       </div>
-      <Footer />
-    </>
   );
+
+  if (showFooter) {
+    return (
+      <>
+        <NavbarComponent />
+        {content}
+        <Footer />
+      </>
+    );
+  }
+
+  return content;
 }
 
 export default WhoWeAre;

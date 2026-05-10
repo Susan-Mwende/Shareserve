@@ -50,7 +50,7 @@ function App() {
                   <Container>
                     <Hero />
                     <section id="about">
-                      <WhoWeAre />
+                      <WhoWeAre showFooter={false} />
                     </section>
                     <Values />
                     <section id="programs">
@@ -59,6 +59,7 @@ function App() {
                     <section id="projects">
                       <Projects />
                     </section>
+                    <Impact />
                   </Container>
                   <section id="gallery">
                     <Gallery />
