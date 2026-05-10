@@ -1,9 +1,6 @@
 import React, { useEffect, useState}from 'react';
 import axios from 'axios';
-//import {container, Row, col,  Container } from 'react-bootstrap'
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 function Dashboard(){
     const [programs,setPrograms] =useState([]);
