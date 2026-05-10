@@ -98,105 +98,212 @@ function Livelihood() {
   return (
     <>
       <NavbarComponent />
-      <div style={{ paddingTop: "76px" }}>
-        <Container className="py-5">
-          <Row className="mb-4">
-            <Col>
-              <h1 className="text-center" style={{ color: "#F08000" }}>
-                Livelihood Program
-              </h1>
-              <p className="text-center lead">
-                Creating sustainable economic opportunities and skills development for community members.
-              </p>
-            </Col>
-          </Row>
+      <div style={{ paddingTop: "100px", backgroundColor: "#f8f9fa" }}>
+        {/* Hero Section */}
+        <div
+          style={{
+            background: "linear-gradient(135deg, #F08000 0%, #ff6b35 100%)",
+            color: "white",
+            padding: "80px 0",
+            marginBottom: "50px",
+          }}
+        >
+          <Container>
+            <Row className="align-items-center">
+              <Col lg={6}>
+                <h1 className="display-4 fw-bold mb-4">
+                  💼 Livelihood & Economic Empowerment
+                </h1>
+                <p className="lead mb-4">
+                  Creating sustainable economic opportunities and empowering communities
+                  through skills development, entrepreneurship, and financial inclusion.
+                </p>
+                <div className="d-flex gap-3 flex-wrap">
+                  <Button variant="light" size="lg" href="#programs">
+                    Explore Programs
+                  </Button>
+                  <Button variant="outline-light" size="lg" href="#impact">
+                    Our Impact
+                  </Button>
+                </div>
+              </Col>
+              <Col lg={6}>
+                <div className="text-center">
+                  <div
+                    style={{
+                      fontSize: "120px",
+                      opacity: "0.3",
+                      animation: "float 3s ease-in-out infinite",
+                    }}
+                  >
+                    💰
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
 
-          <Row className="g-4 mb-5">
-            <Col lg={6}>
-              <Card className="h-100 border-0 shadow">
+        <Container id="programs">
+          {/* Key Initiatives */}
+          <Row className="mb-5">
+            <Col lg={12}>
+              <h2 className="text-center mb-5" style={{ color: "#F08000" }}>
+                Our Key Initiatives
+              </h2>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
                 <Card.Body>
-                  <h3 style={{ color: "#F08000" }}>Our Focus Areas</h3>
-                  <ul className="list-unstyled mt-3">
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-warning me-2"></i>
-                      Skills training and vocational education
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-warning me-2"></i>
-                      Micro-enterprise development
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-warning me-2"></i>
-                      Agriculture and farming support
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-warning me-2"></i>
-                      Financial literacy and savings programs
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-warning me-2"></i>
-                      Market linkage and business networking
-                    </li>
-                  </ul>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#F08000",
+                    }}
+                  >
+                    🌳
+                  </div>
+                  <h5>Fruit Orchards</h5>
+                  <p className="text-muted">
+                    Establishing sustainable food sources and income generation
+                  </p>
                 </Card.Body>
               </Card>
             </Col>
-            <Col lg={6}>
-              <Card className="h-100 border-0 shadow">
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
                 <Card.Body>
-                  <h3 style={{ color: "#F08000" }}>Impact</h3>
-                  <p className="mt-3">
-                    Our livelihood program empowers individuals and families to break the cycle of poverty by providing them with the skills, resources, and opportunities needed to build sustainable incomes.
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#F08000",
+                    }}
+                  >
+                    🏫
+                  </div>
+                  <h5>Environmental Training</h5>
+                  <p className="text-muted">
+                    Building awareness and capacity for sustainable practices
                   </p>
-                  <p>
-                    We work closely with community members to identify local economic opportunities and provide training in areas such as agriculture, craftsmanship, and entrepreneurship.
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#F08000",
+                    }}
+                  >
+                    👥
+                  </div>
+                  <h5>Community Ambassadors</h5>
+                  <p className="text-muted">
+                    Empowering local environmental champions
+                  </p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#F08000",
+                    }}
+                  >
+                    💵
+                  </div>
+                  <h5>VSLA Groups</h5>
+                  <p className="text-muted">
+                    Village savings and loan associations for financial inclusion
                   </p>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
 
-          {/* Projects Section */}
-          <div className="mb-4">
-            <h2 className="text-center mb-4" style={{ color: "#F08000" }}>
-              Our Livelihood Projects
-            </h2>
-            
-            {loading ? (
-              <div className="text-center py-5">
-                <p>Loading projects...</p>
-              </div>
-            ) : projects.length === 0 ? (
-              <div className="text-center py-5 text-muted">
-                <p>No livelihood projects found. Check back soon!</p>
-              </div>
-            ) : (
-              <>
-                {renderProjectSection("active", "Active Projects")}
-                {renderProjectSection("planning", "Projects Under Planning")}
-                {renderProjectSection("completed", "Completed Projects")}
-              </>
-            )}
-          </div>
+          {/* Active Projects */}
+          {renderProjectSection("active", "🚀 Active Projects")}
+          {renderProjectSection("planning", "📋 Under Planning")}
+          {renderProjectSection("completed", "✅ Completed Projects")}
 
+          {/* Impact Stats */}
+          <Row id="impact" className="mt-5 mb-5">
+            <Col lg={12}>
+              <h2 className="text-center mb-5" style={{ color: "#F08000" }}>
+                Our Economic Impact
+              </h2>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-warning text-dark">
+                <Card.Body>
+                  <h2 className="fw-bold">500+</h2>
+                  <p>Households Empowered</p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-info text-white">
+                <Card.Body>
+                  <h2 className="fw-bold">50</h2>
+                  <p>VSLA Groups Formed</p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-success text-white">
+                <Card.Body>
+                  <h2 className="fw-bold">30</h2>
+                  <p>Orchards Established</p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-primary text-white">
+                <Card.Body>
+                  <h2 className="fw-bold">2,000+</h2>
+                  <p>People Trained</p>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          {/* Call to Action */}
           <Row className="mt-5">
-            <Col className="text-center">
-              <Button 
-                as={Link} 
-                to="/" 
-                variant="outline-warning"
-                className="me-3"
-                style={{ color: "#F08000", borderColor: "#F08000" }}
+            <Col lg={12}>
+              <Card
+                className="text-center border-0 shadow"
+                style={{
+                  background: "linear-gradient(135deg, #F08000 0%, #ff6b35 100%)",
+                  color: "white",
+                }}
               >
-                <i className="fas fa-arrow-left me-2"></i>
-                Back to Home
-              </Button>
-              <Button 
-                style={{ backgroundColor: "#F08000", borderColor: "#F08000" }}
-              >
-                <i className="fas fa-donate me-2"></i>
-                Support This Program
-              </Button>
+                <Card.Body className="p-5">
+                  <h2 className="mb-3">Empower Economic Transformation</h2>
+                  <p className="lead mb-4">
+                    Join us in creating sustainable livelihoods and breaking the cycle
+                    of poverty. Your support helps families build better futures.
+                  </p>
+                  <div className="d-flex justify-content-center gap-3 flex-wrap">
+                    <Button variant="light" size="lg">
+                      💼 Support Skills Training
+                    </Button>
+                    <Button variant="outline-light" size="lg">
+                      💚 Donate Now
+                    </Button>
+                    <Button variant="outline-light" size="lg">
+                      📧 Subscribe to Updates
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
         </Container>

@@ -1,7 +1,6 @@
 import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import NavbarComponent from "../components/NavbarComponent.jsx";
 import Footer from "../components/Footer.jsx";
 import { API_ENDPOINTS } from "../config/api.js";
@@ -51,40 +50,39 @@ function Environment() {
 
     return (
       <div className="mb-5">
-        <h3 className="mb-4" style={{ color: "#28a745", borderBottom: "2px solid #28a745", paddingBottom: "10px" }}>
+        <h3 className="mb-4" style={{ color: "#198754", fontWeight: "bold" }}>
           {title}
         </h3>
-        <Row className="g-4">
+        <Row>
           {statusProjects.map((project) => (
-            <Col lg={4} md={6} key={project._id}>
-              <Card className="h-100 shadow-sm">
-                {project.image && (
-                  <Card.Img
-                    variant="top"
-                    src={project.image}
-                    alt={project.title}
-                    style={{ height: "200px", objectFit: "cover" }}
-                  />
-                )}
+            <Col lg={4} md={6} className="mb-4" key={project.id}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Img
+                  variant="top"
+                  src={project.image}
+                  style={{ height: "200px", objectFit: "cover" }}
+                />
                 <Card.Body>
                   <div className="d-flex justify-content-between align-items-start mb-2">
-                    <Card.Title className="h5">{project.title}</Card.Title>
+                    <Card.Title className="mb-1">{project.title}</Card.Title>
                     {getStatusBadge(project.status)}
                   </div>
-                  <Card.Text className="text-muted" style={{ fontSize: "0.9rem" }}>
-                    {project.description}
+                  <Card.Text className="text-muted small mb-3">
+                    {project.location}
                   </Card.Text>
-                  <div className="mt-3">
-                    <small className="text-muted d-block mb-1">
-                      <i className="fas fa-map-marker-alt me-1"></i>
-                      {project.location}
-                    </small>
-                    {project.beneficiaries > 0 && (
-                      <small className="text-muted d-block">
-                        <i className="fas fa-users me-1"></i>
-                        {project.beneficiaries.toLocaleString()} beneficiaries
-                      </small>
-                    )}
+                  <Card.Text>{project.description}</Card.Text>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Badge bg="info" text="dark">
+                      {project.beneficiaries} beneficiaries
+                    </Badge>
+                    <Button
+                      as={Link}
+                      to={`/projects/${project.id}`}
+                      variant="outline-success"
+                      size="sm"
+                    >
+                      Learn More
+                    </Button>
                   </div>
                 </Card.Body>
               </Card>
@@ -95,107 +93,232 @@ function Environment() {
     );
   };
 
+  if (loading) {
+    return (
+      <>
+        <NavbarComponent />
+        <Container style={{ paddingTop: "100px" }}>
+          <div className="text-center">
+            <div className="spinner-border text-success" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </Container>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <NavbarComponent />
-      <div style={{ paddingTop: "76px" }}>
-        <Container className="py-5">
-          <Row className="mb-4">
-            <Col>
-              <h1 className="text-center" style={{ color: "#28a745" }}>
-                Environment Program
-              </h1>
-              <p className="text-center lead">
-                Environmental conservation and restoration through tree growing and climate action initiatives.
-              </p>
-            </Col>
-          </Row>
+      <div style={{ paddingTop: "100px", backgroundColor: "#f8f9fa" }}>
+        {/* Hero Section */}
+        <div
+          style={{
+            background: "linear-gradient(135deg, #198754 0%, #2d6a4f 100%)",
+            color: "white",
+            padding: "80px 0",
+            marginBottom: "50px",
+          }}
+        >
+          <Container>
+            <Row className="align-items-center">
+              <Col lg={6}>
+                <h1 className="display-4 fw-bold mb-4">
+                  🌱 Environment & Climate Action
+                </h1>
+                <p className="lead mb-4">
+                  Leading transformative environmental initiatives that protect our planet,
+                  empower communities, and create sustainable futures for generations to come.
+                </p>
+                <div className="d-flex gap-3 flex-wrap">
+                  <Button variant="light" size="lg" href="#programs">
+                    Explore Programs
+                  </Button>
+                  <Button variant="outline-light" size="lg" href="#impact">
+                    Our Impact
+                  </Button>
+                </div>
+              </Col>
+              <Col lg={6}>
+                <div className="text-center">
+                  <div
+                    style={{
+                      fontSize: "120px",
+                      opacity: "0.3",
+                      animation: "float 3s ease-in-out infinite",
+                    }}
+                  >
+                    🌍
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
 
-          <Row className="g-4 mb-5">
-            <Col lg={6}>
-              <Card className="h-100 border-0 shadow">
+        <Container id="programs">
+          {/* Key Initiatives */}
+          <Row className="mb-5">
+            <Col lg={12}>
+              <h2 className="text-center mb-5" style={{ color: "#198754" }}>
+                Our Key Initiatives
+              </h2>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
                 <Card.Body>
-                  <h3 style={{ color: "#28a745" }}>Our Focus Areas</h3>
-                  <ul className="list-unstyled mt-3">
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-success me-2"></i>
-                      Tree planting and forest restoration
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-success me-2"></i>
-                      Climate change awareness and education
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-success me-2"></i>
-                      Waste management and recycling programs
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-success me-2"></i>
-                      Water conservation and protection
-                    </li>
-                    <li className="mb-3">
-                      <i className="fas fa-check-circle text-success me-2"></i>
-                      Sustainable agriculture practices
-                    </li>
-                  </ul>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#198754",
+                    }}
+                  >
+                    🌳
+                  </div>
+                  <h5>Tree Planting Campaigns</h5>
+                  <p className="text-muted">
+                    Planting native trees to restore ecosystems and combat climate change
+                  </p>
                 </Card.Body>
               </Card>
             </Col>
-            <Col lg={6}>
-              <Card className="h-100 border-0 shadow">
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
                 <Card.Body>
-                  <h3 style={{ color: "#28a745" }}>Impact</h3>
-                  <p className="mt-3">
-                    Our environment program is dedicated to protecting and restoring the natural environment for future generations. We work with communities to implement sustainable practices that benefit both people and the planet.
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#198754",
+                    }}
+                  >
+                    🏫
+                  </div>
+                  <h5>Green Clubs in Schools</h5>
+                  <p className="text-muted">
+                    Establishing environmental clubs to nurture young climate champions
                   </p>
-                  <p>
-                    Through tree planting initiatives, we have restored degraded lands, improved air quality, and created habitats for wildlife. Our climate action programs help communities adapt to and mitigate the effects of climate change.
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#198754",
+                    }}
+                  >
+                    🍎
+                  </div>
+                  <h5>Demo Fruit Orchards</h5>
+                  <p className="text-muted">
+                    Creating sustainable food sources and teaching agricultural skills
+                  </p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#198754",
+                    }}
+                  >
+                    👥
+                  </div>
+                  <h5>Leadership Development</h5>
+                  <p className="text-muted">
+                    Training environmental leaders to drive community change
                   </p>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
 
-          {/* Projects Section */}
-          <div className="mb-4">
-            <h2 className="text-center mb-4" style={{ color: "#28a745" }}>
-              Our Environment Projects
-            </h2>
-            
-            {loading ? (
-              <div className="text-center py-5">
-                <p>Loading projects...</p>
-              </div>
-            ) : projects.length === 0 ? (
-              <div className="text-center py-5 text-muted">
-                <p>No environment projects found. Check back soon!</p>
-              </div>
-            ) : (
-              <>
-                {renderProjectSection("active", "Active Projects")}
-                {renderProjectSection("planning", "Projects Under Planning")}
-                {renderProjectSection("completed", "Completed Projects")}
-              </>
-            )}
-          </div>
+          {/* Active Projects */}
+          {renderProjectSection("active", "🚀 Active Projects")}
+          {renderProjectSection("planning", "📋 Under Planning")}
+          {renderProjectSection("completed", "✅ Completed Projects")}
 
+          {/* Impact Stats */}
+          <Row id="impact" className="mt-5 mb-5">
+            <Col lg={12}>
+              <h2 className="text-center mb-5" style={{ color: "#198754" }}>
+                Our Environmental Impact
+              </h2>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-success text-white">
+                <Card.Body>
+                  <h2 className="fw-bold">50,000+</h2>
+                  <p>Trees Planted</p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-info text-white">
+                <Card.Body>
+                  <h2 className="fw-bold">100+</h2>
+                  <p>Green Clubs Established</p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-warning text-dark">
+                <Card.Body>
+                  <h2 className="fw-bold">25</h2>
+                  <p>Demo Orchards Created</p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="text-center border-0 shadow-sm bg-primary text-white">
+                <Card.Body>
+                  <h2 className="fw-bold">5,000+</h2>
+                  <p>Young Leaders Trained</p>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+
+          {/* Call to Action */}
           <Row className="mt-5">
-            <Col className="text-center">
-              <Button 
-                as={Link} 
-                to="/" 
-                variant="outline-success"
-                className="me-3"
+            <Col lg={12}>
+              <Card
+                className="text-center border-0 shadow"
+                style={{
+                  background: "linear-gradient(135deg, #198754 0%, #2d6a4f 100%)",
+                  color: "white",
+                }}
               >
-                <i className="fas fa-arrow-left me-2"></i>
-                Back to Home
-              </Button>
-              <Button 
-                variant="success"
-              >
-                <i className="fas fa-donate me-2"></i>
-                Support This Program
-              </Button>
+                <Card.Body className="p-5">
+                  <h2 className="mb-3">Join Our Environmental Movement</h2>
+                  <p className="lead mb-4">
+                    Be part of the solution. Support our environmental initiatives and help
+                    create a sustainable future for generations to come.
+                  </p>
+                  <div className="d-flex justify-content-center gap-3 flex-wrap">
+                    <Button variant="light" size="lg">
+                      🌱 Plant a Tree
+                    </Button>
+                    <Button variant="outline-light" size="lg">
+                      💚 Donate Now
+                    </Button>
+                    <Button variant="outline-light" size="lg">
+                      📧 Subscribe to Updates
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
         </Container>

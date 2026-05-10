@@ -1,64 +1,172 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import NavbarComponent from "@/components/NavbarComponent.jsx";
-import Footer from "@/components/Footer.jsx";
-
-const activities = [
-  { icon: "🎒", title: "Education Support", description: "We provide education levies, uniforms, and other essential materials to ensure children — especially in rural areas — can access and stay in school." },
-  { icon: "🧠", title: "Mentorship and Mental Health", description: "We run mentorship programs pairing young people with positive role models, alongside mental health support to nurture well-rounded, resilient individuals." },
-  { icon: "🏫", title: "School Leadership Empowerment Program", description: "We empower school leaders — teachers, heads, and student leaders — with the tools, training, and vision to drive transformative change within their schools and communities." },
-];
+import NavbarComponent from "../components/NavbarComponent.jsx";
+import Footer from "../components/Footer.jsx";
 
 function Education() {
   return (
     <>
       <NavbarComponent />
-      <div style={{ paddingTop: "80px", minHeight: "100vh", backgroundColor: "#f9fafb" }}>
-
-        {/* Hero */}
-        <div style={{ background: "linear-gradient(135deg, #000428 0%, #004e92 100%)", padding: "5rem 0 4rem", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: "-80px", right: "-80px", width: "350px", height: "350px", borderRadius: "50%", border: "2px solid rgba(13,110,253,0.3)" }} />
-          <Container style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-            <span style={{ display: "inline-block", background: "rgba(13,110,253,0.2)", border: "1px solid rgba(13,110,253,0.5)", color: "#93c5fd", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", padding: "6px 16px", borderRadius: "50px", marginBottom: "1.5rem" }}>
-              Our Work
-            </span>
-            <h1 style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)", fontWeight: 900, color: "#fff", marginBottom: "1rem" }}>
-              <span style={{ color: "#93c5fd" }}>Education</span> Programs
-            </h1>
-            <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,0.8)", maxWidth: "600px", margin: "0 auto", lineHeight: 1.8 }}>
-              Empowering learners and school communities with the support, mentorship, and leadership needed to thrive.
-            </p>
+      <div style={{ paddingTop: "100px", backgroundColor: "#f8f9fa" }}>
+        {/* Hero Section */}
+        <div
+          style={{
+            background: "linear-gradient(135deg, #000428 0%, #004e92 100%)",
+            color: "white",
+            padding: "80px 0",
+            marginBottom: "50px",
+          }}
+        >
+          <Container>
+            <Row className="align-items-center">
+              <Col lg={6}>
+                <h1 className="display-4 fw-bold mb-4">
+                  📚 Education Programs
+                </h1>
+                <p className="lead mb-4">
+                  Empowering learners and school communities with educational support,
+                  mentorship, and leadership development to create brighter futures.
+                </p>
+                <div className="d-flex gap-3 flex-wrap">
+                  <Button variant="light" size="lg" href="#programs">
+                    Explore Programs
+                  </Button>
+                  <Button variant="outline-light" size="lg" href="#impact">
+                    Our Impact
+                  </Button>
+                </div>
+              </Col>
+              <Col lg={6}>
+                <div className="text-center">
+                  <div
+                    style={{
+                      fontSize: "120px",
+                      opacity: "0.3",
+                      animation: "float 3s ease-in-out infinite",
+                    }}
+                  >
+                    🎓
+                  </div>
+                </div>
+              </Col>
+            </Row>
           </Container>
         </div>
 
-        <Container className="py-5">
-          <Row className="g-4 mb-5 justify-content-center">
-            {activities.map((a, i) => (
-              <Col key={i} md={6} lg={4}>
-                <div
-                  style={{ background: "#fff", border: "2px solid #e5e7eb", borderRadius: "14px", padding: "2.5rem", height: "100%", transition: "all 0.25s ease" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#0d6efd"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(13,110,253,0.12)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e5e7eb"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "none"; }}
-                >
-                  <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>{a.icon}</div>
-                  <h5 style={{ color: "#0d6efd", fontWeight: 700, marginBottom: "0.75rem" }}>{a.title}</h5>
-                  <p style={{ color: "#4b5563", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>{a.description}</p>
-                </div>
-              </Col>
-            ))}
+        <Container id="programs">
+          {/* Key Programs */}
+          <Row className="mb-5">
+            <Col lg={12}>
+              <h2 className="text-center mb-5" style={{ color: "#000428" }}>
+                Our Key Education Programs
+              </h2>
+            </Col>
+            <Col lg={4} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#000428",
+                    }}
+                  >
+                    🎒
+                  </div>
+                  <h5>Education Support</h5>
+                  <p className="text-muted">
+                    Providing education levies, uniforms, and essential materials
+                    to ensure children can access and stay in school
+                  </p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={4} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#000428",
+                    }}
+                  >
+                    🧠
+                  </div>
+                  <h5>Mentorship & Mental Health</h5>
+                  <p className="text-muted">
+                    Pairing young people with role models and providing
+                    mental health support for well-rounded development
+                  </p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={4} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm">
+                <Card.Body>
+                  <div
+                    style={{
+                      fontSize: "3rem",
+                      marginBottom: "1rem",
+                      color: "#000428",
+                    }}
+                  >
+                    🏫
+                  </div>
+                  <h5>School Leadership Empowerment</h5>
+                  <p className="text-muted">
+                    Empowering teachers, heads, and student leaders with
+                    tools and training for transformative change
+                  </p>
+                </Card.Body>
+              </Card>
+            </Col>
           </Row>
 
           <Row>
-            <Col className="text-center">
-              <Link to="/" style={{ background: "transparent", color: "#0d6efd", padding: "0.6rem 1.5rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", border: "2px solid #0d6efd", marginRight: "1rem", display: "inline-block" }}>
-                ← Back to Home
-              </Link>
-              <Link to="/partnership" style={{ background: "#0d6efd", color: "#fff", padding: "0.6rem 1.5rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-block" }}>
-                🤝 Get Involved
-              </Link>
+            <Col lg={3} md={6} className="mb-4">
+              <Card className="h-100 text-center border-0 shadow-sm bg-warning text-dark">
+                <Card.Body>
+                  <h2 className="fw-bold">95%</h2>
+                  <p>School Retention Rate</p>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
-        </Container>
+
+          {/* Call to Action */}
+          <Row className="mt-5">
+            <Col lg={12}>
+              <Card
+                className="text-center border-0 shadow"
+                style={{
+                  background: "linear-gradient(135deg, #000428 0%, #004e92 100%)",
+                  color: "white",
+                }}
+              >
+                <Card.Body className="p-5">
+                  <h2 className="mb-3">Transform Lives Through Education</h2>
+                  <p className="lead mb-4">
+                    Join us in our mission to provide quality education and
+                    mentorship to every child. Your support creates opportunities.
+                  </p>
+                  <div className="d-flex justify-content-center gap-3 flex-wrap">
+                    <Button variant="light" size="lg">
+                      🎒 Support a Student
+                    </Button>
+                    <Button variant="outline-light" size="lg">
+                      💚 Donate Now
+                    </Button>
+                    <Button variant="outline-light" size="lg">
+                      📧 Subscribe to Updates
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+
+          </Container>
       </div>
       <Footer />
     </>

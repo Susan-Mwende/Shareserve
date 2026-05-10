@@ -85,69 +85,21 @@ function NavbarComponent() {
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 
-                title="Environment and Climate Action" 
-                id="environment-dropdown"
+                title="Our Work" 
+                id="work-dropdown"
                 style={{ fontWeight: '500', color: '#333' }}
               >
-                <NavDropdown.Item as={Link} to="/environment/training" style={{ fontWeight: '500' }}>
-                  Training and awareness campaigns
+                <NavDropdown.Item as={Link} to="/environment" style={{ fontWeight: '500' }}>
+                  🌱 Environment & Climate Action
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/environment/green-clubs" style={{ fontWeight: '500' }}>
-                  Establishment of Green Clubs
+                <NavDropdown.Item as={Link} to="/livelihood" style={{ fontWeight: '500' }}>
+                  💼 Livelihood & Economic Empowerment
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/environment/fruit-orchards" style={{ fontWeight: '500' }}>
-                  Establishment of Demo Fruit Orchards
+                <NavDropdown.Item as={Link} to="/education" style={{ fontWeight: '500' }}>
+                  📚 Education
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/environment/leadership" style={{ fontWeight: '500' }}>
-                  Leadership Development
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/environment/tree-planting" style={{ fontWeight: '500' }}>
-                  Tree planting and care
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/environment/conservation" style={{ fontWeight: '500' }}>
-                  Conservation
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown 
-                title="Livelihood and economic empowerment" 
-                id="livelihood-dropdown"
-                style={{ fontWeight: '500', color: '#333' }}
-              >
-                <NavDropdown.Item as={Link} to="/livelihood/fruit-orchards" style={{ fontWeight: '500' }}>
-                  Fruit Orchards
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/livelihood/environment-training" style={{ fontWeight: '500' }}>
-                  Environment Training and awareness
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/livelihood/environmental-ambassadors" style={{ fontWeight: '500' }}>
-                  Establishment of Community Environmental Ambassadors
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/livelihood/conservation" style={{ fontWeight: '500' }}>
-                  Conservation
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/livelihood/nursery" style={{ fontWeight: '500' }}>
-                  Nursery Establishment for income generation
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/livelihood/clean-energy" style={{ fontWeight: '500' }}>
-                  Clean cooking/energy campaigns
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/livelihood/vsla" style={{ fontWeight: '500' }}>
-                  VSLAs
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown 
-                title="Education" 
-                id="education-dropdown"
-                style={{ fontWeight: '500', color: '#333' }}
-              >
-                <NavDropdown.Item as={Link} to="/education/education-support" style={{ fontWeight: '500' }}>
-                  Education support i.e provision of education levies, uniforms etc
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/education/mentorship" style={{ fontWeight: '500' }}>
-                  Mentorship and mental health
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/education/school-leadership" style={{ fontWeight: '500' }}>
-                  School leadership empowerment program
+                <NavDropdown.Item as={Link} to="/health" style={{ fontWeight: '500' }}>
+                  🏥 Health
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown 

@@ -5,6 +5,8 @@ import { PaystackProvider } from "./contexts/PaystackContext";
 import NavbarComponent from "@/components/NavbarComponent.jsx";
 import Hero from "@/components/Hero.jsx";
 import Values from "@/components/Values.jsx";
+import WhoWeAre from "@/pages/WhoWeAre.jsx";
+import OurFoundation from "@/pages/OurFoundation.jsx";
 import Programs from "@/components/Programs.jsx";
 import About from "@/components/About.jsx";
 import Projects from "@/components/Projects.jsx";
@@ -110,6 +112,8 @@ function App() {
             <Route path="/partnership" element={<Partnership />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/who-we-are" element={<WhoWeAre />} />
+            <Route path="/our-foundation" element={<OurFoundation />} /> 
             <Route path="/admin/*" element={
               <ProtectedRoute>
                 <AdminDashboard />
