@@ -1,5 +1,5 @@
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/ShareServe logo.jpeg";
 import MpesaPaymentModal from "./MpesaPaymentModal.jsx";
@@ -13,6 +13,7 @@ const scrollToSection = (sectionId) => {
 
 function NavbarComponent() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   return (
@@ -70,7 +71,13 @@ function NavbarComponent() {
                 id="about-dropdown"
                 style={{ fontWeight: '500', color: '#333' }}
               >
-                <NavDropdown.Item as={Link} to="/about" style={{ fontWeight: '500' }}>
+                <NavDropdown.Item 
+                  onClick={() => {
+                    navigate('/');
+                    setTimeout(() => scrollToSection('about'), 100);
+                  }}
+                  style={{ fontWeight: '500', cursor: 'pointer' }}
+                >
                   Who We Are
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/foundation" style={{ fontWeight: '500' }}>
