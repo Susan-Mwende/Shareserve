@@ -70,7 +70,7 @@ function App() {
                       <BlogSection />
                     </Container>
                   </section>
-                </div>
+                </section>
               } />
             <Route path="/about" element={
               <>
