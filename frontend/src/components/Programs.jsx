@@ -8,41 +8,29 @@ function Programs() {
 
   const programCategories = [
     {
-      id: 'education',
-      title: 'Education',
-      icon: 'fas fa-graduation-cap',
-      description: 'Empowering pupils and rural communities through educational programs and capacity building initiatives.',
+      id: 'environment',
+      title: 'Environment & Climate Action',
+      description: 'Training and awareness campaigns, establishment of Green Clubs and Demo Fruit Orchards, leadership development, tree planting and care, and conservation.',
       color: '#198754',
       image: '/images/education.jpg',
-      link: '/education'
+      link: '/environment'
     },
     {
       id: 'livelihood',
-      title: 'Livelihood',
-      icon: 'fas fa-briefcase',
-      description: 'Creating sustainable economic opportunities and skills development for community members.',
+      title: 'Livelihood & Economic Empowerment',
+      description: 'Fruit orchards, environment training, community environmental ambassadors, nursery establishment for income generation, clean cooking/energy campaigns, and VSLAs.',
       color: '#F08000',
       image: '/images/livelihood.jpg',
       link: '/livelihood'
     },
     {
-      id: 'environment',
-      title: 'Environment',
-      icon: 'fas fa-leaf',
-      description: 'Environmental conservation and restoration through tree growing and climate action initiatives.',
-      color: '#28a745',
-      image: '/images/environment.jpg',
-      link: '/environment'
-    },
-    {
-      id: 'health',
-      title: 'Health',
-      icon: 'fas fa-heartbeat',
-      description: 'Improving community health outcomes through accessible healthcare and health education programs.',
-      color: '#dc3545',
+      id: 'education',
+      title: 'Education',
+      description: 'Education support including provision of education levies and uniforms, mentorship and mental health programs, and school leadership empowerment.',
+      color: '#0d6efd',
       image: '/images/health.jpg',
-      link: '/health'
-    }
+      link: '/education'
+    },
   ];
 
   const handleCardClick = (id) => {
@@ -54,25 +42,19 @@ function Programs() {
       <Container>
         <h2 className="section-title text-center">Our Work</h2>
         <p className="section-subtitle text-center">
-          Explore our four core program areas designed to create comprehensive community development
+          Three core program areas designed to create lasting change for communities and ecosystems in rural Kenya
         </p>
-
-        <Row className="g-4">
+        <Row className="g-4 justify-content-center">
           {programCategories.map((category) => (
-            <Col lg={3} md={6} className="mb-4" key={category.id}>
-              <div 
+            <Col lg={4} md={6} className="mb-4" key={category.id}>
+              <div
                 className={`flip-card ${flippedCard === category.id ? 'flipped' : ''}`}
                 onClick={() => handleCardClick(category.id)}
               >
                 <div className="flip-card-inner">
-                  {/* Front - Image */}
-                  <div 
+                  <div
                     className="flip-card-front"
-                    style={{ 
-                      backgroundImage: `url(${category.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }}
+                    style={{ backgroundImage: `url(${category.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                   >
                     <div className="flip-card-overlay" style={{ backgroundColor: `${category.color}cc` }}>
                       <div className="flip-card-content">
@@ -80,21 +62,11 @@ function Programs() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Back - Description */}
                   <div className="flip-card-back">
                     <div className="flip-card-content">
                       <h4 style={{ color: category.color }}>{category.title}</h4>
-                      <p className="flip-card-description">
-                        {category.description}
-                      </p>
-                      <Button 
-                        as={Link}
-                        to={category.link}
-                        variant="outline-primary"
-                        size="sm"
-                        onClick={(e) => e.stopPropagation()}
-                      >
+                      <p className="flip-card-description">{category.description}</p>
+                      <Button as={Link} to={category.link} variant="outline-primary" size="sm" onClick={(e) => e.stopPropagation()}>
                         Learn More
                       </Button>
                     </div>
@@ -104,7 +76,6 @@ function Programs() {
             </Col>
           ))}
         </Row>
-
       </Container>
     </div>
   );

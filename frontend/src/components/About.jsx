@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import aboutImage from "../assets/small baby.jpeg";
 import "./About.css";
