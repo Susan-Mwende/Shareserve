@@ -8,7 +8,6 @@ import Values from "@/components/Values.jsx";
 import WhoWeAre from "@/pages/WhoWeAre.jsx";
 import OurFoundation from "@/pages/Foundation.jsx";
 import Programs from "@/components/Programs.jsx";
-import About from "@/components/About.jsx";
 import Projects from "@/components/Projects.jsx";
 import Impact from "@/components/Impact.jsx";
 import Gallery from "@/components/Gallery.jsx";
@@ -44,24 +43,24 @@ function App() {
         <div style={{ width: "100vw", overflow: "hidden" }}>
           <Router>
             <Routes>
+
               <Route path="/" element={
                 <div style={{ width: "100%", paddingTop: "80px" }}>
-                  <section>
-                    <Container>
-                      <NavbarComponent />
-                      <Hero />
-                      <section id="about">
-                        <WhoWeAre />
-                      </section>
-                      <Values />
-                      <section id="programs">
-                        <Programs />
-                      </section>
-                      <section id="projects">
-                        <Projects />
-                      </section>
-                      <Impact />
-                    </Container>
+                  <NavbarComponent />
+                  <Container>
+                    <Hero />
+                    <section id="about">
+                      <WhoWeAre />
+                    </section>
+                    <Values />
+                    <section id="programs">
+                      <Programs />
+                    </section>
+                    <section id="projects">
+                      <Projects />
+                    </section>
+                    <Impact />
+                  </Container>
                   <section id="gallery">
                     <Gallery />
                   </section>
@@ -71,46 +70,50 @@ function App() {
                       <TestimonialsSection />
                     </Container>
                   </section>
+                  <Footer />
                 </div>
               } />
-            <Route path="/about" element={
-              <>
-                <NavbarComponent />
-                <div style={{ paddingTop: '80px' }}>
-                  <AboutPage />
-                </div>
-                <Footer />
-              </>
-            } />
-            <Route path="/foundation" element={<OurFoundation />} />
-            <Route path="/mission" element={<Mission />} />
-            <Route path="/vision" element={<Vision />} />
-            <Route path="/values" element={<ValuesPage />} />
-            <Route path="/team" element={<MeetOurTeam />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/livelihood" element={<Livelihood />} />
-            <Route path="/environment" element={<Environment />} />
-            <Route path="/health" element={<Health />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/partner" element={<Partner />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/our-mandate" element={<OurMandate />} />
-            <Route path="/impact-stories" element={<ImpactStories />} />
-            <Route path="/career" element={<Career />} />
-            <Route path="/partnership" element={<Partnership />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/who-we-are" element={<WhoWeAre />} />
-            <Route path="/our-foundation" element={<OurFoundation />} /> 
-            <Route path="/admin/*" element={
-              <ProtectedRoute>
-                <AdminDashboard />
-              </ProtectedRoute>
-            } />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+
+              <Route path="/about" element={
+                <>
+                  <NavbarComponent />
+                  <div style={{ paddingTop: "80px" }}>
+                    <AboutPage />
+                  </div>
+                  <Footer />
+                </>
+              } />
+
+              <Route path="/foundation" element={<OurFoundation />} />
+              <Route path="/mission" element={<Mission />} />
+              <Route path="/vision" element={<Vision />} />
+              <Route path="/values" element={<ValuesPage />} />
+              <Route path="/team" element={<MeetOurTeam />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/livelihood" element={<Livelihood />} />
+              <Route path="/environment" element={<Environment />} />
+              <Route path="/health" element={<Health />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/partner" element={<Partner />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/our-mandate" element={<OurMandate />} />
+              <Route path="/impact-stories" element={<ImpactStories />} />
+              <Route path="/career" element={<Career />} />
+              <Route path="/partnership" element={<Partnership />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/who-we-are" element={<WhoWeAre />} />
+              <Route path="/our-foundation" element={<OurFoundation />} />
+              <Route path="/admin/*" element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              } />
+              <Route path="*" element={<Navigate to="/" replace />} />
+
+            </Routes>
           </Router>
         </div>
       </PaystackProvider>
