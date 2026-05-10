@@ -68,15 +68,16 @@ function App() {
                   <section id="blog">
                     <Container>
                       <BlogSection />
+                      <TestimonialsSection />
                     </Container>
                   </section>
-                </section>
+                </div>
               } />
             <Route path="/about" element={
               <>
                 <NavbarComponent />
                 <div style={{ paddingTop: '80px' }}>
-                  <WhoWeAre />
+                  <AboutPage />
                 </div>
                 <Footer />
               </>
